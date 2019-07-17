@@ -23,4 +23,4 @@ $ pod install
 
 # Documentation
 
-You can find the Source code documents in the docs directory
+You can find the Source code documents in the ExpenseInfo/docs directory
