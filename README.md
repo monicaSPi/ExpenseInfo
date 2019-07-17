@@ -20,3 +20,7 @@ Open ExpenseInfo.xcworkspace, choose ExpenseInfo and hit run. This method will b
 Replace YOUR_TARGET_NAME and then, in the Podfile directory, type:
 
 $ pod install
+
+# Documentation
+
+You can find the Source code documents in the docs directory
