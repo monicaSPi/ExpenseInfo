@@ -4,9 +4,9 @@ This is a great ios app that helps the user to take a picture of the receipt and
 
 
 # Requirements
-Xcode 10.2
-Swift 5.0
-For Xcode 10.1 and below, use RxSwift 4.5.
+- Xcode 10.2
+- Swift 5.0
+
 
 # Installation
 
