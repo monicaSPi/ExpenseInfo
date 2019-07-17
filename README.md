@@ -15,23 +15,7 @@ These are currently the supported options:
 # Manual
 Open ExpenseInfo.xcworkspace, choose ExpenseInfo and hit run. This method will build everything and run the sample app
 
-CocoaPods
-# Podfile
-use_frameworks!
-
-target 'YOUR_TARGET_NAME' do
-    pod 'Firebase/Core'
-    pod 'Firebase/MLVision'
-    pod 'Firebase/MLVisionTextModel'
-    pod 'DatePickerDialog'
-    pod 'LLSwitch'
-    pod 'WSTagsField'
-    pod 'pop'
-    pod 'RKPieChart'
-    pod 'Fabric', '~> 1.9.0'
-    pod 'Crashlytics', '~> 3.12.0'
-    pod 'SwipeVC'
-end
+# CocoaPods
 
 Replace YOUR_TARGET_NAME and then, in the Podfile directory, type:
 
