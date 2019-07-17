@@ -1,0 +1,170 @@
+PODS:
+  - Crashlytics (3.12.0):
+    - Fabric (~> 1.9.0)
+  - DatePickerDialog (2.0)
+  - Fabric (1.9.0)
+  - Firebase/Core (5.20.2):
+    - Firebase/CoreOnly
+    - FirebaseAnalytics (= 5.8.1)
+  - Firebase/CoreOnly (5.20.2):
+    - FirebaseCore (= 5.4.1)
+  - Firebase/MLVision (5.20.2):
+    - Firebase/CoreOnly
+    - FirebaseMLVision (= 0.15.0)
+  - Firebase/MLVisionTextModel (5.20.2):
+    - Firebase/CoreOnly
+    - FirebaseMLVisionTextModel (= 0.15.0)
+  - FirebaseAnalytics (5.8.1):
+    - FirebaseCore (~> 5.4)
+    - FirebaseInstanceID (~> 3.8)
+    - GoogleAppMeasurement (= 5.8.1)
+    - GoogleUtilities/AppDelegateSwizzler (~> 5.2)
+    - GoogleUtilities/MethodSwizzler (~> 5.2)
+    - GoogleUtilities/Network (~> 5.2)
+    - "GoogleUtilities/NSData+zlib (~> 5.2)"
+    - nanopb (~> 0.3)
+  - FirebaseCore (5.4.1):
+    - GoogleUtilities/Environment (~> 5.2)
+    - GoogleUtilities/Logger (~> 5.2)
+  - FirebaseInstanceID (3.8.1):
+    - FirebaseCore (~> 5.2)
+    - GoogleUtilities/Environment (~> 5.2)
+    - GoogleUtilities/UserDefaults (~> 5.2)
+  - FirebaseMLCommon (0.15.0):
+    - FirebaseCore (~> 5.4)
+    - FirebaseInstanceID (~> 3.8)
+    - GoogleUtilities/UserDefaults (~> 5.3)
+    - GTMSessionFetcher/Core (~> 1.1)
+  - FirebaseMLVision (0.15.0):
+    - FirebaseCore (~> 5.4)
+    - FirebaseMLCommon (~> 0.15)
+    - GoogleAPIClientForREST/Core (~> 1.3)
+    - GoogleAPIClientForREST/Vision (~> 1.3)
+    - GoogleMobileVision/Detector (~> 1.4)
+  - FirebaseMLVisionTextModel (0.15.0):
+    - GoogleMobileVision/TextDetector (~> 1.4)
+  - GoogleAPIClientForREST/Core (1.3.8):
+    - GTMSessionFetcher (>= 1.1.7)
+  - GoogleAPIClientForREST/Vision (1.3.8):
+    - GoogleAPIClientForREST/Core
+    - GTMSessionFetcher (>= 1.1.7)
+  - GoogleAppMeasurement (5.8.1):
+    - GoogleUtilities/AppDelegateSwizzler (~> 5.2)
+    - GoogleUtilities/MethodSwizzler (~> 5.2)
+    - GoogleUtilities/Network (~> 5.2)
+    - "GoogleUtilities/NSData+zlib (~> 5.2)"
+    - nanopb (~> 0.3)
+  - GoogleMobileVision/Detector (1.6.0):
+    - GoogleToolboxForMac/Logger (~> 2.1)
+    - "GoogleToolboxForMac/NSData+zlib (~> 2.1)"
+    - GTMSessionFetcher/Core (~> 1.1)
+    - Protobuf (~> 3.1)
+  - GoogleMobileVision/TextDetector (1.6.0):
+    - GoogleMobileVision/Detector (~> 1.6)
+  - GoogleToolboxForMac/Defines (2.2.0)
+  - GoogleToolboxForMac/Logger (2.2.0):
+    - GoogleToolboxForMac/Defines (= 2.2.0)
+  - "GoogleToolboxForMac/NSData+zlib (2.2.0)":
+    - GoogleToolboxForMac/Defines (= 2.2.0)
+  - GoogleUtilities/AppDelegateSwizzler (5.6.0):
+    - GoogleUtilities/Environment
+    - GoogleUtilities/Logger
+    - GoogleUtilities/Network
+  - GoogleUtilities/Environment (5.6.0)
+  - GoogleUtilities/Logger (5.6.0):
+    - GoogleUtilities/Environment
+  - GoogleUtilities/MethodSwizzler (5.6.0):
+    - GoogleUtilities/Logger
+  - GoogleUtilities/Network (5.6.0):
+    - GoogleUtilities/Logger
+    - "GoogleUtilities/NSData+zlib"
+    - GoogleUtilities/Reachability
+  - "GoogleUtilities/NSData+zlib (5.6.0)"
+  - GoogleUtilities/Reachability (5.6.0):
+    - GoogleUtilities/Logger
+  - GoogleUtilities/UserDefaults (5.6.0):
+    - GoogleUtilities/Logger
+  - GTMSessionFetcher (1.2.1):
+    - GTMSessionFetcher/Full (= 1.2.1)
+  - GTMSessionFetcher/Core (1.2.1)
+  - GTMSessionFetcher/Full (1.2.1):
+    - GTMSessionFetcher/Core (= 1.2.1)
+  - LLSwitch (1.0.5)
+  - nanopb (0.3.901):
+    - nanopb/decode (= 0.3.901)
+    - nanopb/encode (= 0.3.901)
+  - nanopb/decode (0.3.901)
+  - nanopb/encode (0.3.901)
+  - pop (1.0.12)
+  - Protobuf (3.7.0)
+  - RKPieChart (0.0.1)
+  - SwipeVC (0.2.4)
+  - WSTagsField (4.1.0)
+
+DEPENDENCIES:
+  - Crashlytics (~> 3.12.0)
+  - DatePickerDialog
+  - Fabric (~> 1.9.0)
+  - Firebase/Core
+  - Firebase/MLVision
+  - Firebase/MLVisionTextModel
+  - LLSwitch
+  - pop
+  - RKPieChart
+  - SwipeVC
+  - WSTagsField
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - Crashlytics
+    - DatePickerDialog
+    - Fabric
+    - Firebase
+    - FirebaseAnalytics
+    - FirebaseCore
+    - FirebaseInstanceID
+    - FirebaseMLCommon
+    - FirebaseMLVision
+    - FirebaseMLVisionTextModel
+    - GoogleAPIClientForREST
+    - GoogleAppMeasurement
+    - GoogleMobileVision
+    - GoogleToolboxForMac
+    - GoogleUtilities
+    - GTMSessionFetcher
+    - LLSwitch
+    - nanopb
+    - pop
+    - Protobuf
+    - RKPieChart
+    - SwipeVC
+    - WSTagsField
+
+SPEC CHECKSUMS:
+  Crashlytics: 07fb167b1694128c1c9a5a5cc319b0e9c3ca0933
+  DatePickerDialog: 5e1c24d9fe6506cd45dbc573eed7b0a251b1c09d
+  Fabric: f988e33c97f08930a413e08123064d2e5f68d655
+  Firebase: 0c8cf33f266410c61ab3e2265cfa412200351d9c
+  FirebaseAnalytics: ece1aa57a4f43c64d53a648b5a5e05151aae947b
+  FirebaseCore: f1a9a8be1aee4bf71a2fc0f4096df6788bdfda61
+  FirebaseInstanceID: a122b0c258720cf250551bb2bedf48c699f80d90
+  FirebaseMLCommon: 192c49ec584f1fb559747f1da8052441158b04d7
+  FirebaseMLVision: 257d9f1eaac1565f4dac67adf8b76805fa2a9a80
+  FirebaseMLVisionTextModel: 8094f552d742bea9ca7ec0fc9164e11ce6de9fc8
+  GoogleAPIClientForREST: 5447a194eae517986cafe6421a5330b80b820591
+  GoogleAppMeasurement: ffe513e90551844a739e7bcbb1d2aca1c28a4338
+  GoogleMobileVision: 31cfb4319fd0c03d80105680abd9eae9da5e3b47
+  GoogleToolboxForMac: ff31605b7d66400dcec09bed5861689aebadda4d
+  GoogleUtilities: f44b068df02195da10409f415bd8c98439cd70fa
+  GTMSessionFetcher: 32aeca0aa144acea523e1c8e053089dec2cb98ca
+  LLSwitch: d8b7098fd15f70099b989aa70d15aff8176578d5
+  nanopb: 2901f78ea1b7b4015c860c2fdd1ea2fee1a18d48
+  pop: d582054913807fd11fd50bfe6a539d91c7e1a55a
+  Protobuf: 7a877b7f3e5964e3fce995e2eb323dbc6831bb5a
+  RKPieChart: 8e643c505d24e61574f3a2fd6bd807403840b24b
+  SwipeVC: c650691014442bae2d4a3238619d45e8d636a840
+  WSTagsField: 269da4be929d8945adf7195e3822b70826c1c1a4
+
+PODFILE CHECKSUM: 0595985e4d50051e2a66fe8c7672c61db6c355a8
+
+COCOAPODS: 1.7.3
