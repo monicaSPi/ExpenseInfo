@@ -6,6 +6,10 @@ This is a great ios app that helps the user to take a picture of the receipt and
 
 You can find the Source code documents in the ExpenseInfo/docs directory
 
+- open Documentation
+   - Open Terminal pointing project directory
+   - Enter open Docs/index.html
+
 # App Requirements
 - Xcode 10.2
 - Swift 5.0
