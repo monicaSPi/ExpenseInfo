@@ -24,7 +24,7 @@ Open ExpenseInfo.xcworkspace, choose ExpenseInfo and hit run. This method will b
 
 # CocoaPods
 
-Replace YOUR_TARGET_NAME and then, in the Podfile directory, type:
-
-$ pod install
-
+To Inject dependency Libraries 
+- Open Terminal pointing project directory
+- $ pod install
+- Open ExpenseInfo.xcworkspace
