@@ -8,7 +8,7 @@ You can find the Source code documents in the ExpenseInfo/docs directory
 
 - Open Documentation
    - Open Terminal pointing project directory
-   - Enter open Docs/index.html
+   - $ open Docs/index.html
 
 # App Requirements
 - Xcode 10.2
