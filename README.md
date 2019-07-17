@@ -13,7 +13,7 @@ For Xcode 10.1 and below, use RxSwift 4.5.
 These are currently the supported options:
 
 # Manual
-Open ExpenseInfo.xcworkspace, choose ExpenseInfo and hit run. This method will build everything and run the sample app
+Open ExpenseInfo.xcworkspace, choose ExpenseInfo and hit run. This method will build everything and run the application
 
 # CocoaPods
 
