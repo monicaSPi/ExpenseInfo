@@ -27,7 +27,7 @@ class UploadViewController: UIViewController {
     /// <#Description#>
     private var displayedRectangleResult: RectangleDetectorResult?
 
-    /// <#Description#>
+    /// uploadBtn that executes your custom code in response to user interactions.
     @IBOutlet weak var uploadBtn: UIButton! {
         didSet {
             uploadBtn.layer.shadowColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.25).cgColor
@@ -123,11 +123,11 @@ class UploadViewController: UIViewController {
 }
 // MARK: - UIImagePickerControllerDelegate
 extension UploadViewController: UIImagePickerControllerDelegate {
-    /// <#Description#>
+    /// Tells the delegate that the user picked a still image or movie.
     ///
     /// - Parameters:
-    ///   - picker: <#picker description#>
-    ///   - info: <#info description#>
+    ///   - picker: The controller object managing the image picker interface.
+    ///   - info: A dictionary containing the original image and the edited image, if an image was picked; or a filesystem URL for the movie, if a movie was picked. The dictionary also contains any relevant editing information. The keys for this dictionary are listed in Editing Information Keys.
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         picker.dismiss(animated: true, completion: nil)
         guard let image = info[.originalImage] as? UIImage else {
@@ -150,9 +150,10 @@ extension UploadViewController: UIImagePickerControllerDelegate {
     }
     
     
-    /// <#Description#>
+    /// Tells the delegate that the user cancelled the pick operation.
     ///
-    /// - Parameter picker: <#picker description#>
+    /// - Parameter picker: The controller object managing the image picker interface.
+
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
         imagePicker.dismiss(animated: true, completion: nil)
     }

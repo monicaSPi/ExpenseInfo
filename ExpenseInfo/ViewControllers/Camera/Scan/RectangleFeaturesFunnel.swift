@@ -3,10 +3,10 @@
 import Foundation
 import AVFoundation
 
-/// <#Description#>
+/// Enumeration of AddResult
 ///
-/// - showAndAutoScan: <#showAndAutoScan description#>
-/// - showOnly: <#showOnly description#>
+/// - showAndAutoScan: This case will show and auto scan the result
+/// - showOnly: This case will only show
 enum AddResult {
     case showAndAutoScan
     case showOnly

@@ -39,22 +39,22 @@ protocol RectangleDetectionDelegateProtocol: NSObjectProtocol {
 /// The CaptureSessionManager is responsible for setting up and managing the AVCaptureSession and the functions related to capturing.
 final class CaptureSessionManager: NSObject, AVCaptureVideoDataOutputSampleBufferDelegate {
     
-    /// <#Description#>
+    /// A Core Animation layer that can display video as it is being captured.
     private let videoPreviewLayer: AVCaptureVideoPreviewLayer
     
-    /// <#Description#>
+    /// A set of functions that inform the delegate object of the state of the detection.
     private let captureSession = AVCaptureSession()
     
-    /// <#Description#>
+    /// An object that manages capture activity and coordinates the flow of data from input devices to capture outputs.
     private let rectangleFunnel = RectangleFeaturesFunnel()
     
-    /// <#Description#>
+    /// A set of functions that inform the delegate object of the state of the detection.
     weak var delegate: RectangleDetectionDelegateProtocol?
     
-    /// <#Description#>
+    /// Data structure representing the result of the detection of a quadrilateral.
     private var displayedRectangleResult: RectangleDetectorResult?
     
-    /// <#Description#>
+    /// A capture output for still image, Live Photo, and other photography workflows.
     private var photoOutput = AVCapturePhotoOutput()
     
     /// Whether the CaptureSessionManager should be detecting quadrilaterals.
@@ -68,9 +68,9 @@ final class CaptureSessionManager: NSObject, AVCaptureVideoDataOutputSampleBuffe
     
     // MARK: Life Cycle
     
-    /// <#Description#>
+    /// Initializing the `AVCaptureVideoPreviewLayer`
     ///
-    /// - Parameter videoPreviewLayer: <#videoPreviewLayer description#>
+    /// - Parameter videoPreviewLayer: A Core Animation layer that can display video as it is being captured.
     init?(videoPreviewLayer: AVCaptureVideoPreviewLayer) {
         self.videoPreviewLayer = videoPreviewLayer
         super.init()
@@ -142,12 +142,12 @@ final class CaptureSessionManager: NSObject, AVCaptureVideoDataOutputSampleBuffe
         }
     }
     
-    /// <#Description#>
+    /// Stops the camera and the captureSession stopRunning is called
     internal func stop() {
         captureSession.stopRunning()
     }
     
-    /// <#Description#>
+    /// Capture photo with all the `AVCapturePhotoSettings`
     internal func capturePhoto() {
         
         let captureConnection = photoOutput.connections.first { (connection) -> Bool in
@@ -170,12 +170,12 @@ final class CaptureSessionManager: NSObject, AVCaptureVideoDataOutputSampleBuffe
     
     // MARK: - AVCaptureVideoDataOutputSampleBufferDelegate
     
-    /// <#Description#>
+    /// Notifies the delegate that a new video frame was written.
     ///
     /// - Parameters:
-    ///   - output: <#output description#>
-    ///   - sampleBuffer: <#sampleBuffer description#>
-    ///   - connection: <#connection description#>
+    ///   - output: The capture output object.
+    ///   - sampleBuffer: A CMSampleBuffer object containing the video frame data and additional information about the frame, such as its format and presentation time.
+    ///   - connection: The connection from which the video was received.
     func captureOutput(_ output: AVCaptureOutput, didOutput sampleBuffer: CMSampleBuffer, from connection: AVCaptureConnection) {
         guard isDetecting == true else {
             return
@@ -268,15 +268,15 @@ final class CaptureSessionManager: NSObject, AVCaptureVideoDataOutputSampleBuffe
 // MARK: - AVCapturePhotoCaptureDelegate
 extension CaptureSessionManager: AVCapturePhotoCaptureDelegate {
     
-    /// <#Description#>
+    /// Provides the delegate a captured image in a processed format (such as JPEG).
     ///
     /// - Parameters:
-    ///   - captureOutput: <#captureOutput description#>
-    ///   - photoSampleBuffer: <#photoSampleBuffer description#>
-    ///   - previewPhotoSampleBuffer: <#previewPhotoSampleBuffer description#>
-    ///   - resolvedSettings: <#resolvedSettings description#>
-    ///   - bracketSettings: <#bracketSettings description#>
-    ///   - error: <#error description#>
+    ///   - captureOutput: The photo output performing the capture.
+    ///   - photoSampleBuffer: A sample buffer containing the captured photo, either as uncompressed pixel buffer or compressed image data (see the format property of your photo settings object), along with timing information and other metadata.If an error prevented successful capture, this parameter is nil—see the error parameter for a description of the failure.
+    ///   - previewPhotoSampleBuffer: A Preview to an immutable CMSampleBufferRef object.
+    ///   - resolvedSettings: An object describing the settings used for this capture. Match this object’s uniqueID value to the uniqueID property of the photo settings object you initiated capture with to determine which capture request this delegate call corresponds to. You can also use this object to find out which values the photo output has chosen for automatic settings.
+    ///   - bracketSettings: f you requested a bracketed capture of multiple images with a AVCapturePhotoBracketSettings, a bracketed still image settings object describing which image in the bracket this delegate call corresponds to. If you did not request bracketed capture, this parameter is nil.
+    ///   - error: If an the capture process could not proceed successfully, an error object describing the failure; otherwise, nil.
     func photoOutput(_ captureOutput: AVCapturePhotoOutput, didFinishProcessingPhoto photoSampleBuffer: CMSampleBuffer?, previewPhoto previewPhotoSampleBuffer: CMSampleBuffer?, resolvedSettings: AVCaptureResolvedPhotoSettings, bracketSettings: AVCaptureBracketedStillImageSettings?, error: Error?) {
         if let error = error {
             delegate?.captureSessionManager(self, didFailWithError: error)
@@ -305,12 +305,12 @@ extension CaptureSessionManager: AVCapturePhotoCaptureDelegate {
     
     @available(iOS 11.0, *)
     
-    /// <#Description#>
+    /// Provides the delegate with the captured image and associated metadata resulting from a photo capture.
     ///
     /// - Parameters:
-    ///   - output: <#output description#>
-    ///   - photo: <#photo description#>
-    ///   - error: <#error description#>
+    ///   - output: he photo output performing the capture.
+    ///   - photo: An object containing the captured image pixel buffer, along with any metadata and attachments captured along with the photo (such as a preview image or depth map).
+    ///   - error: If the capture process could not proceed successfully, an error object describing the failure; otherwise, nil.
     func photoOutput(_ output: AVCapturePhotoOutput, didFinishProcessingPhoto photo: AVCapturePhoto, error: Error?) {
         if let error = error {
             delegate?.captureSessionManager(self, didFailWithError: error)
@@ -334,10 +334,8 @@ extension CaptureSessionManager: AVCapturePhotoCaptureDelegate {
     
     /// Completes the image capture by processing the image, and passing it to the delegate object.
     /// This function is necessary because the capture functions for iOS 10 and 11 are decoupled.
-    
-    /// <#Description#>
     ///
-    /// - Parameter imageData: <#imageData description#>
+    /// - Parameter imageData: image in data
     private func completeImageCapture(with imageData: Data) {
         DispatchQueue.global(qos: .background).async { [weak self] in
             CaptureSession.current.isEditing = true

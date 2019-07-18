@@ -50,31 +50,31 @@ extension ExpenseReportViewController: UITableViewDataSource {
         return 1
     }
 }
-/// <#Description#>
+/// Generates Expense Report and display it in a Pie chart
 class ExpenseReportViewController: UIViewController {
     
-    /// <#Description#>
+    /// expenseTable presents data using rows arranged in a single column.
     @IBOutlet weak var expenseTable: UITableView!
     
-    /// <#Description#>
+    /// viewsize object that manages the content for a rectangular area on the screen.
     @IBOutlet weak var viewsize: UIView!
     
-    /// <#Description#>
+    /// midview object that manages the content for a rectangular area on the screen.
     @IBOutlet weak var midview: UIView!
     
-    /// <#Description#>
+    /// emptyImageBox displays a single image or a sequence of animated images in your interface.
     @IBOutlet weak var emptyImageBox: UIImageView!
     
-    /// <#Description#>
+    /// scrollView that allows the scrolling and zooming of its contained views.
     @IBOutlet weak var scrollView: UIScrollView!
     
-    /// <#Description#>
+    /// expenseValueBlock a double-precision, floating-point value type.
     var expenseValueBlock : Double = 0.0
     
-    /// <#Description#>
+    /// Default global currency symbol
     var globalCurrencySymbol : String = "$"
 
-    /// <#Description#>
+    /// array of ReportItemViewModel
     var reportItemsArray = [ReportItemViewModel]()
     /// Called after the controller's view is loaded into memory.
 
@@ -93,12 +93,12 @@ class ExpenseReportViewController: UIViewController {
     
 
     
-    /// <#Description#>
+    /// Indicates the Empty text in the Label
     @IBOutlet weak var emptyLbl: UILabel!
     
 
     
-    /// <#Description#>
+    /// This method Updates the PieChart for the Expense by fetching the data from the core data model
     func updateExpenseBlocks() {
         var itemsArray = [RKPieChartItem]()
         let typefetch = NSFetchRequest<NSFetchRequestResult>(entityName: "ExpenseContent")

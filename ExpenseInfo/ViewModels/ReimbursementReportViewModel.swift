@@ -7,7 +7,7 @@
 //
 
 import UIKit
-/// <#Description#>
+/// ViewModel class of `ReimburseReportViewController`
 struct ReportItemViewModel {
     
     /// <#Description#>

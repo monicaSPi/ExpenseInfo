@@ -1,0 +1,691 @@
+{
+  "warnings": [
+    {
+      "file": "/Users/lw-dlf/Desktop/2019 Git/Expense workspace/ExpenseInfo/Common/AppConstants.swift",
+      "line": 23,
+      "symbol": "AppConstants.XIB.Names",
+      "symbol_kind": "source.lang.swift.decl.var.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/lw-dlf/Desktop/2019 Git/Expense workspace/ExpenseInfo/Common/AppConstants.swift",
+      "line": 24,
+      "symbol": "AppConstants.XIB.Value",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/lw-dlf/Desktop/2019 Git/Expense workspace/ExpenseInfo/Common/AppConstants.swift",
+      "line": 25,
+      "symbol": "AppConstants.XIB.MainStoryBoard",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/lw-dlf/Desktop/2019 Git/Expense workspace/ExpenseInfo/Common/AppConstants.swift",
+      "line": 26,
+      "symbol": "AppConstants.XIB.SearchStoryBoard",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/lw-dlf/Desktop/2019 Git/Expense workspace/ExpenseInfo/Common/AppConstants.swift",
+      "line": 31,
+      "symbol": "AppConstants.Segue.Identifier",
+      "symbol_kind": "source.lang.swift.decl.var.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/lw-dlf/Desktop/2019 Git/Expense workspace/ExpenseInfo/Common/AppConstants.swift",
+      "line": 32,
+      "symbol": "AppConstants.Segue.MainViewController",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/lw-dlf/Desktop/2019 Git/Expense workspace/ExpenseInfo/Common/AppConstants.swift",
+      "line": 33,
+      "symbol": "AppConstants.Segue.HomeViewController",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/lw-dlf/Desktop/2019 Git/Expense workspace/ExpenseInfo/Common/AppConstants.swift",
+      "line": 34,
+      "symbol": "AppConstants.Segue.ReportsViewController",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/lw-dlf/Desktop/2019 Git/Expense workspace/ExpenseInfo/Common/AppConstants.swift",
+      "line": 35,
+      "symbol": "AppConstants.Segue.SearchAndFindMerchantPicker",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/lw-dlf/Desktop/2019 Git/Expense workspace/ExpenseInfo/Common/AppConstants.swift",
+      "line": 36,
+      "symbol": "AppConstants.Segue.ReimbursementViewController",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/lw-dlf/Desktop/2019 Git/Expense workspace/ExpenseInfo/Common/AppConstants.swift",
+      "line": 37,
+      "symbol": "AppConstants.Segue.ExpenseViewController",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/lw-dlf/Desktop/2019 Git/Expense workspace/ExpenseInfo/Common/AppConstants.swift",
+      "line": 38,
+      "symbol": "AppConstants.Segue.UploadViewController",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/lw-dlf/Desktop/2019 Git/Expense workspace/ExpenseInfo/Common/AppConstants.swift",
+      "line": 39,
+      "symbol": "AppConstants.Segue.ScannerViewController",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/lw-dlf/Desktop/2019 Git/Expense workspace/ExpenseInfo/Common/AppConstants.swift",
+      "line": 40,
+      "symbol": "AppConstants.Segue.EditScanViewController",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/lw-dlf/Desktop/2019 Git/Expense workspace/ExpenseInfo/Common/AppConstants.swift",
+      "line": 41,
+      "symbol": "AppConstants.Segue.ExpenseDetailsViewController",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/lw-dlf/Desktop/2019 Git/Expense workspace/ExpenseInfo/Common/AppConstants.swift",
+      "line": 42,
+      "symbol": "AppConstants.Segue.ExpenseCategoryViewController",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/lw-dlf/Desktop/2019 Git/Expense workspace/ExpenseInfo/Common/AppConstants.swift",
+      "line": 47,
+      "symbol": "AppConstants.Defaults.Key",
+      "symbol_kind": "source.lang.swift.decl.var.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/lw-dlf/Desktop/2019 Git/Expense workspace/ExpenseInfo/Common/AppConstants.swift",
+      "line": 48,
+      "symbol": "AppConstants.Defaults.AddExpenseType",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/lw-dlf/Desktop/2019 Git/Expense workspace/ExpenseInfo/Common/AppConstants.swift",
+      "line": 49,
+      "symbol": "AppConstants.Defaults.Year",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/lw-dlf/Desktop/2019 Git/Expense workspace/ExpenseInfo/Common/AppConstants.swift",
+      "line": 50,
+      "symbol": "AppConstants.Defaults.Month",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/lw-dlf/Desktop/2019 Git/Expense workspace/ExpenseInfo/Common/AppConstants.swift",
+      "line": 51,
+      "symbol": "AppConstants.Defaults.CurrencySymbol",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/lw-dlf/Desktop/2019 Git/Expense workspace/ExpenseInfo/Common/AppConstants.swift",
+      "line": 52,
+      "symbol": "AppConstants.Defaults.CurrencyCode",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/lw-dlf/Desktop/2019 Git/Expense workspace/ExpenseInfo/Common/AppConstants.swift",
+      "line": 53,
+      "symbol": "AppConstants.Defaults.path",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/lw-dlf/Desktop/2019 Git/Expense workspace/ExpenseInfo/Common/AppConstants.swift",
+      "line": 54,
+      "symbol": "AppConstants.Defaults.image",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/lw-dlf/Desktop/2019 Git/Expense workspace/ExpenseInfo/Common/AppConstants.swift",
+      "line": 55,
+      "symbol": "AppConstants.Defaults.titleTextColor",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/lw-dlf/Desktop/2019 Git/Expense workspace/ExpenseInfo/Common/AppConstants.swift",
+      "line": 56,
+      "symbol": "AppConstants.Defaults.attributedTitle",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/lw-dlf/Desktop/2019 Git/Expense workspace/ExpenseInfo/Common/AppConstants.swift",
+      "line": 57,
+      "symbol": "AppConstants.Defaults.attributedMessage",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/lw-dlf/Desktop/2019 Git/Expense workspace/ExpenseInfo/Common/AppConstants.swift",
+      "line": 58,
+      "symbol": "AppConstants.Defaults.contentViewController",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/lw-dlf/Desktop/2019 Git/Expense workspace/ExpenseInfo/Common/AppConstants.swift",
+      "line": 59,
+      "symbol": "AppConstants.Defaults.searchField",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/lw-dlf/Desktop/2019 Git/Expense workspace/ExpenseInfo/Common/AppConstants.swift",
+      "line": 60,
+      "symbol": "AppConstants.Defaults.clearButton",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/lw-dlf/Desktop/2019 Git/Expense workspace/ExpenseInfo/Common/AppConstants.swift",
+      "line": 61,
+      "symbol": "AppConstants.Defaults.unselected",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/lw-dlf/Desktop/2019 Git/Expense workspace/ExpenseInfo/Common/AppConstants.swift",
+      "line": 62,
+      "symbol": "AppConstants.Defaults.DisplayImg",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/lw-dlf/Desktop/2019 Git/Expense workspace/ExpenseInfo/Common/AppConstants.swift",
+      "line": 63,
+      "symbol": "AppConstants.Defaults.ReceiptImg",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/lw-dlf/Desktop/2019 Git/Expense workspace/ExpenseInfo/Common/AppConstants.swift",
+      "line": 64,
+      "symbol": "AppConstants.Defaults.expenseListArrayId",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/lw-dlf/Desktop/2019 Git/Expense workspace/ExpenseInfo/Common/AppConstants.swift",
+      "line": 65,
+      "symbol": "AppConstants.Defaults.imageTintColor",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/lw-dlf/Desktop/2019 Git/Expense workspace/ExpenseInfo/Common/AppConstants.swift",
+      "line": 66,
+      "symbol": "AppConstants.Defaults.checked",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/lw-dlf/Desktop/2019 Git/Expense workspace/ExpenseInfo/Common/AppConstants.swift",
+      "line": 67,
+      "symbol": "AppConstants.Defaults.GlobalExpense",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/lw-dlf/Desktop/2019 Git/Expense workspace/ExpenseInfo/Common/AppConstants.swift",
+      "line": 68,
+      "symbol": "AppConstants.Defaults.transform",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/lw-dlf/Desktop/2019 Git/Expense workspace/ExpenseInfo/Common/AppConstants.swift",
+      "line": 69,
+      "symbol": "AppConstants.Defaults.Password",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/lw-dlf/Desktop/2019 Git/Expense workspace/ExpenseInfo/Common/AppConstants.swift",
+      "line": 74,
+      "symbol": "AppConstants.Messages.detectionNoResultsMessage",
+      "symbol_kind": "source.lang.swift.decl.var.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/lw-dlf/Desktop/2019 Git/Expense workspace/ExpenseInfo/Common/QuadrilateralView.swift",
+      "line": 15,
+      "symbol": "CornerPosition.topLeft",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/lw-dlf/Desktop/2019 Git/Expense workspace/ExpenseInfo/Common/QuadrilateralView.swift",
+      "line": 16,
+      "symbol": "CornerPosition.topRight",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/lw-dlf/Desktop/2019 Git/Expense workspace/ExpenseInfo/Common/QuadrilateralView.swift",
+      "line": 17,
+      "symbol": "CornerPosition.bottomRight",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/lw-dlf/Desktop/2019 Git/Expense workspace/ExpenseInfo/Common/QuadrilateralView.swift",
+      "line": 18,
+      "symbol": "CornerPosition.bottomLeft",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/lw-dlf/Desktop/2019 Git/Expense workspace/ExpenseInfo/Extensions/UIImage+Extensions.swift",
+      "line": 129,
+      "symbol": "UIImage.RotationOptions.flipOnVerticalAxis",
+      "symbol_kind": "source.lang.swift.decl.var.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/lw-dlf/Desktop/2019 Git/Expense workspace/ExpenseInfo/Extensions/UIImage+Extensions.swift",
+      "line": 130,
+      "symbol": "UIImage.RotationOptions.flipOnHorizontalAxis",
+      "symbol_kind": "source.lang.swift.decl.var.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/lw-dlf/Desktop/2019 Git/Expense workspace/ExpenseInfo/Extensions/UIView+Extensions.swift",
+      "line": 14,
+      "symbol": "UIView.circleCorner",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/lw-dlf/Desktop/2019 Git/Expense workspace/ExpenseInfo/Extensions/UIView+Extensions.swift",
+      "line": 25,
+      "symbol": "UIView.cornerRadius",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/lw-dlf/Desktop/2019 Git/Expense workspace/ExpenseInfo/Extensions/UIView+Extensions.swift",
+      "line": 37,
+      "symbol": "UIView.borderColor",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/lw-dlf/Desktop/2019 Git/Expense workspace/ExpenseInfo/Extensions/UIView+Extensions.swift",
+      "line": 55,
+      "symbol": "UIView.borderWidth",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/lw-dlf/Desktop/2019 Git/Expense workspace/ExpenseInfo/Extensions/UIView+Extensions.swift",
+      "line": 66,
+      "symbol": "UIView.shadowColor",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/lw-dlf/Desktop/2019 Git/Expense workspace/ExpenseInfo/Extensions/UIView+Extensions.swift",
+      "line": 80,
+      "symbol": "UIView.shadowOffset",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/lw-dlf/Desktop/2019 Git/Expense workspace/ExpenseInfo/Extensions/UIView+Extensions.swift",
+      "line": 91,
+      "symbol": "UIView.shadowOpacity",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/lw-dlf/Desktop/2019 Git/Expense workspace/ExpenseInfo/Extensions/UIView+Extensions.swift",
+      "line": 102,
+      "symbol": "UIView.shadowRadius",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/lw-dlf/Desktop/2019 Git/Expense workspace/ExpenseInfo/Extensions/UIView+Extensions.swift",
+      "line": 113,
+      "symbol": "UIView.shadowPath",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/lw-dlf/Desktop/2019 Git/Expense workspace/ExpenseInfo/Extensions/UIView+Extensions.swift",
+      "line": 125,
+      "symbol": "UIView.shadowShouldRasterize",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/lw-dlf/Desktop/2019 Git/Expense workspace/ExpenseInfo/Extensions/UIView+Extensions.swift",
+      "line": 137,
+      "symbol": "UIView.shadowRasterizationScale",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/lw-dlf/Desktop/2019 Git/Expense workspace/ExpenseInfo/Extensions/UIView+Extensions.swift",
+      "line": 148,
+      "symbol": "UIView.maskToBounds",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/lw-dlf/Desktop/2019 Git/Expense workspace/ExpenseInfo/Extensions/UIView+Extensions.swift",
+      "line": 225,
+      "symbol": "UIView.Configuration",
+      "symbol_kind": "source.lang.swift.decl.typealias",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/lw-dlf/Desktop/2019 Git/Expense workspace/ExpenseInfo/Objects/Model.swift",
+      "line": 104,
+      "symbol": "CIRectangleDetector.rectangleDetector",
+      "symbol_kind": "source.lang.swift.decl.var.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/lw-dlf/Desktop/2019 Git/Expense workspace/ExpenseInfo/Objects/Model.swift",
+      "line": 137,
+      "symbol": "VisionRectangleDetector",
+      "symbol_kind": "source.lang.swift.decl.struct",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/lw-dlf/Desktop/2019 Git/Expense workspace/ExpenseInfo/Objects/Model.swift",
+      "line": 250,
+      "symbol": "LocaleStore",
+      "symbol_kind": "source.lang.swift.decl.struct",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/lw-dlf/Desktop/2019 Git/Expense workspace/ExpenseInfo/Objects/Model.swift",
+      "line": 257,
+      "symbol": "LocaleStore.GroupedByAlphabetsFetchResults.success(response:)",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/lw-dlf/Desktop/2019 Git/Expense workspace/ExpenseInfo/Objects/Model.swift",
+      "line": 258,
+      "symbol": "LocaleStore.GroupedByAlphabetsFetchResults.error(error:)",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/lw-dlf/Desktop/2019 Git/Expense workspace/ExpenseInfo/Objects/Model.swift",
+      "line": 266,
+      "symbol": "LocaleStore.FetchResults.success(response:)",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/lw-dlf/Desktop/2019 Git/Expense workspace/ExpenseInfo/Objects/Model.swift",
+      "line": 267,
+      "symbol": "LocaleStore.FetchResults.error(error:)",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/lw-dlf/Desktop/2019 Git/Expense workspace/ExpenseInfo/ViewControllers/Camera/Scan/RectangleFeaturesFunnel.swift",
+      "line": 11,
+      "symbol": "AddResult.showAndAutoScan",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/lw-dlf/Desktop/2019 Git/Expense workspace/ExpenseInfo/ViewControllers/Camera/Scan/RectangleFeaturesFunnel.swift",
+      "line": 12,
+      "symbol": "AddResult.showOnly",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/lw-dlf/Desktop/2019 Git/Expense workspace/ExpenseInfo/ViewControllers/Camera/ScannerViewController.swift",
+      "line": 11,
+      "symbol": "FlashResult.successful",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/lw-dlf/Desktop/2019 Git/Expense workspace/ExpenseInfo/ViewControllers/Camera/ScannerViewController.swift",
+      "line": 12,
+      "symbol": "FlashResult.notSuccessful",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/lw-dlf/Desktop/2019 Git/Expense workspace/ExpenseInfo/ViewControllers/Camera/Session/CaptureSessionManager.swift",
+      "line": 314,
+      "symbol": "CaptureSessionManager.photoOutput(_:didFinishProcessingPhoto:error:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/lw-dlf/Desktop/2019 Git/Expense workspace/ExpenseInfo/ViewControllers/ExpenseFilterViewController.swift",
+      "line": 9,
+      "symbol": "ExpenseFilterViewController.merchantBtn",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/lw-dlf/Desktop/2019 Git/Expense workspace/ExpenseInfo/ViewControllers/LocalePickerViewController.swift",
+      "line": 17,
+      "symbol": "LocalePickerViewController.Kind.country",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/lw-dlf/Desktop/2019 Git/Expense workspace/ExpenseInfo/ViewControllers/LocalePickerViewController.swift",
+      "line": 18,
+      "symbol": "LocalePickerViewController.Kind.currency",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/lw-dlf/Desktop/2019 Git/Expense workspace/ExpenseInfo/ViewControllers/LocalePickerViewController.swift",
+      "line": 19,
+      "symbol": "LocalePickerViewController.Kind.store",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/lw-dlf/Desktop/2019 Git/Expense workspace/ExpenseInfo/ViewControllers/LocalePickerViewController.swift",
+      "line": 97,
+      "symbol": "LocalePickerViewController.deinit",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/lw-dlf/Desktop/2019 Git/Expense workspace/build/ExpenseInfo.build/Release-iphoneos/ExpenseInfo.build/DerivedSources/CoreDataGenerated/ExpenseInfo/ExpenseContent+CoreDataClass.swift",
+      "line": 14,
+      "symbol": "ExpenseContent",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/lw-dlf/Desktop/2019 Git/Expense workspace/build/ExpenseInfo.build/Release-iphoneos/ExpenseInfo.build/DerivedSources/CoreDataGenerated/ExpenseInfo/ExpenseContent+CoreDataClass.swift",
+      "line": 14,
+      "symbol": "ExpenseContent",
+      "symbol_kind": "source.lang.swift.decl.extension",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/lw-dlf/Desktop/2019 Git/Expense workspace/build/ExpenseInfo.build/Release-iphoneos/ExpenseInfo.build/DerivedSources/CoreDataGenerated/ExpenseInfo/ExpenseContent+CoreDataProperties.swift",
+      "line": 16,
+      "symbol": "ExpenseContent.fetchRequest()",
+      "symbol_kind": "source.lang.swift.decl.function.method.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/lw-dlf/Desktop/2019 Git/Expense workspace/build/ExpenseInfo.build/Release-iphoneos/ExpenseInfo.build/DerivedSources/CoreDataGenerated/ExpenseInfo/ExpenseContent+CoreDataProperties.swift",
+      "line": 20,
+      "symbol": "ExpenseContent.amount",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/lw-dlf/Desktop/2019 Git/Expense workspace/build/ExpenseInfo.build/Release-iphoneos/ExpenseInfo.build/DerivedSources/CoreDataGenerated/ExpenseInfo/ExpenseContent+CoreDataProperties.swift",
+      "line": 21,
+      "symbol": "ExpenseContent.billImage",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/lw-dlf/Desktop/2019 Git/Expense workspace/build/ExpenseInfo.build/Release-iphoneos/ExpenseInfo.build/DerivedSources/CoreDataGenerated/ExpenseInfo/ExpenseContent+CoreDataProperties.swift",
+      "line": 22,
+      "symbol": "ExpenseContent.categoryColor",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/lw-dlf/Desktop/2019 Git/Expense workspace/build/ExpenseInfo.build/Release-iphoneos/ExpenseInfo.build/DerivedSources/CoreDataGenerated/ExpenseInfo/ExpenseContent+CoreDataProperties.swift",
+      "line": 23,
+      "symbol": "ExpenseContent.categoryId",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/lw-dlf/Desktop/2019 Git/Expense workspace/build/ExpenseInfo.build/Release-iphoneos/ExpenseInfo.build/DerivedSources/CoreDataGenerated/ExpenseInfo/ExpenseContent+CoreDataProperties.swift",
+      "line": 24,
+      "symbol": "ExpenseContent.currencyCode",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/lw-dlf/Desktop/2019 Git/Expense workspace/build/ExpenseInfo.build/Release-iphoneos/ExpenseInfo.build/DerivedSources/CoreDataGenerated/ExpenseInfo/ExpenseContent+CoreDataProperties.swift",
+      "line": 25,
+      "symbol": "ExpenseContent.currencySymbolString",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/lw-dlf/Desktop/2019 Git/Expense workspace/build/ExpenseInfo.build/Release-iphoneos/ExpenseInfo.build/DerivedSources/CoreDataGenerated/ExpenseInfo/ExpenseContent+CoreDataProperties.swift",
+      "line": 26,
+      "symbol": "ExpenseContent.dateString",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/lw-dlf/Desktop/2019 Git/Expense workspace/build/ExpenseInfo.build/Release-iphoneos/ExpenseInfo.build/DerivedSources/CoreDataGenerated/ExpenseInfo/ExpenseContent+CoreDataProperties.swift",
+      "line": 27,
+      "symbol": "ExpenseContent.expenseCategory",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/lw-dlf/Desktop/2019 Git/Expense workspace/build/ExpenseInfo.build/Release-iphoneos/ExpenseInfo.build/DerivedSources/CoreDataGenerated/ExpenseInfo/ExpenseContent+CoreDataProperties.swift",
+      "line": 28,
+      "symbol": "ExpenseContent.expenseCategoryImg",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/lw-dlf/Desktop/2019 Git/Expense workspace/build/ExpenseInfo.build/Release-iphoneos/ExpenseInfo.build/DerivedSources/CoreDataGenerated/ExpenseInfo/ExpenseContent+CoreDataProperties.swift",
+      "line": 29,
+      "symbol": "ExpenseContent.expenseMode",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/lw-dlf/Desktop/2019 Git/Expense workspace/build/ExpenseInfo.build/Release-iphoneos/ExpenseInfo.build/DerivedSources/CoreDataGenerated/ExpenseInfo/ExpenseContent+CoreDataProperties.swift",
+      "line": 30,
+      "symbol": "ExpenseContent.id",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/lw-dlf/Desktop/2019 Git/Expense workspace/build/ExpenseInfo.build/Release-iphoneos/ExpenseInfo.build/DerivedSources/CoreDataGenerated/ExpenseInfo/ExpenseContent+CoreDataProperties.swift",
+      "line": 31,
+      "symbol": "ExpenseContent.isClaimed",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/lw-dlf/Desktop/2019 Git/Expense workspace/build/ExpenseInfo.build/Release-iphoneos/ExpenseInfo.build/DerivedSources/CoreDataGenerated/ExpenseInfo/ExpenseContent+CoreDataProperties.swift",
+      "line": 32,
+      "symbol": "ExpenseContent.merchantName",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/lw-dlf/Desktop/2019 Git/Expense workspace/build/ExpenseInfo.build/Release-iphoneos/ExpenseInfo.build/DerivedSources/CoreDataGenerated/ExpenseInfo/ExpenseContent+CoreDataProperties.swift",
+      "line": 33,
+      "symbol": "ExpenseContent.monthString",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/lw-dlf/Desktop/2019 Git/Expense workspace/build/ExpenseInfo.build/Release-iphoneos/ExpenseInfo.build/DerivedSources/CoreDataGenerated/ExpenseInfo/ExpenseContent+CoreDataProperties.swift",
+      "line": 34,
+      "symbol": "ExpenseContent.notes",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/lw-dlf/Desktop/2019 Git/Expense workspace/build/ExpenseInfo.build/Release-iphoneos/ExpenseInfo.build/DerivedSources/CoreDataGenerated/ExpenseInfo/ExpenseContent+CoreDataProperties.swift",
+      "line": 35,
+      "symbol": "ExpenseContent.reimbursable",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/lw-dlf/Desktop/2019 Git/Expense workspace/build/ExpenseInfo.build/Release-iphoneos/ExpenseInfo.build/DerivedSources/CoreDataGenerated/ExpenseInfo/ExpenseContent+CoreDataProperties.swift",
+      "line": 36,
+      "symbol": "ExpenseContent.tags",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/lw-dlf/Desktop/2019 Git/Expense workspace/build/ExpenseInfo.build/Release-iphoneos/ExpenseInfo.build/DerivedSources/CoreDataGenerated/ExpenseInfo/ExpenseContent+CoreDataProperties.swift",
+      "line": 37,
+      "symbol": "ExpenseContent.timeString",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/lw-dlf/Desktop/2019 Git/Expense workspace/build/ExpenseInfo.build/Release-iphoneos/ExpenseInfo.build/DerivedSources/CoreDataGenerated/ExpenseInfo/ExpenseContent+CoreDataProperties.swift",
+      "line": 38,
+      "symbol": "ExpenseContent.yearString",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    }
+  ],
+  "source_directory": "/Users/lw-dlf/Desktop/2019 Git/Expense workspace"
+}

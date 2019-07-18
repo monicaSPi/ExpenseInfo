@@ -160,9 +160,9 @@ extension UIView {
 
 // MARK: - UIView
 public extension UIView {
-    /// <#Description#>
+    /// Take Screenshot based on the bounce size and the main screen
     ///
-    /// - Returns: <#return value description#>
+    /// - Returns: returns the image of screenshot
     func takeScreenshot() -> UIImage {
         UIGraphicsBeginImageContextWithOptions(self.bounds.size, false, UIScreen.main.scale)
         drawHierarchy(in: self.bounds, afterScreenUpdates: true)
@@ -173,10 +173,8 @@ public extension UIView {
         return UIImage()
     }
     /// Extension: insert view.fadeTransition right before changing content
-    
-    /// <#Description#>
-    ///
-    /// - Parameter duration: <#duration description#>
+
+    /// - Parameter duration: in specific time interval
     func fadeTransition(_ duration: CFTimeInterval) {
         let animation: CATransition = CATransition()
         animation.timingFunction = CAMediaTimingFunction(name: CAMediaTimingFunctionName.easeInEaseOut)
@@ -184,31 +182,12 @@ public extension UIView {
         animation.duration = duration
         self.layer.add(animation, forKey: CATransitionType.fade.rawValue)
     }
-    /// This is the function to get subViews of a view of a particular type
-    /// https://stackoverflow.com/a/45297466/5321670
-    
-    /// <#Description#>
-    ///
-    /// - Parameter type: <#type description#>
-    /// - Returns: <#return value description#>
-    func subViews<T : UIView>(type : T.Type) -> [T]{
-        var all = [T]()
-        for view in self.subviews {
-            if let aView = view as? T{
-                all.append(aView)
-            }
-        }
-        return all
-    }
     
     
     /// This is a function to get subViews of a particular type from view recursively. It would look recursively in all subviews and return back the subviews of the type T
-    /// https://stackoverflow.com/a/45297466/5321670
-    
-    /// <#Description#>
-    ///
-    /// - Parameter type: <#type description#>
-    /// - Returns: <#return value description#>
+
+    /// - Parameter type: type T of any kind
+    /// - Returns: return array of type T of any Kind
     func allSubViewsOf<T : UIView>(type : T.Type) -> [T]{
         var all = [T]()
         func getSubview(view: UIView) {
@@ -223,13 +202,6 @@ public extension UIView {
     }
 
     typealias Configuration = (UIView) -> Swift.Void
-    
-    /// <#Description#>
-    ///
-    /// - Parameter configurate: <#configurate description#>
-    func config(configurate: Configuration?) {
-        configurate?(self)
-    }
     
     /// Set some or all corners radiuses of view.
     ///
@@ -273,13 +245,7 @@ public extension UIView {
         }
     }
     
-    /// <#Description#>
-    ///
-    /// - Parameter type: <#type description#>
-    /// - Returns: <#return value description#>
-    func superview<T>(of type: T.Type) -> T? {
-        return superview as? T ?? superview.flatMap { $0.superview(of: T.self) }
-    }
+  
     
 }
 

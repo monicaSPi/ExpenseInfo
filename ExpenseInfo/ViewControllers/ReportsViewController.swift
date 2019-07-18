@@ -8,10 +8,10 @@ import MessageUI
 extension ReportsViewController: MFMailComposeViewControllerDelegate {
     
 }
-/// <#Description#>
+/// This ViewController is used to Generate Report based on the expense made
 class ReportsViewController: UIViewController {
     
-    /// <#Description#>
+    /// Designable menuButton that executes your custom code in response to user interactions.
     @IBOutlet weak var menuButton: RoundButton! {
         didSet {
             menuButton.layer.shadowColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.25).cgColor
@@ -22,7 +22,7 @@ class ReportsViewController: UIViewController {
         }
     }
     
-    /// <#Description#>
+     /// expensBtn that executes your custom code in response to user interactions.
     @IBOutlet weak var expensBtn: UIButton! {
         didSet {
             expensBtn.layer.shadowColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.25).cgColor
@@ -33,7 +33,7 @@ class ReportsViewController: UIViewController {
         }
     }
     
-    /// <#Description#>
+    /// Designable snapBtn that executes your custom code in response to user interactions.
     @IBOutlet weak var snapBtn: RoundButton! {
         didSet {
             snapBtn.layer.shadowColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.25).cgColor
@@ -44,7 +44,7 @@ class ReportsViewController: UIViewController {
         }
     }
     
-    /// <#Description#>
+    /// enterBillBtn that executes your custom code in response to user interactions.
     @IBOutlet weak var enterBillBtn: UIButton! {
         didSet {
             enterBillBtn.layer.shadowColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.25).cgColor
@@ -55,7 +55,8 @@ class ReportsViewController: UIViewController {
         }
     }
     
-    /// <#Description#>
+    /// settingsBtn that executes your custom code in response to user interactions.
+
     @IBOutlet weak var settingsBtn: UIButton! {
         didSet {
             settingsBtn.layer.shadowColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.25).cgColor
@@ -66,7 +67,7 @@ class ReportsViewController: UIViewController {
         }
     }
     
-    /// <#Description#>
+   /// uploadBtn that executes your custom code in response to user interactions.
     @IBOutlet weak var uploadBtn: UIButton! {
         didSet {
             uploadBtn.layer.shadowColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.25).cgColor
@@ -77,15 +78,15 @@ class ReportsViewController: UIViewController {
         }
     }
     
-    /// <#Description#>
+    /// This method is called when the report button is pressed it will ssend the .csv file via email
     ///
-    /// - Parameter sender: <#sender description#>
+    /// - Parameter sender: sender id
     @IBAction func reportGenerate(_ sender: UIButton) {
         
         generateReportforExpense()
     }
     
-    /// <#Description#>
+     /// reportBtn that executes your custom code in response to user interactions.
     @IBOutlet weak var reportBtn: UIButton! {
         didSet {
             reportBtn.layer.shadowColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.25).cgColor
@@ -96,14 +97,15 @@ class ReportsViewController: UIViewController {
         }
     }
     
-    /// <#Description#>
+    ///  generatereportBtn that executes your custom code in response to user interactions.
+   
     @IBOutlet weak var generatereportBtn: UIButton! {
         didSet {
             generatereportBtn.isHidden = false
         }
     }
     
-    /// <#Description#>
+     /// reimbursementBtn that executes your custom code in response to user interactions.
     @IBOutlet weak var reimbursementBtn: UIButton! {
         didSet {
             reimbursementBtn.layer.shadowColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.25).cgColor
@@ -114,9 +116,9 @@ class ReportsViewController: UIViewController {
         }
     }
     
-    /// <#Description#>
+    /// A horizontal control made of multiple segments, each segment functioning as a discrete button.
     ///
-    /// - Parameter sender: <#sender description#>
+    /// - Parameter sender: UISegmentedControl id
     @IBAction func reportsSegmentAction(_ sender: UISegmentedControl) {
         if sender.selectedSegmentIndex == 0 {
             self.expenseContainer.isHidden = false
@@ -129,35 +131,35 @@ class ReportsViewController: UIViewController {
         }
     }
     
-    /// <#Description#>
+   /// stack1 an interface for laying out a collection of views in either a column or a row.
     @IBOutlet weak var stack1: UIStackView!
     
-    /// <#Description#>
+    /// stack2 an interface for laying out a collection of views in either a column or a row.
     @IBOutlet weak var stack2: UIStackView!
     
-    /// <#Description#>
+    /// Check for the option menus is active
     var isMenuActive = false
     
-    /// <#Description#>
+   /// Hide Options Menu
     func hideMenu() {
         self.shadowView.isHidden = true
         self.optionsView.isHidden = true
     }
     
-    /// <#Description#>
+    /// This method is used to navigate to HomeViewController
     ///
-    /// - Parameter sender: <#sender description#>
+    /// - Parameter sender: UIButton id
     @IBAction func goHoem(_ sender: UIButton) {
         let firstVC = self.storyboard?.instantiateViewController(withIdentifier:AppConstants.Segue.Identifier.HomeViewController) as? HomeViewController
         self.present(firstVC!, animated: true, completion: nil)
     }
     
-    /// <#Description#>
+    /// Tells the delegate that the user wants to dismiss the mail composition view.
     ///
     /// - Parameters:
-    ///   - controller: <#controller description#>
-    ///   - result: <#result description#>
-    ///   - error: <#error description#>
+    ///   - controller: The view controller object managing the mail composition view.
+    ///   - result: The result of the user’s action.
+    ///   - error: If an error occurred, this parameter contains an error object with information about the type of failure.
     func mailComposeController(_ controller: MFMailComposeViewController, didFinishWith result: MFMailComposeResult, error: Error?) {
         
         if result.rawValue == 2 {
@@ -166,7 +168,7 @@ class ReportsViewController: UIViewController {
         controller.dismiss(animated: true)
     }
     
-    /// <#Description#>
+    /// Show Options Menu
     func showMenu() {
         
         
@@ -175,13 +177,13 @@ class ReportsViewController: UIViewController {
         
     }
     
-    /// <#Description#>
+    /// reimburseContainer manages the content for a rectangular area on the screen.
     @IBOutlet weak var reimburseContainer: UIView!
     
-    /// <#Description#>
+    /// reimburseContainer manages the content for a rectangular area on the screen.
     @IBOutlet weak var expenseContainer: UIView!
     
-    /// <#Description#>
+    /// scrollView allows the scrolling and zooming of its contained views.
     @IBOutlet weak var scrollView: UIScrollView!
     /// Called after the controller's view is loaded into memory.
 
@@ -203,9 +205,9 @@ class ReportsViewController: UIViewController {
         isMenuActive = false
     }
     
-    /// <#Description#>
+    /// When menu is pressed from the bottom bar it opens the optionsView and should change the value of isMenuActive Value
     ///
-    /// - Parameter sender: <#sender description#>
+    /// - Parameter sender: menuButton id
     @IBAction func menuButtonAction(_ sender: UIButton) {
         
         if isMenuActive {
@@ -221,15 +223,15 @@ class ReportsViewController: UIViewController {
         isMenuActive = isMenuActive ? false : true
     }
     
-    /// <#Description#>
+    /// optionsView that manages the content for a rectangular area on the screen.
     @IBOutlet weak var optionsView: UIView!
     
-    /// <#Description#>
+    /// shadowView that manages the content for a rectangular area on the screen.
     @IBOutlet weak var shadowView: UIView!
     
-    /// <#Description#>
+    /// When this manual Entry is pressed , it updates the AddExpenseType Defaults and navigate to MainViewController
     ///
-    /// - Parameter sender: <#sender description#>
+    /// - Parameter sender: sender id
     @IBAction func manualEntry(_ sender: UIButton) {
         UserDefaults.standard.set("Manual", forKey: AppConstants.Defaults.Key.AddExpenseType)
         
@@ -241,9 +243,9 @@ class ReportsViewController: UIViewController {
    /// Instance for a Data structure containing information about Expense List
     var expenseListArray = [ExpenseListInfo]()
     
-    /// <#Description#>
+    /// When this upload bill is pressed , it updates the AddExpenseType Defaults and navigate to UploadViewController
     ///
-    /// - Parameter sender: <#sender description#>
+    /// - Parameter sender: sender id
     @IBAction func uploadBill(_ sender: UIButton) {
         
         UserDefaults.standard.set("Upload", forKey: AppConstants.Defaults.Key.AddExpenseType)
@@ -255,9 +257,9 @@ class ReportsViewController: UIViewController {
         
     }
     
-    /// <#Description#>
+    /// When this snap bill is pressed , it updates the AddExpenseType Defaults and navigate to ScannerViewController
     ///
-    /// - Parameter sender: <#sender description#>
+    /// - Parameter sender: sender id
     @IBAction func snapBill(_ sender: UIButton) {
         UserDefaults.standard.set("Snap", forKey: AppConstants.Defaults.Key.AddExpenseType)
         let firstVC = self.storyboard?.instantiateViewController(withIdentifier: AppConstants.Segue.Identifier.ScannerViewController) as? ScannerViewController
@@ -265,7 +267,7 @@ class ReportsViewController: UIViewController {
     }
     
     
-    /// <#Description#>
+    /// This method generate the report for the expense fetching the data from the coredata model `ExpenseContent` and export the report via email in a .csv format
     func generateReportforExpense() {
         expenseListArray = [ExpenseListInfo]()
         
@@ -406,7 +408,7 @@ class ReportsViewController: UIViewController {
         
     }
     
-    /// <#Description#>
+    /// Called when Email is not configured in the device
     func showSendMailErrorAlert() {
         
         let alert = UIAlertController(title: "Email Failed", message: "Your device could not send e-mail.  Please check e-mail configuration and try again.", preferredStyle: .alert)

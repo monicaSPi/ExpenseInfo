@@ -4,19 +4,19 @@ import UIKit
 
 
 
-/// <#Description#>
+/// This viewcontroller is the heart of the application likely dashboard
 class MainViewController: UIViewController {
     
     
     // MARK: IBOutlet Properties
     
-    /// <#Description#>
+    /// optionsView that manages the content for a rectangular area on the screen.
     @IBOutlet weak var optionsView: UIView!
     
-    /// <#Description#>
+    /// topBar that manages the content for a top rectangular area on the screen.
     @IBOutlet weak var topBar: UIView!
     
-    /// <#Description#>
+    /// expensBtn that executes your custom code in response to user interactions.
     @IBOutlet weak var expensBtn: UIButton! {
         didSet {
             expensBtn.layer.shadowColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.25).cgColor
@@ -27,7 +27,7 @@ class MainViewController: UIViewController {
         }
     }
     
-    /// <#Description#>
+    /// Designable snapBtn that executes your custom code in response to user interactions.
     @IBOutlet weak var snapBtn: RoundButton! {
         didSet {
             snapBtn.layer.shadowColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.25).cgColor
@@ -38,7 +38,7 @@ class MainViewController: UIViewController {
         }
     }
     
-    /// <#Description#>
+     /// enterBillBtn that executes your custom code in response to user interactions.
     @IBOutlet weak var enterBillBtn: UIButton! {
         didSet {
             enterBillBtn.layer.shadowColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.25).cgColor
@@ -49,7 +49,7 @@ class MainViewController: UIViewController {
         }
     }
     
-    /// <#Description#>
+    /// settingsBtn that executes your custom code in response to user interactions.
     @IBOutlet weak var settingsBtn: UIButton! {
         didSet {
             settingsBtn.layer.shadowColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.25).cgColor
@@ -60,7 +60,7 @@ class MainViewController: UIViewController {
         }
     }
     
-    /// <#Description#>
+   /// uploadBtn that executes your custom code in response to user interactions.
     @IBOutlet weak var uploadBtn: UIButton! {
         didSet {
             uploadBtn.layer.shadowColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.25).cgColor
@@ -71,7 +71,7 @@ class MainViewController: UIViewController {
         }
     }
     
-    /// <#Description#>
+     /// reportBtn that executes your custom code in response to user interactions.
     @IBOutlet weak var reportBtn: UIButton! {
         didSet {
             
@@ -83,7 +83,7 @@ class MainViewController: UIViewController {
         }
     }
     
-    /// <#Description#>
+     /// reimbursementBtn that executes your custom code in response to user interactions.
     @IBOutlet weak var reimbursementBtn: UIButton! {
         didSet {
             reimbursementBtn.layer.shadowColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.25).cgColor
@@ -94,7 +94,7 @@ class MainViewController: UIViewController {
         }
     }
     
-    /// <#Description#>
+    /// menuButton that executes your custom code in response to user interactions.
     @IBOutlet weak var menuButton: UIButton! {
         didSet {
             menuButton.layer.shadowColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.25).cgColor
@@ -114,10 +114,10 @@ class MainViewController: UIViewController {
     /// <#Description#>
     @IBOutlet weak var scrollView: UIScrollView!
     
-    /// <#Description#>
+   /// stack1 an interface for laying out a collection of views in either a column or a row.
     @IBOutlet weak var stack1: UIStackView!
     
-    /// <#Description#>
+    /// stack2 an interface for laying out a collection of views in either a column or a row.
     @IBOutlet weak var stack2: UIStackView!
     
     // MARK: - Local variables
@@ -166,9 +166,9 @@ class MainViewController: UIViewController {
     
     // MARK: IBAction Methods
     
-    /// <#Description#>
+    /// When this manual Entry is pressed , it updates the AddExpenseType Defaults and navigate to MainViewController
     ///
-    /// - Parameter sender: <#sender description#>
+    /// - Parameter sender: sender id
     @IBAction func manualEntry(_ sender: UIButton) {
         UserDefaults.standard.set("Manual", forKey: AppConstants.Defaults.Key.AddExpenseType)
         
@@ -177,9 +177,9 @@ class MainViewController: UIViewController {
         
     }
     
-    /// <#Description#>
+    /// When this upload bill is pressed , it updates the AddExpenseType Defaults and navigate to UploadViewController
     ///
-    /// - Parameter sender: <#sender description#>
+    /// - Parameter sender: sender id
     @IBAction func uploadBill(_ sender: UIButton) {
         
         UserDefaults.standard.set("Upload", forKey: AppConstants.Defaults.Key.AddExpenseType)
@@ -191,12 +191,11 @@ class MainViewController: UIViewController {
         
     }
     
-    /// <#Description#>
+    /// When this snap bill is pressed , it updates the AddExpenseType Defaults and navigate to ScannerViewController
     ///
-    /// - Parameter sender: <#sender description#>
+    /// - Parameter sender: sender id
     @IBAction func snapBill(_ sender: UIButton) {
         UserDefaults.standard.set("Snap", forKey: AppConstants.Defaults.Key.AddExpenseType)
-        
         let cameraPicker = UIStoryboard(name: AppConstants.XIB.Names.MainStoryBoard, bundle: nil).instantiateViewController(withIdentifier: "camera")
         self.present(cameraPicker, animated: true, completion: nil)
     }
@@ -225,9 +224,9 @@ class MainViewController: UIViewController {
         
     }
     
-    /// <#Description#>
+    /// When menu is pressed from the bottom bar it opens the optionsView and should change the value of isMenuActive Value
     ///
-    /// - Parameter sender: <#sender description#>
+    /// - Parameter sender: menuButton id
     @IBAction func menuButtonAction(_ sender: UIButton) {
         
         if mainViewModel.isMenuActive {
@@ -246,13 +245,13 @@ class MainViewController: UIViewController {
     }
     // MARK: Custom Methods
     
-    /// <#Description#>
+    /// Hide Options Menu
     func hideMenu() {
         self.blackView.isHidden = true
         self.optionsView.isHidden = true
     }
     
-    /// <#Description#>
+    /// Show Options Menu
     func showMenu() {
         
         

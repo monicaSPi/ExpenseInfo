@@ -8,29 +8,29 @@
 
 import Foundation
 
-/// <#Description#>
+/// ViewModel class of `SearchAndFindMerchantPicker`
 class MerchantPickerViewModel {
     
-    /// <#Description#>
+    /// searchActive sets bool value
     var searchActive : Bool = false
     
-    /// <#Description#>
+    /// filteredArray is after the predicate value
     var filteredArray:[[String:AnyObject]] = []
     
-    /// <#Description#>
+    /// dataArray has the required data for the uitableview
     var dataArray = [[String:AnyObject]]()
     
-    /// <#Description#>
+    /// dataTypeString
     var dataTypeStr = ""
     
-    /// <#Description#>
+    /// Delegate content array after selection of the merchant
     var selectedData:[String:AnyObject]!
     
-    /// <#Description#>
+    /// after done button is tapped
     var doneButtonTapped: (([String:AnyObject])->())?
     
     
-    /// <#Description#>
+    /// Clear the selected rows and remain unselected 
     func clearSelection() {
         
         var tempDataArray = [[String:AnyObject]]()

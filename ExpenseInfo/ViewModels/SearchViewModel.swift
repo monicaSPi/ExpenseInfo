@@ -10,7 +10,7 @@ import Foundation
 import CoreGraphics
 import UIKit
 
-/// <#Description#>
+/// ViewModel class of `SearchViewController`
 class SearchViewModel {
     // MARK: - Local variable
     

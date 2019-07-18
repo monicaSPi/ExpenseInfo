@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 import CoreGraphics
 
-/// <#Description#>
+/// ViewModel class of `ReimbursementViewController`
 class ReimbursementViewModel {
     
      /// <#Description#>
@@ -50,7 +50,7 @@ class ReimbursementViewModel {
      /// <#Description#>
      let topInset: CGFloat = 10
     
-    /// <#Description#>
+    /// Check for the option menus is active
     var isMenuActive = false
     
     /// Instance for a Data structure containing information about unClaimed List

@@ -3,7 +3,7 @@
 import UIKit
 import CoreData
 
-/// <#Description#>
+/// Manages the ExpenseCategory Actions
 class ExpenseCategoryViewController: UIViewController {
     // MARK: - ViewModel Variables
     
@@ -14,7 +14,7 @@ class ExpenseCategoryViewController: UIViewController {
     /// <#Description#>
     @IBOutlet weak var bottomView: UIView!
     
-    /// <#Description#>
+    /// topBar that manages the content for a top rectangular area on the screen.
     @IBOutlet weak var topBar: UIView!
     
     /// <#Description#>
@@ -197,11 +197,11 @@ class ExpenseCategoryViewController: UIViewController {
 
 // MARK: - UICollectionViewDelegate
 extension ExpenseCategoryViewController: UICollectionViewDelegate {
-    /// <#Description#>
+    /// Tells the delegate that the item at the specified index path was selected.
     ///
     /// - Parameters:
-    ///   - collectionView: <#collectionView description#>
-    ///   - indexPath: <#indexPath description#>
+    ///   - collectionView: The collection view object that is notifying you of the selection change.
+    ///   - indexPath: The index path of the cell that was selected.
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
         let value = categoryViewModel.expenseCategory[indexPath.row]//categNameArray[indexPath.row]
@@ -213,23 +213,25 @@ extension ExpenseCategoryViewController: UICollectionViewDelegate {
 
 // MARK: - UICollectionViewDataSource
 extension ExpenseCategoryViewController: UICollectionViewDataSource {
-    /// <#Description#>
+    /// Asks your data source object for the number of items in the specified section.
     ///
     /// - Parameters:
-    ///   - collectionView: <#collectionView description#>
-    ///   - section: <#section description#>
-    /// - Returns: <#return value description#>
+    ///   - collectionView: The collection view requesting this information.
+    ///   - section: An index number identifying a section in collectionView. This index value is 0-based.
+
+    /// - Returns: The number of rows in section.
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         
         return categoryViewModel.expenseCategory.count
     }
     
-    /// <#Description#>
+    /// Asks your data source object for the cell that corresponds to the specified item in the collection view.
     ///
     /// - Parameters:
-    ///   - collectionView: <#collectionView description#>
-    ///   - indexPath: <#indexPath description#>
-    /// - Returns: <#return value description#>
+    ///   - collectionView: The collection view requesting this information.
+    ///   - indexPath: The index path that specifies the location of the item.
+
+    /// - Returns: A configured cell object. You must not return nil from this method.
     func collectionView(_ collectionView: UICollectionView,
                         cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: categoryViewModel.cellId, for: indexPath) as! CategoryCollectionViewCell

@@ -4,7 +4,7 @@ import Foundation
 import AVFoundation
 import UIKit
 
-/// <#Description#>
+/// This class is used to zoom the images using the gesture
 final class ZoomGestureController {
     
     // MARK: - File Private

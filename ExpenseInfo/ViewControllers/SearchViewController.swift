@@ -3,17 +3,17 @@
 import UIKit
 import CoreData
 
-/// <#Description#>
+/// Manages the searches made and display the search result list
 class SearchViewController: UIViewController {
     // MARK: IBOutlet Properties
     
-    /// <#Description#>
+    /// emptyImageBox that displays a single image or a sequence of animated images in your interface. when there is nothing to show
     @IBOutlet weak var emptyImageBox: UIImageView!
     
-    /// <#Description#>
+    /// collectionView that manages an ordered collection of data items and presents them using customizable layouts.
     @IBOutlet weak var collectionView: UICollectionView!
     
-    /// <#Description#>
+    /// A specialized view for receiving search-related information from the user.
     @IBOutlet weak var searchBar: UISearchBar! {
         didSet {
              searchBar.delegate = self
@@ -22,7 +22,7 @@ class SearchViewController: UIViewController {
     
     // MARK: - ViewModel Variable
     
-    /// <#Description#>
+    /// Instance of SearchViewModel
     let searchViewModel = SearchViewModel()
     // MARK: - View Initializatioln
     /// Called after the controller's view is loaded into memory.
@@ -148,11 +148,12 @@ class SearchViewController: UIViewController {
 // MARK: - UISearchBarDelegate
 extension SearchViewController: UISearchBarDelegate {
     
-    /// <#Description#>
+    /// Tells the delegate that the user changed the search text.
     ///
     /// - Parameters:
-    ///   - searchBar: <#searchBar description#>
-    ///   - searchText: <#searchText description#>
+    ///   - searchBar: The search bar that is being edited.
+    ///   - searchText: The current text in the search text field.
+
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         print("didchange")
         
@@ -169,34 +170,38 @@ extension SearchViewController: UISearchBarDelegate {
         self.collectionView.reloadData()
     }
     
-    /// <#Description#>
+    /// Tells the delegate when the user begins editing the search text.
     ///
-    /// - Parameter searchBar: <#searchBar description#>
+    /// - Parameter searchBar: The search bar that is being edited.
+
     func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
         searchViewModel.searchActive = true
         collectionView.reloadData()
     }
     
-    /// <#Description#>
+    /// Tells the delegate that the user finished editing the search text.
     ///
-    /// - Parameter searchBar: <#searchBar description#>
+    /// - Parameter searchBar: The search bar that is being edited.
+
     func searchBarTextDidEndEditing(_ searchBar: UISearchBar) {
         searchViewModel.searchActive = false
         searchBar.resignFirstResponder()
         collectionView.reloadData()
     }
     
-    /// <#Description#>
+    /// Tells the delegate that the cancel button was tapped.
     ///
-    /// - Parameter searchBar: <#searchBar description#>
+    /// - Parameter searchBar: The search bar that was tapped.
+
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
         searchViewModel.searchActive = false
         collectionView.reloadData()
     }
     
-    /// <#Description#>
+    /// Tells the delegate that the search button was tapped.
     ///
-    /// - Parameter searchBar: <#searchBar description#>
+    /// - Parameter searchBar: The search bar that was tapped.
+
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         searchViewModel.searchActive = false
         collectionView.reloadData()
@@ -206,11 +211,11 @@ extension SearchViewController: UISearchBarDelegate {
 // MARK: - UICollectionViewDelegate
 extension SearchViewController: UICollectionViewDelegate {
     
-    /// <#Description#>
+    /// Tells the delegate that the item at the specified index path was selected.
     ///
     /// - Parameters:
-    ///   - collectionView: <#collectionView description#>
-    ///   - indexPath: <#indexPath description#>
+    ///   - collectionView: The collection view object that is notifying you of the selection change.
+    ///   - indexPath: The index path of the cell that was selected.
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
         let vc2 = self.storyboard?.instantiateViewController(withIdentifier: AppConstants.Segue.Identifier.ExpenseDetailsViewController) as? ExpenseDetailsViewController
@@ -227,12 +232,12 @@ extension SearchViewController: UICollectionViewDelegate {
 extension SearchViewController: UICollectionViewDataSource {
     
     
-    /// <#Description#>
+    /// Asks your data source object for the cell that corresponds to the specified item in the collection view.
     ///
     /// - Parameters:
-    ///   - collectionView: <#collectionView description#>
-    ///   - indexPath: <#indexPath description#>
-    /// - Returns: <#return value description#>
+    ///   - collectionView: The collection view requesting this information.
+    ///   - indexPath: The index path that specifies the location of the item.
+    /// - Returns: A configured cell object. You must not return nil from this method.
     func collectionView(_ collectionView: UICollectionView,
                         cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: searchViewModel.cellId, for: indexPath) as! ExpenseCell
@@ -273,12 +278,12 @@ extension SearchViewController: UICollectionViewDataSource {
         return cell
     }
     
-    /// <#Description#>
+    /// Asks your data source object for the number of items in the specified section.
     ///
     /// - Parameters:
-    ///   - collectionView: <#collectionView description#>
-    ///   - section: <#section description#>
-    /// - Returns: <#return value description#>
+    ///   - collectionView: The collection view requesting this information.
+    ///   - section: An index number identifying a section in collectionView. This index value is 0-based.
+    /// - Returns: The number of rows in section.
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if (searchViewModel.filtered.count == 0) {
             self.collectionView.setEmptyMessage("")

@@ -11,30 +11,23 @@ import CoreData
 import UIKit
 
 
-/// <#Description#>
+/// ViewModel class of `HomeViewController`
 class HomeViewModel {
     
     
     /// global currency symbol instance variable
     var globalCurrencySymbol : String = ""
     
-    /// expenseValue as double instance variable
+    /// expenseValueBlock a double-precision, floating-point value type.
     var expenseValueBlock : Double = 0.0
     
-    /// claimed value as double instance variable
+    /// claimedValueBloak a double-precision, floating-point value type.
     var claimedValueBlock : Double = 0.0
     
-    /// unclaimedValue as double instance variable
+    /// unclaimedValueBlock a double-precision, floating-point value type.
     var unclaimedValueBlock : Double = 0.0
     
-//    /// <#Description#>
-//    var libraryEnabled: Bool = true
-//    var croppingEnabled: Bool = false
-//    var allowResizing: Bool = true
-//    var allowMoving: Bool = false
-//    var minimumSize: CGSize = CGSize(width: 60, height: 60)
-//
-    
+
     
     // MARK: - Get List
     

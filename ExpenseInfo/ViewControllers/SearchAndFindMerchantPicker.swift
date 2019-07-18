@@ -286,19 +286,19 @@ extension SearchAndFindMerchantPicker :  UITableViewDelegate {
 // MARK: - SearchAndFindMerchantPicker
 extension SearchAndFindMerchantPicker {
     
-    /// <#Description#>
+    /// This method is used to show keyboard and set the view to move up
     @objc func keyBoardWillShow() {
         self.view.frame.origin.y >= 0 ? setViewMovedUp(movedUp: true) : setViewMovedUp(movedUp: false)
     }
     
-    /// <#Description#>
+    /// This method is used to hide keyboard and set the view to move down to original frame
     @objc func keyBoardWillHide() {
         
         self.view.frame.origin.y >= 0 ? setViewMovedUp(movedUp: true) : setViewMovedUp(movedUp: false)
         
     }
     
-    /// <#Description#>
+    /// This method is used to set the View up or set the view to its original position
     ///
     /// - Parameter movedUp: true or false based on the keyboard status
     func setViewMovedUp(movedUp: Bool){
@@ -319,10 +319,9 @@ extension SearchAndFindMerchantPicker {
             rect.origin.y += kOffset;
             rect.size.height -= kOffset;
         }
-        
-        
         self.view.frame = rect;
         UIView.commitAnimations()
     }
     
 }
+

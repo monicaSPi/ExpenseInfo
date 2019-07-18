@@ -3,7 +3,7 @@
 import UIKit
 import AVFoundation
 
-/// <#Description#>
+/// FlashResult enumeration
 ///
 /// - successful: <#successful description#>
 /// - notSuccessful: <#notSuccessful description#>

@@ -258,18 +258,28 @@ class AddNewExpenseViewController: UIViewController {
     
     
     
+    /// <#Description#>
     private lazy var annotationOverlayView: UIView = {
         precondition(isViewLoaded)
         let annotationOverlayView = UIView(frame: .zero)
         annotationOverlayView.translatesAutoresizingMaskIntoConstraints = false
         return annotationOverlayView
     }()
+    
+    /// <#Description#>
     private func removeDetectionAnnotations() {
   
         annotationOverlayView.subviews.forEach { (annotationView) in
             annotationView.removeFromSuperview()
         }
     }
+    
+    /// <#Description#>
+    ///
+    /// - Parameters:
+    ///   - frame: <#frame description#>
+    ///   - color: <#color description#>
+    ///   - transform: <#transform description#>
     private func drawFrame(_ frame: CGRect, in color: UIColor, transform: CGAffineTransform) {
         let transformedRect = frame.applying(transform)
         UIUtilities.addRectangle(
@@ -279,6 +289,8 @@ class AddNewExpenseViewController: UIViewController {
         )
     }
     
+    
+    /// <#Description#>
     fileprivate let tagsField = WSTagsField()
     
     /// Delegate for the Tag View when it is added , removed, changed, adjust height, select tag, unselect tag

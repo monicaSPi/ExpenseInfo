@@ -3,7 +3,7 @@
 import UIKit
 import AVFoundation
 
-/// <#Description#>
+/// This will allow the user to edit the scanned image
 final class EditScanViewController: UIViewController {
     
     

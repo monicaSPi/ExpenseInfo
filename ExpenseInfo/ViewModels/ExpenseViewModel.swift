@@ -10,7 +10,7 @@ import Foundation
 import CoreGraphics
 import UIKit
 
-/// <#Description#>
+/// ViewModel class of `ExpenseViewController`
 class ExpenseViewModel {
 
      /// <#Description#>
@@ -25,13 +25,13 @@ class ExpenseViewModel {
      /// <#Description#>
      let topInset: CGFloat = 10
     
-    /// <#Description#>
+    /// globalExpense a double-precision, floating-point value type.
     var globalExpense : Double = 0.0
     
     /// <#Description#>
     var currentCheckedIndex = 2;
     
-    /// <#Description#>
+    /// Check for the option menus is active
     var isMenuActive = false
     
     /// <#Description#>

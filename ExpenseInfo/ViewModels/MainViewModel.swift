@@ -9,9 +9,10 @@
 import Foundation
 
 
-/// <#Description#>
+/// ViewModel class of `MainViewController`
 class MainViewModel {
     
-      /// <#Description#>
+    /// Check for the option menus is active
+
       var isMenuActive = false
 }

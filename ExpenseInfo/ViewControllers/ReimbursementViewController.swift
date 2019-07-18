@@ -6,12 +6,13 @@ import MessageUI
 
 // MARK: - UICollectionViewDataSource
 extension ReimbursementViewController: UICollectionViewDataSource {
-    /// <#Description#>
+    /// Asks your data source object for the cell that corresponds to the specified item in the collection view.
     ///
     /// - Parameters:
-    ///   - collectionView: <#collectionView description#>
-    ///   - indexPath: <#indexPath description#>
-    /// - Returns: <#return value description#>
+    ///   - collectionView: The collection view requesting this information.
+    ///   - indexPath: The index path that specifies the location of the item.
+
+    /// - Returns: A configured cell object. You must not return nil from this method.
     func collectionView(_ collectionView: UICollectionView,
                         cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         //        let cell = UICollectionViewCell()
@@ -127,12 +128,12 @@ extension ReimbursementViewController: UICollectionViewDataSource {
         //  return cell
     }
     
-    /// <#Description#>
+    /// Asks your data source object for the number of items in the specified section.
     ///
     /// - Parameters:
-    ///   - collectionView: <#collectionView description#>
-    ///   - section: <#section description#>
-    /// - Returns: <#return value description#>
+    ///   - collectionView: The collection view requesting this information.
+    ///   - section: An index number identifying a section in collectionView. This index value is 0-based.
+    /// - Returns: The number of rows in section.
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         
         if collectionView == self.collectionView {
@@ -175,11 +176,11 @@ extension ReimbursementViewController: UICollectionViewDataSource {
 
 // MARK: - UICollectionViewDelegate
 extension ReimbursementViewController: UICollectionViewDelegate {
-    /// <#Description#>
+    /// Tells the delegate that the item at the specified index path was selected.
     ///
     /// - Parameters:
-    ///   - collectionView: <#collectionView description#>
-    ///   - indexPath: <#indexPath description#>
+    ///   - collectionView: The collection view object that is notifying you of the selection change.
+    ///   - indexPath: The index path of the cell that was selected.
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let vc2 = self.storyboard?.instantiateViewController(withIdentifier: AppConstants.Segue.Identifier.ExpenseDetailsViewController) as? ExpenseDetailsViewController
         if collectionView == unClaimedCollectionView {
@@ -200,25 +201,42 @@ extension ReimbursementViewController: UICollectionViewDelegate {
 extension ReimbursementViewController: MFMailComposeViewControllerDelegate {
     
 }
-/// <#Description#>
+/// This ViewController is used to show the claimed expense, unclaimed expense, submitted expense in a single roof using segments
 class ReimbursementViewController: UIViewController {
    
     // MARK: - ViewModel Variable
     
-    /// <#Description#>
+    /// Instance of ReimbursementViewModel
     let reimbursemntViewModel = ReimbursementViewModel()
     // MARK: IBOutlet Properties
     
-    /// <#Description#>
+    
+    /// stack1 an interface for laying out a collection of views in either a column or a row.
+    @IBOutlet weak var stack1: UIStackView!
+    
+    /// stack2 an interface for laying out a collection of views in either a column or a row.
+    @IBOutlet weak var stack2: UIStackView!
+    
+    /// optionsView that manages the content for a rectangular area on the screen.
+    @IBOutlet weak var optionsView: UIView!
+    
+    /// shadowView that manages the content for a rectangular area on the screen.
+    @IBOutlet weak var shadowView: UIView!
+    
+    /// submittedCollectionView that manages an ordered collection of data items and presents them using customizable layouts.
+    @IBOutlet weak var submittedCollectionView: UICollectionView!
+
+    /// unClaimedCollectionView that manages an ordered collection of data items and presents them using customizable layouts.
+
     @IBOutlet weak var unClaimedCollectionView: UICollectionView!
     
-    /// <#Description#>
+    /// segmentControl is a horizontal control made of multiple segments, each segment functioning as a discrete button.
     @IBOutlet weak var segmentControl: UISegmentedControl!
     
-    /// <#Description#>
+    /// collectionView that manages an ordered collection of data items and presents them using customizable layouts.
     @IBOutlet weak var collectionView: UICollectionView!
 
-    /// <#Description#>
+    /// Designable menuButton that executes your custom code in response to user interactions.
     @IBOutlet weak var menuButton: RoundButton! {
         didSet {
             menuButton.layer.shadowColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.25).cgColor
@@ -229,7 +247,7 @@ class ReimbursementViewController: UIViewController {
         }
     }
     
-    /// <#Description#>
+     /// expensBtn that executes your custom code in response to user interactions.
     @IBOutlet weak var expensBtn: UIButton! {
         didSet {
             expensBtn.layer.shadowColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.25).cgColor
@@ -240,7 +258,7 @@ class ReimbursementViewController: UIViewController {
         }
     }
     
-    /// <#Description#>
+    /// Designable snapBtn that executes your custom code in response to user interactions.
     @IBOutlet weak var snapBtn: RoundButton! {
         didSet {
             snapBtn.layer.shadowColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.25).cgColor
@@ -251,10 +269,10 @@ class ReimbursementViewController: UIViewController {
         }
     }
     
-    /// <#Description#>
+    /// emptyImageBox that displays a single image or a sequence of animated images in your interface. when there is nothing to show
     @IBOutlet weak var emptyImageBox: UIImageView!
     
-    /// <#Description#>
+    /// enterBillBtn that executes your custom code in response to user interactions.
     @IBOutlet weak var enterBillBtn: UIButton! {
         didSet {
             enterBillBtn.layer.shadowColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.25).cgColor
@@ -265,7 +283,8 @@ class ReimbursementViewController: UIViewController {
         }
     }
     
-    /// <#Description#>
+    /// settingsBtn that executes your custom code in response to user interactions.
+
     @IBOutlet weak var settingsBtn: UIButton! {
         didSet {
             settingsBtn.layer.shadowColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.25).cgColor
@@ -276,7 +295,7 @@ class ReimbursementViewController: UIViewController {
         }
     }
     
-    /// <#Description#>
+    /// uploadBtn that executes your custom code in response to user interactions.
     @IBOutlet weak var uploadBtn: UIButton! {
         didSet {
             
@@ -288,7 +307,7 @@ class ReimbursementViewController: UIViewController {
         }
     }
     
-    /// <#Description#>
+     /// reportBtn that executes your custom code in response to user interactions.
     @IBOutlet weak var reportBtn: UIButton! {
         didSet {
             reportBtn.layer.shadowColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.25).cgColor
@@ -299,7 +318,7 @@ class ReimbursementViewController: UIViewController {
         }
     }
     
-    /// <#Description#>
+     /// reimbursementBtn that executes your custom code in response to user interactions.
     @IBOutlet weak var reimbursementBtn: UIButton! {
         didSet {
             reimbursementBtn.layer.shadowColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.25).cgColor
@@ -309,37 +328,22 @@ class ReimbursementViewController: UIViewController {
             reimbursementBtn.layer.masksToBounds = false
         }
     }
-    
-    /// <#Description#>
-    @IBOutlet weak var stack1: UIStackView!
-    
-    /// <#Description#>
-    @IBOutlet weak var stack2: UIStackView!
-    
-    /// <#Description#>
-    @IBOutlet weak var optionsView: UIView!
-    
-    /// <#Description#>
-    @IBOutlet weak var shadowView: UIView!
-    
-    /// <#Description#>
-    @IBOutlet weak var submittedCollectionView: UICollectionView!
 
 
         // MARK: IBAction Methodss
     
-    /// <#Description#>
+    /// When this snap bill is pressed , it updates the AddExpenseType Defaults and navigate to ScannerViewController
     ///
-    /// - Parameter sender: <#sender description#>
+    /// - Parameter sender: sender id
     @IBAction func snapBill(_ sender: UIButton) {
         UserDefaults.standard.set("Snap", forKey: AppConstants.Defaults.Key.AddExpenseType)
         let firstVC = self.storyboard?.instantiateViewController(withIdentifier: AppConstants.Segue.Identifier.ScannerViewController) as? ScannerViewController
         self.present(firstVC!, animated: true, completion: nil)
     }
     
-    /// <#Description#>
+    /// When menu is pressed from the bottom bar it opens the optionsView and should change the value of isMenuActive Value
     ///
-    /// - Parameter sender: <#sender description#>
+    /// - Parameter sender: menuButton id
     @IBAction func menuButtonAction(_ sender: UIButton) {
         
         if reimbursemntViewModel.isMenuActive {
@@ -363,9 +367,9 @@ class ReimbursementViewController: UIViewController {
         
     }
     
-    /// <#Description#>
+    /// When this manual Entry is pressed , it updates the AddExpenseType Defaults and navigate to MainViewController
     ///
-    /// - Parameter sender: <#sender description#>
+    /// - Parameter sender: sender id
     @IBAction func manualEntry(_ sender: UIButton) {
         UserDefaults.standard.set("Manual", forKey: AppConstants.Defaults.Key.AddExpenseType)
         
@@ -374,9 +378,9 @@ class ReimbursementViewController: UIViewController {
         
     }
     
-    /// <#Description#>
+    /// When this upload bill is pressed , it updates the AddExpenseType Defaults and navigate to UploadViewController
     ///
-    /// - Parameter sender: <#sender description#>
+    /// - Parameter sender: sender id
     @IBAction func uploadBill(_ sender: UIButton) {
         
         UserDefaults.standard.set("Upload", forKey: AppConstants.Defaults.Key.AddExpenseType)
@@ -388,9 +392,9 @@ class ReimbursementViewController: UIViewController {
         
     }
 
-    /// <#Description#>
+    /// A horizontal control made of multiple segments, each segment functioning as a discrete button.
     ///
-    /// - Parameter sender: <#sender description#>
+    /// - Parameter sender: UISegmentedControl id
     @IBAction func segmentValueChanged(_ sender: UISegmentedControl) {
         if sender.selectedSegmentIndex == 0 {
             self.collectionView.isHidden = false
@@ -414,13 +418,13 @@ class ReimbursementViewController: UIViewController {
     
         // MARK: - Custom Calls
     
-    /// <#Description#>
+   /// Hide Options Menu
     func hideMenu() {
         self.shadowView.isHidden = true
         self.optionsView.isHidden = true
     }
     
-    /// <#Description#>
+    /// Show Options Menu
     func showMenu() {
         
         
@@ -510,20 +514,14 @@ class ReimbursementViewController: UIViewController {
     /// - Parameter animated: If true, the view is being added to the window using an animation.
 
     override func viewWillAppear(_ animated: Bool) {
-        getExpenseList()
+        getReimbursementDetailsList()
         collectionView.reloadData()
         submittedCollectionView.reloadData()
         unClaimedCollectionView.reloadData()
     }
     
-    
-
-    
-   
-    
-    
-    /// <#Description#>
-    func getExpenseList() {
+    /// This method is used to get the Reimbursement details from the coredata model and categories into unclaimedList , claimedList, submittedList and the tableViews of the respective tabs will get populated
+    func getReimbursementDetailsList() {
         reimbursemntViewModel.unclaimedListArray = [ExpenseListInfo]()
         reimbursemntViewModel.claimedListArray = [ExpenseListInfo]()
         reimbursemntViewModel.submittedListArray = [ExpenseListInfo]()
@@ -692,9 +690,9 @@ class ReimbursementViewController: UIViewController {
     }
 
     
-    /// <#Description#>
+    /// This method is used to navigate to HomeViewController
     ///
-    /// - Parameter sender: <#sender description#>
+    /// - Parameter sender: UIButton id
     @IBAction func goHoem(_ sender: UIButton) {
         let firstVC = self.storyboard?.instantiateViewController(withIdentifier:AppConstants.Segue.Identifier.HomeViewController) as? HomeViewController
         self.present(firstVC!, animated: true, completion: nil)

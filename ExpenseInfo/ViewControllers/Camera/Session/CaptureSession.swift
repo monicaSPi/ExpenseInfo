@@ -5,7 +5,7 @@ import ImageIO
 /// A class containing global variables and settings for this capture session
 final class CaptureSession {
     
-    /// <#Description#>
+    /// Instance of global variables and settings for this capture session
     static let current = CaptureSession()
     
     /// Whether the user is past the scanning screen or not (needed to disable auto scan on other screens)

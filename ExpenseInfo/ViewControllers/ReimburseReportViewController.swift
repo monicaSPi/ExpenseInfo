@@ -7,34 +7,34 @@ import RKPieChart
 // MARK: - Double
 extension Double {
     
-    /// <#Description#>
+    /// String with Format function
     ///
-    /// - Parameter f: <#f description#>
-    /// - Returns: <#return value description#>
+    /// - Parameter f: f as a string
+    /// - Returns: returns formatted string
     func format(f: String) -> String {
         return NSString(format: "%\(f)f" as NSString, self) as String
     }
 }
 
-/// <#Description#>
+/// Generates Reimbursement Report and display it in a Pie chart
 class ReimburseReportViewController: UIViewController{
     
-    /// <#Description#>
+    /// expenseTable presents data using rows arranged in a single column.
     @IBOutlet weak var expenseTable: UITableView!
     
-    /// <#Description#>
+    /// viewsize object that manages the content for a rectangular area on the screen.
     @IBOutlet weak var viewsize: UIView!
     
-    /// <#Description#>
+    /// emptyImageBox displays a single image or a sequence of animated images in your interface.
     @IBOutlet weak var emptyImageBox: UIImageView!
     
-    /// <#Description#>
+    /// midview object that manages the content for a rectangular area on the screen.
     @IBOutlet weak var midview: UIView!
     
-    /// <#Description#>
+    /// Indicates the Empty text in the Label
     @IBOutlet weak var emptyLbl: UILabel!
     
-    /// <#Description#>
+    /// A view that allows the scrolling and zooming of its contained views.
     @IBOutlet weak var scrollView: UIScrollView! {
         didSet {
             self.scrollView.isScrollEnabled = true
@@ -47,24 +47,24 @@ class ReimburseReportViewController: UIViewController{
     
     
     
-    /// <#Description#>
+    /// expenseValueBlock a double-precision, floating-point value type.
     var expenseValueBlock : Double = 0.0
     
-    /// <#Description#>
+    /// claimedValueBlock a double-precision, floating-point value type.
     var claimedValueBlock : Double = 0.0
     
-    /// <#Description#>
+    /// unclaimedValueBlock a double-precision, floating-point value type.
     var unclaimedValueBlock : Double = 0.0
     
-    /// <#Description#>
+    /// Array of ReportItemViewModel
     var reportItemsArray = Array<ReportItemViewModel>()//[ReportItemViewModel]()
     
-    /// <#Description#>
+    /// Static Category Array
     var categNameArray : [String] = ["Cloths","Food","Health", "Hotel","Party","Travel", "Education" , "Entertainment" , "Fitness","Gift","Labour","Loan","Shop","Sports","Transport","Utilities","Others"]
     
     
     
-    /// <#Description#>
+    /// Called for fetching the claimed and unclaimed list from the core data entitiy `ExpenseContent`
     func getClaimedandUnclaimedList() {
         
         var claim : Int = 0
@@ -76,14 +76,7 @@ class ReimburseReportViewController: UIViewController{
             let fetchedtype = try AppConstants.managedObjectContext.fetch(typefetch) as! [ExpenseContent]
             
             if fetchedtype.count > 0 {
-                //                for exp in fetchedtype {
-                //
-                //                    let myString = exp.amount
-                //                    let myFloat = (myString! as NSString).doubleValue
-                //
-                //                    claimedValueBlock += myFloat
-                //                }
-                
+     
                 fetchedtype.forEach { (exp) in
                     let myString = exp.amount
                     let myFloat = (myString! as NSString).doubleValue
@@ -105,13 +98,6 @@ class ReimburseReportViewController: UIViewController{
             let fetchedtype1 = try AppConstants.managedObjectContext.fetch(typefetch1) as! [ExpenseContent]
             
             if fetchedtype1.count > 0 {
-                //                for exp in fetchedtype1 {
-                //
-                //                    let myString = exp.amount
-                //                    let myFloat = (myString! as NSString).doubleValue
-                //
-                //                    unclaimedValueBlock += myFloat
-                //                }
                 
                 fetchedtype1.forEach { (exp) in
                     
@@ -139,7 +125,7 @@ class ReimburseReportViewController: UIViewController{
         
     }
     
-    /// <#Description#>
+    /// This method perform Math / Arithmetic Calculation to find the percentage of the reimbursement made based on claimed and unclaimed value
     func updateChart() {
         let reimbursable: Double = claimedValueBlock + unclaimedValueBlock
         
@@ -209,7 +195,7 @@ class ReimburseReportViewController: UIViewController{
         chartView.centerYAnchor.constraint(equalTo: self.viewsize.centerYAnchor).isActive = true
     }
     
-    /// <#Description#>
+    /// Default global currency symbol
     var globalCurrencySymbol : String = "$"
     /// Called after the controller's view is loaded into memory.
 

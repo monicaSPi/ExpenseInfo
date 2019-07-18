@@ -10,7 +10,6 @@ target 'ExpenseInfo' do
     pod 'Firebase/MLVisionTextModel'
     pod 'DatePickerDialog'
     pod 'LLSwitch'
-#    pod 'VegaScrollFlowLayout'
     pod 'WSTagsField'
     pod 'pop'
     pod 'RKPieChart'

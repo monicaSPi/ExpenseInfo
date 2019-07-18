@@ -2,7 +2,7 @@
 //  ExpenseContent+CoreDataClass.swift
 //  
 //
-//  Created by lw-dlf on 7/16/19.
+//  Created by lw-dlf on 7/18/19.
 //
 //  This file was automatically generated and should not be edited.
 //

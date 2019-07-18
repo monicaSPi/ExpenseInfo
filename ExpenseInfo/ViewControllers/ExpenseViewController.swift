@@ -3,7 +3,7 @@
 import UIKit
 import CoreData
 
-/// <#Description#>
+/// Displays List of Expenses made with the details
 class ExpenseViewController: UIViewController  {
     //    func igcMenuSelected(_ selectedMenuName: String!, at index: Int) {
     //
@@ -17,13 +17,13 @@ class ExpenseViewController: UIViewController  {
     
     // MARK: IBOutlet Properties
     
-    /// <#Description#>
+    /// optionsView that manages the content for a rectangular area on the screen.
     @IBOutlet weak var optionsView: UIView!
     
-    /// <#Description#>
+    /// shadowView that manages the content for a rectangular area on the screen.
     @IBOutlet weak var shadowView: UIView!
     
-    /// <#Description#>
+    /// collectionView that manages an ordered collection of data items and presents them using customizable layouts.
     @IBOutlet weak var collectionView: UICollectionView! {
         didSet {
             let nib = UINib(nibName: expenseViewModel.cellId, bundle: nil)
@@ -33,7 +33,7 @@ class ExpenseViewController: UIViewController  {
         }
     }
     
-    /// <#Description#>
+    /// expensBtn that executes your custom code in response to user interactions.
     @IBOutlet weak var expensBtn: UIButton! {
         didSet {
             expensBtn.layer.shadowColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.25).cgColor
@@ -45,7 +45,7 @@ class ExpenseViewController: UIViewController  {
         }
     }
     
-    /// <#Description#>
+    /// Designable snapBtn that executes your custom code in response to user interactions.
     @IBOutlet weak var snapBtn: RoundButton! {
         didSet {
             snapBtn.layer.shadowColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.25).cgColor
@@ -56,7 +56,7 @@ class ExpenseViewController: UIViewController  {
         }
     }
     
-    /// <#Description#>
+    /// enterBillBtn that executes your custom code in response to user interactions.
     @IBOutlet weak var enterBillBtn: UIButton! {
         didSet {
             enterBillBtn.layer.shadowColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.25).cgColor
@@ -67,7 +67,8 @@ class ExpenseViewController: UIViewController  {
         }
     }
     
-    /// <#Description#>
+    /// settingsBtn that executes your custom code in response to user interactions.
+
     @IBOutlet weak var settingsBtn: UIButton! {
         didSet {
             settingsBtn.layer.shadowColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.25).cgColor
@@ -78,7 +79,7 @@ class ExpenseViewController: UIViewController  {
         }
     }
     
-    /// <#Description#>
+   /// uploadBtn that executes your custom code in response to user interactions.
     @IBOutlet weak var uploadBtn: UIButton! {
         didSet {
             uploadBtn.layer.shadowColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.25).cgColor
@@ -89,7 +90,7 @@ class ExpenseViewController: UIViewController  {
         }
     }
     
-    /// <#Description#>
+     /// reportBtn that executes your custom code in response to user interactions.
     @IBOutlet weak var reportBtn: UIButton! {
         didSet {
             reportBtn.layer.shadowColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.25).cgColor
@@ -100,7 +101,7 @@ class ExpenseViewController: UIViewController  {
         }
     }
     
-    /// <#Description#>
+     /// reimbursementBtn that executes your custom code in response to user interactions.
     @IBOutlet weak var reimbursementBtn: UIButton! {
         didSet {
             reimbursementBtn.layer.shadowColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.25).cgColor
@@ -111,7 +112,7 @@ class ExpenseViewController: UIViewController  {
         }
     }
     
-    /// <#Description#>
+    /// menuButton that executes your custom code in response to user interactions.
     @IBOutlet weak var menuButton: UIButton! {
         didSet {
             menuButton.layer.shadowColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.25).cgColor
@@ -122,13 +123,13 @@ class ExpenseViewController: UIViewController  {
         }
     }
     
-    /// <#Description#>
+    /// emptyImageBox that displays a single image or a sequence of animated images in your interface. when there is nothing to show
     @IBOutlet weak var emptyImageBox: UIImageView!
     
-    /// <#Description#>
+   /// stack1 an interface for laying out a collection of views in either a column or a row.
     @IBOutlet weak var stack1: UIStackView!
     
-    /// <#Description#>
+    /// stack2 an interface for laying out a collection of views in either a column or a row.
     @IBOutlet weak var stack2: UIStackView!
     
     
@@ -137,9 +138,9 @@ class ExpenseViewController: UIViewController  {
     
     // MARK: IBAction Methods
     
-    /// <#Description#>
+    /// When menu is pressed from the bottom bar it opens the optionsView and should change the value of isMenuActive Value
     ///
-    /// - Parameter sender: <#sender description#>
+    /// - Parameter sender: menuButton id
     @IBAction func menuButtonAction(_ sender: UIButton) {
         
         if expenseViewModel.isMenuActive {
@@ -160,9 +161,9 @@ class ExpenseViewController: UIViewController  {
         
     }
     
-    /// <#Description#>
+    /// When this manual Entry is pressed , it updates the AddExpenseType Defaults and navigate to MainViewController
     ///
-    /// - Parameter sender: <#sender description#>
+    /// - Parameter sender: sender id
     @IBAction func manualEntry(_ sender: UIButton) {
         UserDefaults.standard.set("Manual", forKey: AppConstants.Defaults.Key.AddExpenseType)
         
@@ -220,9 +221,9 @@ class ExpenseViewController: UIViewController  {
 
     }
     
-    /// <#Description#>
+    /// When this upload bill is pressed , it updates the AddExpenseType Defaults and navigate to UploadViewController
     ///
-    /// - Parameter sender: <#sender description#>
+    /// - Parameter sender: sender id
     @IBAction func uploadBill(_ sender: UIButton) {
         
         UserDefaults.standard.set("Upload", forKey: AppConstants.Defaults.Key.AddExpenseType)
@@ -235,9 +236,9 @@ class ExpenseViewController: UIViewController  {
     }
     
     
-    /// <#Description#>
+    /// When this snap bill is pressed , it updates the AddExpenseType Defaults and navigate to ScannerViewController
     ///
-    /// - Parameter sender: <#sender description#>
+    /// - Parameter sender: sender id
     @IBAction func snapBill(_ sender: UIButton) {
         UserDefaults.standard.set("Snap", forKey: AppConstants.Defaults.Key.AddExpenseType)
         let firstVC = self.storyboard?.instantiateViewController(withIdentifier: AppConstants.Segue.Identifier.ScannerViewController) as? ScannerViewController
@@ -251,9 +252,9 @@ class ExpenseViewController: UIViewController  {
         self.dismiss(animated: true, completion: nil)
     }
     
-    /// <#Description#>
+    /// This method is used to navigate to HomeViewController
     ///
-    /// - Parameter sender: <#sender description#>
+    /// - Parameter sender: UIButton id
     @IBAction func goHoem(_ sender: UIButton) {
         let firstVC = self.storyboard?.instantiateViewController(withIdentifier:AppConstants.Segue.Identifier.HomeViewController) as? HomeViewController
         self.present(firstVC!, animated: true, completion: nil)
@@ -261,7 +262,7 @@ class ExpenseViewController: UIViewController  {
     
     // MARK: - Custom Action
     
-    /// <#Description#>
+   /// Hide Options Menu
     func hideMenu() {
         self.stack1.isHidden = false
         self.stack2.isHidden = false
@@ -271,7 +272,7 @@ class ExpenseViewController: UIViewController  {
         expenseViewModel.isMenuActive = false
     }
     
-    /// <#Description#>
+    /// Show Options Menu
     func showMenu() {
         
         
@@ -424,11 +425,11 @@ class ExpenseViewController: UIViewController  {
 extension ExpenseViewController: UICollectionViewDelegate {
     
     
-    /// <#Description#>
+    /// Tells the delegate that the item at the specified index path was selected.
     ///
     /// - Parameters:
-    ///   - collectionView: <#collectionView description#>
-    ///   - indexPath: <#indexPath description#>
+    ///   - collectionView: The collection view object that is notifying you of the selection change.
+    ///   - indexPath: The index path of the cell that was selected.
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
         let vc2 = self.storyboard?.instantiateViewController(withIdentifier: AppConstants.Segue.Identifier.ExpenseDetailsViewController) as? ExpenseDetailsViewController
@@ -447,12 +448,12 @@ extension ExpenseViewController: UICollectionViewDataSource {
     
     
     
-    /// <#Description#>
+    /// Asks your data source object for the cell that corresponds to the specified item in the collection view.
     ///
     /// - Parameters:
-    ///   - collectionView: <#collectionView description#>
-    ///   - indexPath: <#indexPath description#>
-    /// - Returns: <#return value description#>
+    ///   - collectionView: The collection view requesting this information.
+    ///   - indexPath: The index path that specifies the location of the item.
+    /// - Returns: A configured cell object. You must not return nil from this method.
     func collectionView(_ collectionView: UICollectionView,
                         cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: expenseViewModel.cellId, for: indexPath) as! ExpenseCell
@@ -495,12 +496,12 @@ extension ExpenseViewController: UICollectionViewDataSource {
     }
     
     
-    /// <#Description#>
+    /// Asks your data source object for the number of items in the specified section.
     ///
     /// - Parameters:
-    ///   - collectionView: <#collectionView description#>
-    ///   - section: <#section description#>
-    /// - Returns: <#return value description#>
+    ///   - collectionView: The collection view requesting this information.
+    ///   - section: An index number identifying a section in collectionView. This index value is 0-based.
+    /// - Returns: The number of rows in section.
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if (expenseViewModel.expenseListArray.count == 0) {
             self.collectionView.setEmptyMessage("")

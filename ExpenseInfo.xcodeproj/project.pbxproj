@@ -21,9 +21,8 @@
 		8E20AE80222FA3ED00145962 /* MyriadPro-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 8E20AE71222FA3B400145962 /* MyriadPro-Regular.otf */; };
 		8E20AE81222FA3ED00145962 /* MyriadPro-Semibold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 8E20AE70222FA3B400145962 /* MyriadPro-Semibold.otf */; };
 		8E20AE82222FA3ED00145962 /* MyriadPro-SemiboldIt.otf in Resources */ = {isa = PBXBuildFile; fileRef = 8E20AE72222FA3B400145962 /* MyriadPro-SemiboldIt.otf */; };
-		8E31D67221DF1EA500A55FEE /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E31D67121DF1EA500A55FEE /* SearchViewController.swift */; };
+		8E233E1522E02C9800CEAE1B /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E233E1422E02C9700CEAE1B /* SearchViewController.swift */; };
 		8E42841721EEFE6300DAB9A7 /* ImageScannerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E42841621EEFE6300DAB9A7 /* ImageScannerController.swift */; };
-		8E5000B421E9CB350027BD13 /* ExpenseFilterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E5000B321E9CB340027BD13 /* ExpenseFilterViewController.swift */; };
 		8E5000B721E9CF160027BD13 /* CGRect+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E5000B621E9CF160027BD13 /* CGRect+Utils.swift */; };
 		8E5000B821E9D26A0027BD13 /* impact.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8E5000B521E9CD070027BD13 /* impact.ttf */; };
 		8E5000B921E9D26C0027BD13 /* impact.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8E5000B521E9CD070027BD13 /* impact.ttf */; };
@@ -176,9 +175,8 @@
 		8E20AE73222FA3B400145962 /* MyriadPro-BoldCondIt.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "MyriadPro-BoldCondIt.otf"; sourceTree = "<group>"; };
 		8E20AE74222FA3B400145962 /* MyriadPro-BoldIt.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "MyriadPro-BoldIt.otf"; sourceTree = "<group>"; };
 		8E20AE76222FA3B500145962 /* MyriadPro-CondIt.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "MyriadPro-CondIt.otf"; sourceTree = "<group>"; };
-		8E31D67121DF1EA500A55FEE /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SearchViewController.swift; path = ExpenseInfo/ViewControllers/SearchViewController.swift; sourceTree = SOURCE_ROOT; };
+		8E233E1422E02C9700CEAE1B /* SearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		8E42841621EEFE6300DAB9A7 /* ImageScannerController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageScannerController.swift; sourceTree = "<group>"; };
-		8E5000B321E9CB340027BD13 /* ExpenseFilterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExpenseFilterViewController.swift; sourceTree = "<group>"; };
 		8E5000B521E9CD070027BD13 /* impact.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = impact.ttf; sourceTree = "<group>"; };
 		8E5000B621E9CF160027BD13 /* CGRect+Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CGRect+Utils.swift"; sourceTree = "<group>"; };
 		8E5000BB21E9D3350027BD13 /* Myriad Pro Bold SemiExtended.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Myriad Pro Bold SemiExtended.ttf"; sourceTree = "<group>"; };
@@ -409,12 +407,12 @@
 		8E7328E821D5FB46004E0E22 /* ExpenseInfo */ = {
 			isa = PBXGroup;
 			children = (
+				8E8B6DC521E467C6007F8AB9 /* WeScan.framework */,
 				8EF693DC223F75B700333E54 /* Model */,
 				8EDECFEF2239286C00955F5A /* Core Data */,
 				8EDECFF1223928CA00955F5A /* Delegate */,
 				8E8B6DF421E46B16007F8AB9 /* Protocol */,
 				8E8B6DD821E46A37007F8AB9 /* Common */,
-				8E8B6DC521E467C6007F8AB9 /* WeScan.framework */,
 				8E732A4621D6006E004E0E22 /* Managers */,
 				8E732A4021D60053004E0E22 /* Countries.bundle */,
 				8E732A3B21D6001A004E0E22 /* Extensions */,
@@ -462,12 +460,11 @@
 			children = (
 				8E7329D721D5FCB0004E0E22 /* HomeViewController.swift */,
 				8EA1AEC5222D47A500B5EB4C /* SearchAndFindMerchantPicker.swift */,
+				8E233E1422E02C9700CEAE1B /* SearchViewController.swift */,
 				8E7329D921D5FCBC004E0E22 /* MainViewController.swift */,
 				8E7329DB21D5FCC9004E0E22 /* AddNewExpenseViewController.swift */,
 				8E65D39E222E2BD0004F7E72 /* Checkmark-50.png */,
 				8E7329DD21D5FCDA004E0E22 /* ExpenseViewController.swift */,
-				8E5000B321E9CB340027BD13 /* ExpenseFilterViewController.swift */,
-				8E31D67121DF1EA500A55FEE /* SearchViewController.swift */,
 				8E7329E721D5FD1A004E0E22 /* ExpenseCategoryViewController.swift */,
 				8E7329E521D5FD04004E0E22 /* ExpenseDetailsViewController.swift */,
 				8E88BAF221DA27E6000F6D0B /* Crop */,
@@ -1062,6 +1059,7 @@
 				8E59753E2260B65E00E87FF0 /* ReimbursementViewModel.swift in Sources */,
 				8ED3772D225DF89900C096EA /* AppConstants.swift in Sources */,
 				8E7329E621D5FD04004E0E22 /* ExpenseDetailsViewController.swift in Sources */,
+				8E233E1522E02C9800CEAE1B /* SearchViewController.swift in Sources */,
 				8E8B6E0121E46B66007F8AB9 /* CaptureSession.swift in Sources */,
 				18383FFC21DDE6DE009AEB87 /* ExpenseReportViewController.swift in Sources */,
 				8E597532226070AF00E87FF0 /* MerchantPickerViewModel.swift in Sources */,
@@ -1070,7 +1068,6 @@
 				8E59753622608D1F00E87FF0 /* ExpenseViewModel.swift in Sources */,
 				8E8B6E0521E46C0C007F8AB9 /* RectangleFeaturesFunnel.swift in Sources */,
 				8E42841721EEFE6300DAB9A7 /* ImageScannerController.swift in Sources */,
-				8E31D67221DF1EA500A55FEE /* SearchViewController.swift in Sources */,
 				8E732A5721D60207004E0E22 /* UIUtilities.swift in Sources */,
 				8E8B6DD621E46A2B007F8AB9 /* Quadrilateral.swift in Sources */,
 				8E7329DA21D5FCBC004E0E22 /* MainViewController.swift in Sources */,
@@ -1081,7 +1078,6 @@
 				8E59753822608FF700E87FF0 /* SearchViewModel.swift in Sources */,
 				8E7329E021D5FCE6004E0E22 /* ReimbursementViewController.swift in Sources */,
 				8E59753A2260912E00E87FF0 /* CategoryViewModel.swift in Sources */,
-				8E5000B421E9CB350027BD13 /* ExpenseFilterViewController.swift in Sources */,
 				8E732A5921D60246004E0E22 /* LocalePickerViewController.swift in Sources */,
 				8E8B6DFC21E46B3E007F8AB9 /* ScannerViewController.swift in Sources */,
 				8E732A3021D60012004E0E22 /* UIViewController+Extensions.swift in Sources */,

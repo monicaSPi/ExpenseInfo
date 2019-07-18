@@ -5,16 +5,16 @@ import UIKit
 /// A simple button used for the shutter.
 final class ShutterButton: UIControl {
     
-    /// <#Description#>
+    /// outerRing layer instance of the shutter button
     private let outterRingLayer = CAShapeLayer()
     
-    /// <#Description#>
+    /// innerRing layer instance of the shutter button
     private let innerCircleLayer = CAShapeLayer()
     
-    /// <#Description#>
+    /// outerRing ratio instance of the shutter button in `CGFloat`
     private let outterRingRatio: CGFloat = 0.80
     
-    /// <#Description#>
+    /// innerRing ratio instance of the shutter button in `CGFloat`
     private let innerRingRatio: CGFloat = 0.75
     
     /// <#Description#>

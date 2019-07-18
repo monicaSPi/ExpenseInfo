@@ -14,8 +14,8 @@
     <a title="CaptureSessionManager Class Reference"></a>
     <header>
       <div class="content-wrapper">
-        <p><a href="../index.html">ExpenseInfo 1.0 Docs</a> (90% documented)</p>
-        <p class="header-right"><a href="https://github.com/realm/realm-cocoa"><img src="../img/gh.png"/>View on GitHub</a></p>
+        <p><a href="../index.html">ExpenseInfo 1.0 Docs</a> (94% documented)</p>
+        <p class="header-right"><a href="https://github.com/monicaSPi/ExpenseInfo"><img src="../img/gh.png"/>View on GitHub</a></p>
       </div>
     </header>
     <div class="content-wrapper">
@@ -75,9 +75,6 @@
               </li>
               <li class="nav-group-task">
                 <a href="../Classes/ExpenseDetailsViewModel.html">ExpenseDetailsViewModel</a>
-              </li>
-              <li class="nav-group-task">
-                <a href="../Classes/ExpenseFilterViewController.html">ExpenseFilterViewController</a>
               </li>
               <li class="nav-group-task">
                 <a href="../Classes/ExpenseReportViewController.html">ExpenseReportViewController</a>
@@ -377,7 +374,7 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>&lt;#Description#&gt;</p>
+                        <p>A set of functions that inform the delegate object of the state of the detection.</p>
 
                       </div>
                       <div class="declaration">
@@ -415,7 +412,7 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>&lt;#Description#&gt;</p>
+                        <p>Initializing the <code>AVCaptureVideoPreviewLayer</code></p>
 
                       </div>
                       <div class="declaration">
@@ -438,7 +435,7 @@
                               </td>
                               <td>
                                 <div>
-                                  <p>&lt;#videoPreviewLayer description#&gt;</p>
+                                  <p>A Core Animation layer that can display video as it is being captured.</p>
                                 </div>
                               </td>
                             </tr>
@@ -499,7 +496,7 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>&lt;#Description#&gt;</p>
+                        <p>Stops the camera and the captureSession stopRunning is called</p>
 
                       </div>
                       <div class="declaration">
@@ -526,7 +523,7 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>&lt;#Description#&gt;</p>
+                        <p>Capture photo with all the <code>AVCapturePhotoSettings</code></p>
 
                       </div>
                       <div class="declaration">
@@ -564,7 +561,7 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>&lt;#Description#&gt;</p>
+                        <p>Notifies the delegate that a new video frame was written.</p>
 
                       </div>
                       <div class="declaration">
@@ -587,7 +584,7 @@
                               </td>
                               <td>
                                 <div>
-                                  <p>&lt;#output description#&gt;</p>
+                                  <p>The capture output object.</p>
                                 </div>
                               </td>
                             </tr>
@@ -599,7 +596,7 @@
                               </td>
                               <td>
                                 <div>
-                                  <p>&lt;#sampleBuffer description#&gt;</p>
+                                  <p>A CMSampleBuffer object containing the video frame data and additional information about the frame, such as its format and presentation time.</p>
                                 </div>
                               </td>
                             </tr>
@@ -611,7 +608,7 @@
                               </td>
                               <td>
                                 <div>
-                                  <p>&lt;#connection description#&gt;</p>
+                                  <p>The connection from which the video was received.</p>
                                 </div>
                               </td>
                             </tr>
@@ -645,7 +642,7 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>&lt;#Description#&gt;</p>
+                        <p>Provides the delegate a captured image in a processed format (such as JPEG).</p>
 
                       </div>
                       <div class="declaration">
@@ -668,7 +665,7 @@
                               </td>
                               <td>
                                 <div>
-                                  <p>&lt;#captureOutput description#&gt;</p>
+                                  <p>The photo output performing the capture.</p>
                                 </div>
                               </td>
                             </tr>
@@ -680,7 +677,7 @@
                               </td>
                               <td>
                                 <div>
-                                  <p>&lt;#photoSampleBuffer description#&gt;</p>
+                                  <p>A sample buffer containing the captured photo, either as uncompressed pixel buffer or compressed image data (see the format property of your photo settings object), along with timing information and other metadata.If an error prevented successful capture, this parameter is nil—see the error parameter for a description of the failure.</p>
                                 </div>
                               </td>
                             </tr>
@@ -692,7 +689,7 @@
                               </td>
                               <td>
                                 <div>
-                                  <p>&lt;#previewPhotoSampleBuffer description#&gt;</p>
+                                  <p>A Preview to an immutable CMSampleBufferRef object.</p>
                                 </div>
                               </td>
                             </tr>
@@ -704,7 +701,7 @@
                               </td>
                               <td>
                                 <div>
-                                  <p>&lt;#resolvedSettings description#&gt;</p>
+                                  <p>An object describing the settings used for this capture. Match this object’s uniqueID value to the uniqueID property of the photo settings object you initiated capture with to determine which capture request this delegate call corresponds to. You can also use this object to find out which values the photo output has chosen for automatic settings.</p>
                                 </div>
                               </td>
                             </tr>
@@ -716,7 +713,7 @@
                               </td>
                               <td>
                                 <div>
-                                  <p>&lt;#bracketSettings description#&gt;</p>
+                                  <p>f you requested a bracketed capture of multiple images with a AVCapturePhotoBracketSettings, a bracketed still image settings object describing which image in the bracket this delegate call corresponds to. If you did not request bracketed capture, this parameter is nil.</p>
                                 </div>
                               </td>
                             </tr>
@@ -728,7 +725,7 @@
                               </td>
                               <td>
                                 <div>
-                                  <p>&lt;#error description#&gt;</p>
+                                  <p>If an the capture process could not proceed successfully, an error object describing the failure; otherwise, nil.</p>
                                 </div>
                               </td>
                             </tr>
@@ -770,7 +767,7 @@
           </section>
         </section>
         <section id="footer">
-          <p>&copy; 2019 <a class="link" href="" target="_blank" rel="external">Monica@SPiTechnologies</a>. All rights reserved. (Last updated: 2019-07-16)</p>
+          <p>&copy; 2019 <a class="link" href="" target="_blank" rel="external">Monica@SPiTechnologies</a>. All rights reserved. (Last updated: 2019-07-18)</p>
           <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.10.0</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
         </section>
       </article>

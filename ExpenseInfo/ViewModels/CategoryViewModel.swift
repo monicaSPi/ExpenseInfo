@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-/// <#Description#>
+/// ViewModel class of `ExpenseCategoryViewController`
 class CategoryViewModel {
     // MARK: - Local variable
     

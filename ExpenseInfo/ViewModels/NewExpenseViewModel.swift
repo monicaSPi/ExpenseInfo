@@ -16,7 +16,7 @@ import FirebaseMLVision
 import CoreData
 
 
-/// <#Description#>
+/// ViewModel class of `AddNewExpenseViewController`
 class NewExpenseViewModel {
     
     /// <#Description#>
@@ -94,31 +94,11 @@ class NewExpenseViewModel {
     }
     
     
-    /// <#Description#>
-    ///
-    /// - Parameters:
-    ///   - top_image: <#top_image description#>
-    ///   - bottom_image: <#bottom_image description#>
-    ///   - top_image_point: <#top_image_point description#>
-    ///   - isHaveBackground: <#isHaveBackground description#>
-    /// - Returns: <#return value description#>
-    func mixImage(top_image:UIImage, bottom_image:UIImage, top_image_point:CGPoint=CGPoint.zero, isHaveBackground:Bool = true)-> UIImage{
-        let bottomImage = bottom_image//self.Camera_Image_View.image
-        let newSize = bottomImage.size // set this to what you need
-        UIGraphicsBeginImageContextWithOptions(newSize, false, 0.0)
-        if(isHaveBackground==true){
-            bottomImage.draw(in: CGRect(origin: CGPoint.zero, size: newSize))
-        }
-        top_image.draw(in: CGRect(origin: top_image_point, size: newSize))
-        let newImage = UIGraphicsGetImageFromCurrentImageContext()
         
-        return newImage!
-    }
-    
-    /// <#Description#>
+    /// Set Orientation for `UIImage` given
     ///
-    /// - Parameter image: <#image description#>
-    /// - Returns: <#return value description#>
+    /// - Parameter image: image for the orientation process
+    /// - Returns: return image with the appropriate orientation
     func fixOrientation(image: UIImage) -> UIImage {
         if image.imageOrientation == UIImage.Orientation.up {
             return image

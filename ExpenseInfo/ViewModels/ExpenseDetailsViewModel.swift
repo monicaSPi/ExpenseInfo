@@ -10,7 +10,7 @@ import Foundation
 import WSTagsField
 import UIKit
 
-/// <#Description#>
+/// ViewModel class of `ExpenseDetailsViewController`
 class ExpenseDetailsViewModel {
     // MARK: - Local variable
     

@@ -10,61 +10,61 @@ extension ExpenseContent {
     }
     /// `declare the properties using the @NSManaged keyword`
     
-    /// <#Description#>
+    /// Expense Amount
     @NSManaged public var amount: String?
     
-    /// <#Description#>
+    /// Expense Bill Image
     @NSManaged public var billImage: Data?
     
-    /// <#Description#>
+    /// Expense category color
     @NSManaged public var categoryColor: String?
     
-    /// <#Description#>
+    /// Expense category id
     @NSManaged public var categoryId: String?
     
-    /// <#Description#>
+    /// Expense currency code
     @NSManaged public var currencyCode: String?
     
-    /// <#Description#>
+    /// Expense date
     @NSManaged public var dateString: String?
     
-    /// <#Description#>
+    /// Expense Category
     @NSManaged public var expenseCategory: String?
     
-    /// <#Description#>
+    /// Expense Category Image
     @NSManaged public var expenseCategoryImg: Data?
     
-    /// <#Description#>
+    /// Expense Mode
     @NSManaged public var expenseMode: String?
     
-    /// <#Description#>
+    /// Expense Currency Symbol
     @NSManaged public var currencySymbolString: String?
     
-    /// <#Description#>
+    /// Expense id
     @NSManaged public var id: String?
     
-    /// <#Description#>
+    /// Expense is Claimed
     @NSManaged public var isClaimed: String?
     
-    /// <#Description#>
+    /// Merchant name
     @NSManaged public var merchantName: String?
     
-    /// <#Description#>
+    /// Expense month
     @NSManaged public var monthString: String?
     
-    /// <#Description#>
+    /// Expense notes
     @NSManaged public var notes: String?
     
-    /// <#Description#>
+    /// Expense reimbursable or not
     @NSManaged public var reimbursable: Bool
     
-    /// <#Description#>
+    /// Tags
     @NSManaged public var tags: NSObject?
     
-    /// <#Description#>
+    /// Expense time
     @NSManaged public var timeString: String?
     
-    /// <#Description#>
+    /// Expense year
     @NSManaged public var yearString: String?
     
 }

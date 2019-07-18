@@ -1,12 +1,12 @@
 import UIKit
 
 
-/// <#Description#>
+/// Customized Picker View Controller
 final class LocalePickerViewController: UIViewController {
     
     // MARK: Properties
     
-    /// <#Description#>
+    /// typealiasing (LocaleInfo?) -> Swift.Void
     public typealias Selection = (LocaleInfo?) -> Swift.Void
     /// Result enum
     ///
@@ -19,28 +19,28 @@ final class LocalePickerViewController: UIViewController {
         case store
     }
     
-    /// <#Description#>
+    /// type Kind of Picker
      fileprivate var type: Kind
     
-    /// <#Description#>
+    /// selection
     fileprivate var selection: Selection?
     
-    /// <#Description#>
+    /// Ordered Information of the Locale
     fileprivate var orderedInfo = [String: [LocaleInfo]]()
     
-    /// <#Description#>
+    /// String Obejct Array of the Locale
     fileprivate var sortedInfoKeys = [String]()
     
-    /// <#Description#>
+    /// Array Instance of LocaleInfo
     fileprivate var filteredInfo: [LocaleInfo] = []
     
-    /// <#Description#>
+    /// Instance of LocaleInfo
     fileprivate var selectedInfo: LocaleInfo?
     
-    /// <#Description#>
+    /// searchView
     fileprivate lazy var searchView: UIView = UIView()
     
-    /// <#Description#>
+    /// seacrchController Initialization
     fileprivate lazy var searchController: UISearchController = { [unowned self] in
         $0.searchResultsUpdater = self
         $0.searchBar.delegate = self
@@ -54,7 +54,7 @@ final class LocalePickerViewController: UIViewController {
         return $0
         }(UISearchController(searchResultsController: nil))
     
-    /// <#Description#>
+    /// tableView Initialization
     fileprivate lazy var tableView: UITableView = { [unowned self] in
         $0.dataSource = self
         $0.delegate = self
@@ -68,7 +68,7 @@ final class LocalePickerViewController: UIViewController {
         return $0
         }(UITableView(frame: .zero, style: .plain))
     
-    /// <#Description#>
+    /// Activity Indicator View Initialization
     fileprivate lazy var indicatorView: UIActivityIndicatorView = {
         $0.color = .lightGray
         return $0
@@ -76,11 +76,11 @@ final class LocalePickerViewController: UIViewController {
     
     // MARK: Initialize
     
-    /// <#Description#>
+    /// Initializing the Kind of Picker and the Selection made
     ///
     /// - Parameters:
-    ///   - type: <#type description#>
-    ///   - selection: <#selection description#>
+    ///   - type: Kind of Picker
+    ///   - selection: Locale Selection
     required init(type: Kind, selection: @escaping Selection) {
         self.type = type
         self.selection = selection
@@ -181,7 +181,7 @@ final class LocalePickerViewController: UIViewController {
         }
     }
     
-    /// <#Description#>
+    /// sort the FilteredInfo with type as condition
     func sortFilteredInfo() {
         filteredInfo = filteredInfo.sorted { lhs, rhs in
             switch type {
@@ -195,10 +195,10 @@ final class LocalePickerViewController: UIViewController {
         }
     }
     
-    /// <#Description#>
+    /// Get the information from the orderedInfo
     ///
-    /// - Parameter indexPath: <#indexPath description#>
-    /// - Returns: <#return value description#>
+    /// - Parameter indexPath: indexPath has row and section
+    /// - Returns: return LocaleInfo
     func info(at indexPath: IndexPath) -> LocaleInfo? {
         if searchController.isActive {
             return filteredInfo[indexPath.row]
@@ -210,9 +210,9 @@ final class LocalePickerViewController: UIViewController {
         return nil
     }
     
-    /// <#Description#>
+    /// Gives the indexPather of the selected Information
     ///
-    /// - Returns: <#return value description#>
+    /// - Returns: return the IndexPath value with row and section
     func indexPathOfSelectedInfo() -> IndexPath? {
         guard let selectedInfo = selectedInfo else { return nil }
         if searchController.isActive {
@@ -239,9 +239,10 @@ final class LocalePickerViewController: UIViewController {
 // MARK: - UISearchResultsUpdating
 extension LocalePickerViewController: UISearchResultsUpdating {
     
-    /// <#Description#>
+    /// Called when the search bar becomes the first responder or when the user makes changes inside the search bar.
     ///
-    /// - Parameter searchController: <#searchController description#>
+    /// - Parameter searchController: The `UISearchController` object used as the search bar.
+
     func updateSearchResults(for searchController: UISearchController) {
         if let searchText = searchController.searchBar.text, searchController.isActive {
             filteredInfo = []
@@ -266,9 +267,10 @@ extension LocalePickerViewController: UISearchResultsUpdating {
 
 extension LocalePickerViewController: UISearchBarDelegate {
     
-    /// <#Description#>
+    /// ells the delegate that the cancel button was tapped.
     ///
-    /// - Parameter searchBar: <#searchBar description#>
+    /// - Parameter searchBar: The search bar that was tapped.
+
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
         
     }
@@ -318,34 +320,35 @@ extension LocalePickerViewController: UITableViewDataSource {
         return 0
     }
     
-    /// <#Description#>
+    /// Asks the data source to return the index of the section having the given title and section title index.
     ///
     /// - Parameters:
-    ///   - tableView: <#tableView description#>
-    ///   - title: <#title description#>
-    ///   - index: <#index description#>
-    /// - Returns: <#return value description#>
+    ///   - tableView: The table-view object requesting this information.
+    ///   - title: The title as displayed in the section index of tableView.
+    ///   - index: n index number identifying a section title in the array returned by `sectionIndexTitles(for:)`.
+    /// - Returns: An index number identifying a section.
     func tableView(_ tableView: UITableView, sectionForSectionIndexTitle title: String, at index: Int) -> Int {
         if searchController.isActive { return 0 }
         tableView.scrollToRow(at: IndexPath(row: 0, section: index), at: .top , animated: false)
         return sortedInfoKeys.firstIndex(of: title)!
     }
     
-    /// <#Description#>
+    /// Asks the data source to return the titles for the sections of a table view.
     ///
-    /// - Parameter tableView: <#tableView description#>
-    /// - Returns: <#return value description#>
+    /// - Parameter tableView: The table-view object requesting this information.
+
+    /// - Returns: An array of strings that serve as the title of sections in the table view and appear in the index list on the right side of the table view. The table view must be in the plain style (UITableViewStylePlain). For example, for an alphabetized list, you could return an array containing strings “A” through “Z”.
     func sectionIndexTitles(for tableView: UITableView) -> [String]? {
         if searchController.isActive { return nil }
         return sortedInfoKeys
     }
     
-    /// <#Description#>
+    /// Asks the data source for the title of the header of the specified section of the table view.
     ///
     /// - Parameters:
-    ///   - tableView: <#tableView description#>
-    ///   - section: <#section description#>
-    /// - Returns: <#return value description#>
+    ///   - tableView: The table-view object asking for the title.
+    ///   - section: An index number identifying a section of tableView .
+    /// - Returns: A string to use as the title of the section header. If you return nil , the section will have no title.
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         if searchController.isActive { return nil }
         return sortedInfoKeys[section]

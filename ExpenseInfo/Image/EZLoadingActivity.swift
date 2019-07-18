@@ -8,7 +8,7 @@
 
 import UIKit
 
-/// <#Description#>
+/// Data structure for the Loading Activity indicator
 public struct EZLoadingActivity {
     
     /// <#Description#>

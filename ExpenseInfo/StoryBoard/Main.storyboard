@@ -4174,153 +4174,6 @@
             </objects>
             <point key="canvasLocation" x="5656.875" y="-481.25"/>
         </scene>
-        <!--Expense Filter View Controller-->
-        <scene sceneID="YbF-gF-XME">
-            <objects>
-                <viewController storyboardIdentifier="ExpenseFilterViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="3QC-M0-fTU" customClass="ExpenseFilterViewController" customModule="ExpenseInfo" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="J98-s1-OJc">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Group By" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aJW-VH-8hx">
-                                <rect key="frame" x="18" y="95" width="86" height="21"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="21" id="1BX-va-kcw"/>
-                                    <constraint firstAttribute="width" constant="86" id="snK-dv-G9o"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="MyriadPro-Regular" family="Myriad Pro" pointSize="17"/>
-                                <color key="textColor" red="0.88235294119999996" green="0.50588235290000005" blue="0.20392156859999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="nKM-x1-9zb">
-                                <rect key="frame" x="18" y="126" width="284" height="40"/>
-                                <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="P4f-gr-7fv" customClass="RoundButton" customModule="ExpenseInfo" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="137" height="40"/>
-                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <state key="normal" title="Category">
-                                            <color key="titleColor" red="0.39607843139999999" green="0.46666666670000001" blue="0.58431372550000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        </state>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                                                <color key="value" red="0.53725490200000003" green="0.59215686270000001" blue="0.68235294120000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
-                                                <real key="value" value="1"/>
-                                            </userDefinedRuntimeAttribute>
-                                        </userDefinedRuntimeAttributes>
-                                        <connections>
-                                            <action selector="categorySelected:" destination="3QC-M0-fTU" eventType="touchUpInside" id="wE8-hd-A5o"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jcZ-li-bD3" customClass="RoundButton" customModule="ExpenseInfo" customModuleProvider="target">
-                                        <rect key="frame" x="147" y="0.0" width="137" height="40"/>
-                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <state key="normal" title="Merchant">
-                                            <color key="titleColor" red="0.39607843139999999" green="0.46666666670000001" blue="0.58431372550000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        </state>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                                                <color key="value" red="0.53725490200000003" green="0.59215686270000001" blue="0.68235294120000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
-                                                <real key="value" value="1"/>
-                                            </userDefinedRuntimeAttribute>
-                                        </userDefinedRuntimeAttributes>
-                                        <connections>
-                                            <action selector="merchantSelected:" destination="3QC-M0-fTU" eventType="touchUpInside" id="mkf-pB-aUl"/>
-                                        </connections>
-                                    </button>
-                                </subviews>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="40" id="LcW-0v-8J4"/>
-                                </constraints>
-                            </stackView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Filter By" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ykK-Eb-8wZ">
-                                <rect key="frame" x="18" y="186" width="86" height="21"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="86" id="E1w-Zo-Ud5"/>
-                                    <constraint firstAttribute="height" constant="21" id="zeB-7K-KcX"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="MyriadPro-Regular" family="Myriad Pro" pointSize="17"/>
-                                <color key="textColor" red="0.88235294119999996" green="0.50588235290000005" blue="0.20392156859999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <textField opaque="NO" userInteractionEnabled="NO" tag="2" contentMode="scaleAspectFit" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Custom Date" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wZ9-ua-jFi" customClass="SkyFloatingLabelTextField" customModule="SkyFloatingLabelTextField">
-                                <rect key="frame" x="18" y="359.5" width="284" height="14"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <color key="textColor" red="0.39607843139999999" green="0.46666666670000001" blue="0.58431372550000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <fontDescription key="fontDescription" name="MyriadPro-Regular" family="Myriad Pro" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocorrectionType="no" returnKeyType="done"/>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="Custom Date"/>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="lineHeight">
-                                        <real key="value" value="1"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="textColor">
-                                        <color key="value" red="0.39607843139999999" green="0.46666666670000001" blue="0.58431372550000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="placeholderColor">
-                                        <color key="value" red="0.40784313729999999" green="0.46666666670000001" blue="0.57254901960000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="titleColor">
-                                        <color key="value" red="0.39607843139999999" green="0.46666666670000001" blue="0.58431372550000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="lineColor">
-                                        <color key="value" red="0.85490196080000003" green="0.87058823529999996" blue="0.92156862750000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="selectedTitleColor">
-                                        <color key="value" red="0.39607843139999999" green="0.46666666670000001" blue="0.58431372550000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="selectedLineColor">
-                                        <color key="value" red="0.85490196080000003" green="0.87058823529999996" blue="0.92156862750000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="selectedLineHeight">
-                                        <real key="value" value="1"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="string" keyPath="selectedTitle" value="Custom Date"/>
-                                    <userDefinedRuntimeAttribute type="string" keyPath="title" value="Custom Date"/>
-                                </userDefinedRuntimeAttributes>
-                            </textField>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="calendar" translatesAutoresizingMaskIntoConstraints="NO" id="q5c-xy-Edq">
-                                <rect key="frame" x="277" y="354" width="25" height="25"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="25" id="bkd-dq-hXq"/>
-                                    <constraint firstAttribute="width" constant="25" id="pUg-ea-ZIZ"/>
-                                </constraints>
-                            </imageView>
-                        </subviews>
-                        <color key="backgroundColor" red="0.96078431369999995" green="0.96470588239999999" blue="0.97647058819999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <constraints>
-                            <constraint firstItem="aJW-VH-8hx" firstAttribute="leading" secondItem="cCW-ET-1Rw" secondAttribute="leading" constant="18" id="0kP-tD-X6g"/>
-                            <constraint firstItem="nKM-x1-9zb" firstAttribute="top" secondItem="aJW-VH-8hx" secondAttribute="bottom" constant="10" id="3fM-UC-AVO"/>
-                            <constraint firstItem="wZ9-ua-jFi" firstAttribute="leading" secondItem="cCW-ET-1Rw" secondAttribute="leading" constant="18" id="4CQ-iQ-qkN"/>
-                            <constraint firstItem="ykK-Eb-8wZ" firstAttribute="top" secondItem="nKM-x1-9zb" secondAttribute="bottom" constant="20" id="5M4-0e-KwX"/>
-                            <constraint firstItem="cCW-ET-1Rw" firstAttribute="trailing" secondItem="nKM-x1-9zb" secondAttribute="trailing" constant="18" id="Or5-s3-HXa"/>
-                            <constraint firstItem="cCW-ET-1Rw" firstAttribute="trailing" secondItem="wZ9-ua-jFi" secondAttribute="trailing" constant="18" id="VSF-Th-vFM"/>
-                            <constraint firstItem="q5c-xy-Edq" firstAttribute="centerY" secondItem="wZ9-ua-jFi" secondAttribute="centerY" id="aUe-a5-vwK"/>
-                            <constraint firstItem="cCW-ET-1Rw" firstAttribute="bottom" secondItem="q5c-xy-Edq" secondAttribute="bottom" constant="101" id="c2f-f4-0Pd"/>
-                            <constraint firstItem="nKM-x1-9zb" firstAttribute="leading" secondItem="cCW-ET-1Rw" secondAttribute="leading" constant="18" id="d0a-qL-AAA"/>
-                            <constraint firstItem="q5c-xy-Edq" firstAttribute="trailing" secondItem="wZ9-ua-jFi" secondAttribute="trailing" id="lK5-PG-h5u"/>
-                            <constraint firstItem="aJW-VH-8hx" firstAttribute="top" secondItem="cCW-ET-1Rw" secondAttribute="top" constant="75" id="ukn-Hd-oGp"/>
-                            <constraint firstItem="ykK-Eb-8wZ" firstAttribute="leading" secondItem="cCW-ET-1Rw" secondAttribute="leading" constant="18" id="v8V-j3-Ys2"/>
-                            <constraint firstItem="nKM-x1-9zb" firstAttribute="centerX" secondItem="cCW-ET-1Rw" secondAttribute="centerX" id="yys-23-mnC"/>
-                        </constraints>
-                        <viewLayoutGuide key="safeArea" id="cCW-ET-1Rw"/>
-                    </view>
-                    <connections>
-                        <outlet property="calenderImg" destination="q5c-xy-Edq" id="IHT-9q-pff"/>
-                        <outlet property="categoryButton" destination="P4f-gr-7fv" id="m4s-It-qxK"/>
-                        <outlet property="cuatomeDate" destination="wZ9-ua-jFi" id="A2X-ae-sM9"/>
-                        <outlet property="merchantBtn" destination="jcZ-li-bD3" id="CRd-bQ-sZ1"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="bdm-01-xdo" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="3724" y="223"/>
-        </scene>
     </scenes>
     <resources>
         <image name="Back" width="16" height="16"/>
@@ -4335,7 +4188,6 @@
         <image name="Settings-w" width="46.5" height="46.5"/>
         <image name="add-bill-b" width="46.5" height="46.5"/>
         <image name="back" width="66" height="66"/>
-        <image name="calendar" width="16" height="16"/>
         <image name="closeButton" width="40" height="40"/>
         <image name="clothes" width="109" height="109"/>
         <image name="crop-icon" width="53" height="53"/>
@@ -4357,9 +4209,9 @@
         <image name="upload-bill-img" width="150.33332824707031" height="150.33332824707031"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="aTf-ut-VUd"/>
-        <segue reference="2HF-CP-dwO"/>
-        <segue reference="Kpu-LW-vDO"/>
-        <segue reference="6lH-EE-mfj"/>
+        <segue reference="j7v-bv-Na9"/>
+        <segue reference="bq7-Hr-mQV"/>
+        <segue reference="xjp-eV-LpQ"/>
+        <segue reference="ZiB-RM-lwA"/>
     </inferredMetricsTieBreakers>
 </document>

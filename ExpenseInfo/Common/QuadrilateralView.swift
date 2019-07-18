@@ -22,7 +22,7 @@ enum CornerPosition {
 /// The `QuadrilateralView` is a simple `UIView` subclass that can draw a quadrilateral, and optionally edit it.
 final class QuadrilateralView: UIView {
     
-    /// <#Description#>
+    /// Instance of `CAShapeLayer`
     private let quadLayer: CAShapeLayer = {
         let layer = CAShapeLayer()
         layer.strokeColor = UIColor.white.cgColor
@@ -44,7 +44,7 @@ final class QuadrilateralView: UIView {
     /// The quadrilateral drawn on the view.
     private(set) var quad: Quadrilateral?
     
-    /// <#Description#>
+    /// Editable Contraints is set
     public var editable = false {
         didSet {
             cornerViews(hidden: !editable)
@@ -57,7 +57,7 @@ final class QuadrilateralView: UIView {
         }
     }
     
-    /// <#Description#>
+    /// Highlited contraints is set
     private var isHighlighted = false {
         didSet (oldValue) {
             guard oldValue != isHighlighted else {
@@ -68,34 +68,34 @@ final class QuadrilateralView: UIView {
         }
     }
     
-    /// <#Description#>
+    ///  topLeftCornerView used by a quadrilateral that is aware of its position.
     lazy private var topLeftCornerView: EditScanCornerView = {
         return EditScanCornerView(frame: CGRect(origin: .zero, size: cornerViewSize), position: .topLeft)
     }()
     
-    /// <#Description#>
+    ///  topRightCornerView used by a quadrilateral that is aware of its position.
     lazy private var topRightCornerView: EditScanCornerView = {
         return EditScanCornerView(frame: CGRect(origin: .zero, size: cornerViewSize), position: .topRight)
     }()
     
-    /// <#Description#>
+    ///  bottomRightCornerView used by a quadrilateral that is aware of its position.
     lazy private var bottomRightCornerView: EditScanCornerView = {
         return EditScanCornerView(frame: CGRect(origin: .zero, size: cornerViewSize), position: .bottomRight)
     }()
     
-    /// <#Description#>
+    ///  bottomLeftCornerView used by a quadrilateral that is aware of its position.
     lazy private var bottomLeftCornerView: EditScanCornerView = {
         return EditScanCornerView(frame: CGRect(origin: .zero, size: cornerViewSize), position: .bottomLeft)
     }()
     
-    /// <#Description#>
+    /// assign highlightedCornerViewSize in `CGSize`
     private let highlightedCornerViewSize = CGSize(width: 75.0, height: 75.0)
     
-    /// <#Description#>
+    /// assign cornerViewSize in `CGSize`
     private let cornerViewSize = CGSize(width: 20.0, height: 20.0)
     
     // MARK: - Life Cycle
-
+    
     /// Initializes and returns a newly allocated view object with the specified frame rectangle.
     ///
     /// - Parameter frame: The frame rectangle for the view, measured in points. The origin of the frame is relative to the superview in which you plan to add it. This method uses the frame rectangle to set the center and bounds properties accordingly.
@@ -106,12 +106,12 @@ final class QuadrilateralView: UIView {
     /// Returns an object initialized from data in a given unarchiver.
     ///
     /// - Parameter aDecoder: An unarchiver object.
-
+    
     required public init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
-    /// <#Description#>
+    /// This method is used to initialize the setup of cornerViews , Contraints, adding sublayers and adding quadView as subview
     private func commonInit() {
         addSubview(quadView)
         setupCornerViews()
@@ -119,7 +119,7 @@ final class QuadrilateralView: UIView {
         quadView.layer.addSublayer(quadLayer)
     }
     
-    /// <#Description#>
+    /// This methods does the constraint setup for a quadView
     private func setupConstraints() {
         let quadViewConstraints = [
             quadView.topAnchor.constraint(equalTo: topAnchor),
@@ -131,7 +131,7 @@ final class QuadrilateralView: UIView {
         NSLayoutConstraint.activate(quadViewConstraints)
     }
     
-    /// <#Description#>
+    /// This method adds all the CornerView as subview to the current View
     private func setupCornerViews() {
         addSubview(topLeftCornerView)
         addSubview(topRightCornerView)
@@ -167,11 +167,11 @@ final class QuadrilateralView: UIView {
         }
     }
     
-    /// <#Description#>
+    /// This method is used to draw the path using `UIBezierPath` by checking some conditions if its editable or not
     ///
     /// - Parameters:
-    ///   - quad: <#quad description#>
-    ///   - animated: <#animated description#>
+    ///   - quad: Instance represents quadrilateral and its position.
+    ///   - animated: True if it can be animated
     private func drawQuad(_ quad: Quadrilateral, animated: Bool) {
         var path = quad.path
         
@@ -191,9 +191,9 @@ final class QuadrilateralView: UIView {
         quadLayer.isHidden = false
     }
     
-    /// <#Description#>
+    /// This method layoutCornerViews based on the quad corners and set the values
     ///
-    /// - Parameter quad: <#quad description#>
+    /// - Parameter quad: has quad corners
     private func layoutCornerViews(forQuad quad: Quadrilateral) {
         topLeftCornerView.center = quad.topLeft
         topRightCornerView.center = quad.topRight
@@ -201,7 +201,7 @@ final class QuadrilateralView: UIView {
         bottomRightCornerView.center = quad.bottomRight
     }
     
-    /// <#Description#>
+    /// This method removes the quadrilateral from the quadLayer path
     func removeQuadrilateral() {
         quadLayer.path = nil
         quadLayer.isHidden = true
@@ -209,11 +209,11 @@ final class QuadrilateralView: UIView {
     
     // MARK: - Actions
     
-    /// <#Description#>
+    /// This method is to moveCorner and draw the updated quadrilateral
     ///
     /// - Parameters:
-    ///   - cornerView: <#cornerView description#>
-    ///   - point: <#point description#>
+    ///   - cornerView: corners of a quadrilateral that is aware of its position
+    ///   - point: specified points for the quadrilateral
     func moveCorner(cornerView: EditScanCornerView, atPoint point: CGPoint) {
         guard let quad = quad else {
             return
@@ -228,11 +228,11 @@ final class QuadrilateralView: UIView {
         drawQuad(updatedQuad, animated: false)
     }
     
-    /// <#Description#>
+    /// This method is used to highlight when the quad corener is pressed to change its position
     ///
     /// - Parameters:
-    ///   - position: <#position description#>
-    ///   - image: <#image description#>
+    ///   - position: to keep track of the position of the corners of a quadrilateral.
+    ///   - image: image captured / uploaded image
     func highlightCornerAtPosition(position: CornerPosition, with image: UIImage) {
         guard editable else {
             return
@@ -244,31 +244,31 @@ final class QuadrilateralView: UIView {
             cornerView.highlightWithImage(image)
             return
         }
-
+        
         let origin = CGPoint(x: cornerView.frame.origin.x - (highlightedCornerViewSize.width - cornerViewSize.width) / 2.0,
                              y: cornerView.frame.origin.y - (highlightedCornerViewSize.height - cornerViewSize.height) / 2.0)
         cornerView.frame = CGRect(origin: origin, size: highlightedCornerViewSize)
         cornerView.highlightWithImage(image)
     }
     
-    /// <#Description#>
+    /// This method resets the highlightedCornerViews and set to normal
     func resetHighlightedCornerViews() {
         isHighlighted = false
         resetHighlightedCornerViews(cornerViews: [topLeftCornerView, topRightCornerView, bottomLeftCornerView, bottomRightCornerView])
     }
     
-    /// <#Description#>
+    /// This method resets the multiple highlightedCornerViews and set to normal
     ///
-    /// - Parameter cornerViews: <#cornerViews description#>
+    /// - Parameter cornerViews: Array of `EditScanCornerView`
     private func resetHighlightedCornerViews(cornerViews: [EditScanCornerView]) {
         cornerViews.forEach { (cornerView) in
             resetHightlightedCornerView(cornerView: cornerView)
         }
     }
     
-    /// <#Description#>
+    /// This method resets the  highlightedCornerViews and set to normal
     ///
-    /// - Parameter cornerView: <#cornerView description#>
+    /// - Parameter cornerView: Instance of the `EditScanCornerView`
     private func resetHightlightedCornerView(cornerView: EditScanCornerView) {
         cornerView.reset()
         let origin = CGPoint(x: cornerView.frame.origin.x + (cornerView.frame.size.width - cornerViewSize.width) / 2.0,
@@ -306,9 +306,9 @@ final class QuadrilateralView: UIView {
     
     // MARK: - Convenience
     
-    /// <#Description#>
+    /// This method helps to hide and show the CornerViews based on the boolen
     ///
-    /// - Parameter hidden: <#hidden description#>
+    /// - Parameter hidden: boolen to hide or show
     private func cornerViews(hidden: Bool) {
         topLeftCornerView.isHidden = hidden
         topRightCornerView.isHidden = hidden
@@ -316,13 +316,13 @@ final class QuadrilateralView: UIView {
         bottomLeftCornerView.isHidden = hidden
     }
     
-    /// <#Description#>
+    /// This method updates the quadrilateral with the positions and the corners and returns the rectangle as quadrilateral
     ///
     /// - Parameters:
-    ///   - quad: <#quad description#>
-    ///   - position: <#position description#>
-    ///   - corner: <#corner description#>
-    /// - Returns: <#return value description#>
+    ///   - quad: quad position
+    ///   - position: position points in `CGPoint`
+    ///   - corner: corner of the quadrilateral
+    /// - Returns: returns the rectangle as quadrilateral
     private func update(_ quad: Quadrilateral, withPosition position: CGPoint, forCorner corner: CornerPosition) -> Quadrilateral {
         var quad = quad
         
@@ -340,10 +340,10 @@ final class QuadrilateralView: UIView {
         return quad
     }
     
-    /// <#Description#>
+    /// cornerViewForCornerPosition method is used to check with the position and returns corner for   `EditScanCornerView`
     ///
-    /// - Parameter position: <#position description#>
-    /// - Returns: <#return value description#>
+    /// - Parameter position: cornerView Position
+    /// - Returns: returns corner for   `EditScanCornerView`
     func cornerViewForCornerPosition(position: CornerPosition) -> EditScanCornerView {
         switch position {
         case .topLeft:
@@ -357,4 +357,4 @@ final class QuadrilateralView: UIView {
         }
     }
 }
- 
+

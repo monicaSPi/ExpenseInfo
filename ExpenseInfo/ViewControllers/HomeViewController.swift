@@ -166,18 +166,18 @@ class HomeViewController: UIViewController {
         self.present(firstVC!, animated: true, completion: nil)
     }
     
-    /// This IBAction navigate to `UploadViewController`
+    /// When this upload bill is pressed , it updates the AddExpenseType Defaults and navigate to UploadViewController
     ///
-    /// - Parameter sender: uploadBillBtn id
+    /// - Parameter sender: sender id
     @IBAction func uploadBill(_ sender: UIButton) {
         UserDefaults.standard.set("Upload", forKey: AppConstants.Defaults.Key.AddExpenseType)
         let firstVC = self.storyboard?.instantiateViewController(withIdentifier: AppConstants.Segue.Identifier.UploadViewController) as? UploadViewController
         self.present(firstVC!, animated: true, completion: nil)
     }
     
-    /// This IBAction navigate to `ScannerViewController`
+    /// When this snap bill is pressed , it updates the AddExpenseType Defaults and navigate to ScannerViewController
     ///
-    /// - Parameter sender: snapBillBtn id
+    /// - Parameter sender: sender id
     @IBAction func snapBill(_ sender: UIButton) {
         UserDefaults.standard.set("Snap", forKey: AppConstants.Defaults.Key.AddExpenseType)
         let firstVC = self.storyboard?.instantiateViewController(withIdentifier: AppConstants.Segue.Identifier.ScannerViewController) as? ScannerViewController

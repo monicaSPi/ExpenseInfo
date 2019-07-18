@@ -8,12 +8,12 @@ import MessageUI
 
 // MARK: - MFMailComposeViewControllerDelegate
 extension ExpenseDetailsViewController: MFMailComposeViewControllerDelegate {
-    /// <#Description#>
+    /// Tells the delegate that the user wants to dismiss the mail composition view.
     ///
     /// - Parameters:
-    ///   - controller: <#controller description#>
-    ///   - result: <#result description#>
-    ///   - error: <#error description#>
+    ///   - controller: The view controller object managing the mail composition view.
+    ///   - result: The result of the user’s action.
+    ///   - error: If an error occurred, this parameter contains an error object with information about the type of failure.
     func mailComposeController(_ controller: MFMailComposeViewController, didFinishWith result: MFMailComposeResult, error: Error?) {
         if result.rawValue == 2 {
             updateSubmitted()
@@ -23,12 +23,12 @@ extension ExpenseDetailsViewController: MFMailComposeViewControllerDelegate {
     
 }
 
-/// <#Description#>
+/// Manages the detailed description of the Expense made
 class ExpenseDetailsViewController: UIViewController {
     
     // MARK: IBOutlet Properties
     
-    /// <#Description#>
+    /// topBar that manages the content for a top rectangular area on the screen.
     @IBOutlet weak var topBar: UIView!
     
     /// <#Description#>
