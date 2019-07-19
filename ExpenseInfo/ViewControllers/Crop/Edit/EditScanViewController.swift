@@ -9,7 +9,7 @@ final class EditScanViewController: UIViewController {
     
     // MARK: IBOutlet Properties
     
-    /// <#Description#>
+    ///  retakeBtn that executes your custom code in response to user interactions.
     @IBOutlet weak var retakeBtn: UIButton! {
         didSet {
             retakeBtn.layer.shadowColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.25).cgColor
@@ -20,7 +20,7 @@ final class EditScanViewController: UIViewController {
         }
     }
     
-    /// <#Description#>
+    /// Designable doneBtn that executes your custom code in response to user interactions.
     @IBOutlet weak var doneBtn: RoundButton! {
         didSet {
             doneBtn.layer.shadowColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.25).cgColor
@@ -31,7 +31,7 @@ final class EditScanViewController: UIViewController {
         }
     }
     
-    /// <#Description#>
+    /// cropBtn that executes your custom code in response to user interactions.
     @IBOutlet weak var cropBtn: UIButton! {
         didSet {
             cropBtn.layer.shadowColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.25).cgColor
@@ -42,18 +42,18 @@ final class EditScanViewController: UIViewController {
         }
     }
     
-    /// <#Description#>
+    /// finalImageView that displays a single image or a sequence of animated images in your interface.
     @IBOutlet weak var finalImageView: UIImageView!
     
-    /// <#Description#>
+    /// centerView that manages the content for a rectangular area on the screen.
     @IBOutlet weak var centerView: UIView!
     
-    /// <#Description#>
+    /// blackImg that displays a single image or a sequence of animated images in your interface.
     @IBOutlet weak var blackImg: UIImageView!
     
     // MARK: - File Private
     
-    /// <#Description#>
+    /// imageView displays a single image or a sequence of animated images in your interface.
     lazy private var imageView: UIImageView = {
         let imageView = UIImageView()
         imageView.clipsToBounds = true
@@ -69,7 +69,7 @@ final class EditScanViewController: UIViewController {
         return imageView
     }()
     
-    /// <#Description#>
+    /// The QuadrilateralView is a simple UIView subclass that can draw a quadrilateral, and optionally edit it.
     lazy private var quadView: QuadrilateralView = {
         let quadView = QuadrilateralView()
         quadView.editable = true
@@ -77,7 +77,7 @@ final class EditScanViewController: UIViewController {
         return quadView
     }()
     
-    /// <#Description#>
+    /// nextButton in toolbar is used to navigate to reviewviewcontroller
     lazy private var nextButton: UIBarButtonItem = {
         let title = NSLocalizedString("wescan.edit.button.next", tableName: nil, bundle: Bundle(for: EditScanViewController.self), value: "Next", comment: "A generic next button")
         let button = UIBarButtonItem(title: title, style: .plain, target: self, action: #selector(pushReviewController))
@@ -86,21 +86,21 @@ final class EditScanViewController: UIViewController {
     }()
     
     
-    /// <#Description#>
+    /// This class is used to zoom the images using the gesture recognization
     private var zoomGestureController: ZoomGestureController!
     
-    /// <#Description#>
+    /// quadViewWidthConstraint that must be satisfied by the constraint-based layout system.
     private var quadViewWidthConstraint = NSLayoutConstraint()
     
-    /// <#Description#>
+    /// quadViewHeightConstraint that must be satisfied by the constraint-based layout system.
     private var quadViewHeightConstraint = NSLayoutConstraint()
     
     // MARK: - Local variable
     
-    /// <#Description#>
+    /// An object that manages image data in your app.
     var image : UIImage?
     
-    /// <#Description#>
+    /// A data structure representing a quadrilateral and its position. This class exists to bypass the fact that CIRectangleFeature is read-only.
     var quad: Quadrilateral?
     
     // MARK: Default View Controller Methods
@@ -111,14 +111,6 @@ final class EditScanViewController: UIViewController {
         self.image = image?.applyingPortraitOrientation()
         self.quad = quad ?? EditScanViewController.defaultQuad(forImage: image!)
         setupViews()
-        
-       
-        
-      
-        
-        
-       
-        
         
         setupConstraints()
         title = NSLocalizedString("wescan.edit.title", tableName: nil, bundle: Bundle(for: EditScanViewController.self), value: "Edit Scan", comment: "The title of the EditScanViewController")
@@ -159,9 +151,9 @@ final class EditScanViewController: UIViewController {
     
     // MARK: IBAction Methods
     
-    /// <#Description#>
+    /// This method is used to finalize the image after proper edit and scan and send the image to mainviewcontroller
     ///
-    /// - Parameter sender: <#sender description#>
+    /// - Parameter sender: sender id
     @IBAction func doneAction(_ sender: UIButton) {
         
         
@@ -185,16 +177,16 @@ final class EditScanViewController: UIViewController {
         
     }
     
-    /// <#Description#>
+    /// This method is used to dismiss the EditScanViewController from the navigation stack
     ///
-    /// - Parameter sender: <#sender description#>
+    /// - Parameter sender: sender id
     @IBAction func closeAction(_ sender: UIButton) {
         self.dismiss(animated: true, completion: nil)
     }
     
-    /// <#Description#>
+    /// This method helps to retake the image
     ///
-    /// - Parameter sender: <#sender description#>
+    /// - Parameter sender: sender id
     @IBAction func reTakeAction(_ sender: UIButton) {
         cropBtn.isEnabled = true
         self.finalImageView.isHidden = true
@@ -203,23 +195,23 @@ final class EditScanViewController: UIViewController {
         self.view.sendSubviewToBack(finalImageView)
     }
     
-    /// <#Description#>
+    /// This method is called when crop operation is done and ready to send to review
     ///
-    /// - Parameter sender: <#sender description#>
+    /// - Parameter sender: sender id
     @IBAction func cropAction(_ sender: UIButton) {
         pushReviewController()
     }
     
     // MARK: - Custom Action
     
-    /// <#Description#>
+    /// Setup subviews to the parentView
     private func setupViews() {
         view.addSubview(imageView)
         view.addSubview(quadView)
         view.bringSubviewToFront(centerView)
     }
     
-    /// <#Description#>
+    /// This method is to setup the constraints for the views
     private func setupConstraints() {
         let imageViewConstraints = [
             imageView.topAnchor.constraint(equalTo: centerView.topAnchor),
@@ -242,7 +234,7 @@ final class EditScanViewController: UIViewController {
     }
     
     
-    /// <#Description#>
+    /// This method take the view from edit view to review the edited image to final review
     @objc func pushReviewController() {
         guard let quad = quadView.quad,
             let ciImage = CIImage(image: image!) else {
@@ -293,10 +285,10 @@ final class EditScanViewController: UIViewController {
         }
     }
     
-    /// <#Description#>
+    /// This method is used to find the document path with filename
     ///
-    /// - Parameter name: <#name description#>
-    /// - Returns: <#return value description#>
+    /// - Parameter name: filename
+    /// - Returns: document path url
     func documentsPath(forFileName name: String?) -> String? {
         let paths = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)
         let documentsPath = paths[0]
@@ -305,7 +297,7 @@ final class EditScanViewController: UIViewController {
     }
     
     
-    /// <#Description#>
+    /// This method is to display the Quadrilateral to QuadView
     private func displayQuad() {
         let imageSize = image?.size
         let imageFrame = CGRect(origin: imageView.frame.origin, size: CGSize(width: quadViewWidthConstraint.constant, height: quadViewHeightConstraint.constant))
@@ -317,17 +309,17 @@ final class EditScanViewController: UIViewController {
         quadView.drawQuadrilateral(quad: transformedQuad!, animated: false)
     }
     
-    /// <#Description#>
+    /// This method is used to adjust the Quad View Constraint constant
     private func adjustQuadViewConstraints() {
         let frame = AVMakeRect(aspectRatio: (image?.size)!, insideRect: imageView.bounds)
         quadViewWidthConstraint.constant = frame.size.width
         quadViewHeightConstraint.constant = frame.size.height
     }
     
-    /// <#Description#>
+    /// This method sets the default values for the QuadCorners
     ///
-    /// - Parameter image: <#image description#>
-    /// - Returns: <#return value description#>
+    /// - Parameter image: Quad image
+    /// - Returns: return Quadrilateral
     private static func defaultQuad(forImage image: UIImage) -> Quadrilateral {
         let topLeft = CGPoint(x: image.size.width / 3.0, y: image.size.height / 3.0)
         let topRight = CGPoint(x: 2.0 * image.size.width / 3.0, y: image.size.height / 3.0)

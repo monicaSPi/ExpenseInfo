@@ -38,9 +38,9 @@ class ExpenseViewModel {
     var expenseListArray = [ExpenseListInfo]()
     
     
-    /// <#Description#>
+    /// This method is called while setting the collectionView Layout
     ///
-    /// - Returns: <#return value description#>
+    /// - Returns: returns the custom size based on the device model
     func lineSpacingValue() -> CGFloat {
         switch UIDevice.current.model {
         case "iPhone 4":

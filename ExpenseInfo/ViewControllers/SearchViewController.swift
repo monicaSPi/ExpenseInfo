@@ -98,9 +98,9 @@ class SearchViewController: UIViewController {
         
     }
     
-    /// <#Description#>
+    /// This method is called while setting the collectionView Layout
     ///
-    /// - Returns: <#return value description#>
+    /// - Returns: returns the custom size based on the device model
     func lineSpacingValue() -> CGFloat {
         switch UIDevice.current.model {
         case "iPhone 4":
@@ -116,7 +116,7 @@ class SearchViewController: UIViewController {
         }
     }
     
-    /// <#Description#>
+    /// configure collection view layout
     private func configureCollectionViewLayout() {
         
         let lineSpacing: CGFloat = self.lineSpacingValue()
@@ -131,9 +131,9 @@ class SearchViewController: UIViewController {
     
     // MARK: IBAction Methods
     
-    /// <#Description#>
+    /// This method will dismiss the viewcontroller from the stack
     ///
-    /// - Parameter sender: <#sender description#>
+    /// - Parameter sender: sender id
     @IBAction func cancelPressed(_ sender: UIButton) {
         self.dismiss(animated: true, completion: nil)
     }

@@ -31,7 +31,7 @@ class ExpenseDetailsViewController: UIViewController {
     /// topBar that manages the content for a top rectangular area on the screen.
     @IBOutlet weak var topBar: UIView!
     
-    /// <#Description#>
+    /// Designable detailView
     @IBOutlet weak var detailView: RoundView! {
         didSet {
             detailView.layer.shadowColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.25).cgColor
@@ -42,10 +42,10 @@ class ExpenseDetailsViewController: UIViewController {
         }
     }
     
-    /// <#Description#>
+    /// This label shows the empty tag field
     @IBOutlet weak var mEmptyTag: UILabel!
     
-    /// <#Description#>
+    /// Designable roundImages
     @IBOutlet weak var roundImages: RoundImage! {
         didSet {
             roundImages.layer.shadowColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.25).cgColor
@@ -56,17 +56,17 @@ class ExpenseDetailsViewController: UIViewController {
         }
     }
     
-    /// <#Description#>
-    @IBOutlet weak var mAmount: UILabel! {
-        didSet {
-              mAmount.text = "\(expenseDetailsViewModel.expenseListArray.currencySymbol!)\(expenseDetailsViewModel.expenseListArray.amount!)"
-        }
-    }
+    /// This displays the amount of the expense with the currency symbol
+//    @IBOutlet weak var mAmount: UILabel! {
+//        didSet {
+//              mAmount.text = "\(expenseDetailsViewModel.expenseListArray.currencySymbol!)\(expenseDetailsViewModel.expenseListArray.amount!)"
+//        }
+//    }
     
-    /// <#Description#>
+    /// shortView that manages the content for a rectangular area on the screen.
     @IBOutlet weak var shortView: UIView!
     
-    /// <#Description#>
+    /// This displayes the merchant name for which the expense is made
     @IBOutlet weak var mmerchantName: UILabel! {
         didSet {
             mmerchantName.text = expenseDetailsViewModel.expenseListArray.merchantName
@@ -74,15 +74,15 @@ class ExpenseDetailsViewController: UIViewController {
         }
     }
     
-    /// <#Description#>
-    @IBOutlet weak var mCategory: UILabel! {
-        didSet {
-            mCategory.text = expenseDetailsViewModel.expenseListArray.category
-
-        }
-    }
+    /// This displays under which category the expense is made
+//    @IBOutlet weak var mCategory: UILabel! {
+//        didSet {
+//            mCategory.text = expenseDetailsViewModel.expenseListArray.category
+//
+//        }
+//    }
     
-    /// <#Description#>
+    /// A scrollable, multiline text region. contains notes of the expense made
     @IBOutlet weak var mDescription: UITextView! {
         didSet {
             
@@ -93,15 +93,15 @@ class ExpenseDetailsViewController: UIViewController {
         }
     }
     
-    /// <#Description#>
-    @IBOutlet weak var mCategoryImg: UIImageView! {
-        didSet {
-            mCategoryImg.image = UIImage(data: expenseDetailsViewModel.expenseListArray.categoryImg!)
-
-        }
-    }
+    /// This shows the category image
+//    @IBOutlet weak var mCategoryImg: UIImageView! {
+//        didSet {
+//            mCategoryImg.image = UIImage(data: expenseDetailsViewModel.expenseListArray.categoryImg!)
+//
+//        }
+//    }
     
-    /// <#Description#>
+    /// This custom button is to perform claim operation
     @IBOutlet weak var claimBtn: UIButton! {
         didSet {
             claimBtn.layer.shadowColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.25).cgColor
@@ -112,28 +112,28 @@ class ExpenseDetailsViewController: UIViewController {
         }
     }
     
-    /// <#Description#>
+    /// This image is used to send the email regarding the expense
     @IBOutlet weak var screenShot: UIImageView!
     
-    /// <#Description#>
+    /// The claimed button is used to denote that the expense is claimed already
     @IBOutlet weak var claimedBttn: UIButton!
     
-    /// <#Description#>
-    @IBOutlet weak var mdate: UILabel! {
-        didSet {
-            mdate.text = "\(String(describing: expenseDetailsViewModel.expenseListArray.date!)) - \(String(describing: expenseDetailsViewModel.expenseListArray.time!))"
-
-        }
-    }
+    /// This displays the date and time of the expense made
+//    @IBOutlet weak var mdate: UILabel! {
+//        didSet {
+//            mdate.text = "\(String(describing: expenseDetailsViewModel.expenseListArray.date!)) - \(String(describing: expenseDetailsViewModel.expenseListArray.time!))"
+//
+//        }
+//    }
     
-    /// <#Description#>
+    /// This displayes the merchant name for which the expense is made
     @IBOutlet weak var MerchantName: UILabel! {
         didSet {
                  MerchantName.text = expenseDetailsViewModel.expenseListArray.merchantName
         }
     }
     
-    /// <#Description#>
+    /// This displays the amount of the expense with the currency symbol
     @IBOutlet weak var amount: UILabel! {
         didSet {
             amount.text = "\(expenseDetailsViewModel.expenseListArray.currencySymbol!)\(expenseDetailsViewModel.expenseListArray.amount!)"
@@ -141,7 +141,7 @@ class ExpenseDetailsViewController: UIViewController {
         }
     }
     
-    /// <#Description#>
+    /// This displays under which category the expense is made
     @IBOutlet weak var category: UILabel! {
         didSet {
             category.text = expenseDetailsViewModel.expenseListArray.category
@@ -149,7 +149,7 @@ class ExpenseDetailsViewController: UIViewController {
         }
     }
     
-    /// <#Description#>
+    /// This displays the date and time of the expense made
     @IBOutlet weak var dateandTime: UILabel! {
         didSet {
             dateandTime.text = "\(String(describing: expenseDetailsViewModel.expenseListArray.date!)) - \(String(describing: expenseDetailsViewModel.expenseListArray.time!))"
@@ -157,14 +157,14 @@ class ExpenseDetailsViewController: UIViewController {
         }
     }
     
-    /// <#Description#>
+    /// This shows the category image
     @IBOutlet weak var catImage: UIImageView! {
         didSet {
               catImage.image = UIImage(data: expenseDetailsViewModel.expenseListArray.categoryImg!)
         }
     }
     
-    /// <#Description#>
+    /// A scrollable, multiline text region. for notes about the expense
     @IBOutlet weak var notes: UITextView! {
         didSet {
             
@@ -175,17 +175,17 @@ class ExpenseDetailsViewController: UIViewController {
         }
     }
     
-    /// <#Description#>
+    /// tagsView that manages the content for a rectangular area on the screen.
     @IBOutlet weak var tagsView: UIView!
     
-    /// <#Description#>
+    /// emptyTag that manages the content for a rectangular area on the screen.
     @IBOutlet weak var emptyTag: UILabel!
     
-    /// <#Description#>
+    /// mTagsView that manages the content for a rectangular area on the screen.
     @IBOutlet weak var mTagsView: UIView!
     
     
-  /// <#Description#>
+  /// Instance of ExpenseDetailsViewModel
   let expenseDetailsViewModel = ExpenseDetailsViewModel()
     
     // MARK: Default View Controller Methods
@@ -241,24 +241,24 @@ class ExpenseDetailsViewController: UIViewController {
     }
     // MARK: IBAction Methods
     
-    /// <#Description#>
+    /// This method is used to dismiss this viewcontroller from the stack of viewcontrollers
     ///
-    /// - Parameter sender: <#sender description#>
+    /// - Parameter sender: sender id
     @IBAction func goBack(_ sender: UIButton) {
         self.dismiss(animated: true, completion: nil)
     }
     
-    /// <#Description#>
+    /// This method is used to delete the expense from the core data database
     ///
-    /// - Parameter sender: <#sender description#>
+    /// - Parameter sender: sender id
     @IBAction func deleteExpense(_ sender: UIButton) {
         print(expenseDetailsViewModel.expenseListArray.id as Any)
         deleteProfile(withID: expenseDetailsViewModel.expenseListArray.id!)
     }
     
-    /// <#Description#>
+    /// This method is used to edit the expense , so setting the `AddExpenseType` defaults to Edit and navigate to the MainViewController and perform the edit operation
     ///
-    /// - Parameter sender: <#sender description#>
+    /// - Parameter sender: sender id
     @IBAction func editExpense(_ sender: UIButton) {
         let imageVC = self.storyboard?.instantiateViewController(withIdentifier: AppConstants.Segue.Identifier.MainViewController) as! MainViewController
         UserDefaults.standard.set("Edit", forKey: AppConstants.Defaults.Key.AddExpenseType)
@@ -266,16 +266,16 @@ class ExpenseDetailsViewController: UIViewController {
         self.present(imageVC, animated: true, completion: nil)
     }
     
-    /// <#Description#>
+    /// This method is called when the user got reimbursement and clicked done claimed option
     ///
-    /// - Parameter sender: <#sender description#>
+    /// - Parameter sender: sender id
     @IBAction func doneClaim(_ sender: UIButton) {
         updateClaimed()
     }
     
-    /// <#Description#>
+    /// The user wants to claim the expense by notifying it to the receipient via email with the expense details and the bill image
     ///
-    /// - Parameter sender: <#sender description#>
+    /// - Parameter sender: sender id
     @IBAction func claimedAction(_ sender: UIButton) {
         if MFMailComposeViewController.canSendMail() {
             shortView.isHidden = false
@@ -305,7 +305,7 @@ class ExpenseDetailsViewController: UIViewController {
     
     // MARK: - Custom Action
     
-    /// <#Description#>
+    /// This method is used to save the data to core data context
     func saveItems() {
         do {
             try AppConstants.managedObjectContext.save()
@@ -314,9 +314,9 @@ class ExpenseDetailsViewController: UIViewController {
         }
     }
     
-    /// <#Description#>
+    /// This method is called when user want to delete the particular expense
     ///
-    /// - Parameter withID: <#withID description#>
+    /// - Parameter withID: unique expenseID
     func deleteProfile(withID: String) {
         let alert = UIAlertController(title: "Alert", message: "Would you like to Delete?", preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "Cancel", style: UIAlertAction.Style.cancel, handler: nil))
@@ -351,18 +351,9 @@ class ExpenseDetailsViewController: UIViewController {
         self.present(alert, animated: true, completion: nil)
     }
     
-    /// <#Description#>
-    func sendEmail() {
-        let mailVC = MFMailComposeViewController()
-        mailVC.mailComposeDelegate = self
-        mailVC.setToRecipients([])
-        mailVC.setSubject("Subject for email")
-        mailVC.setMessageBody("Email message string", isHTML: false)
-        present(mailVC, animated: true, completion: nil)
-    }
+
     
-    
-    /// <#Description#>
+    /// This method is called when the user Submitted the expense , this will take you to the reimbursement view controller
     func updateSubmitted() {
         let typefetch = NSFetchRequest<NSFetchRequestResult>(entityName: "ExpenseContent")
         typefetch.predicate = NSPredicate(format: "id == %@", expenseDetailsViewModel.expenseListArray.id!)
@@ -383,7 +374,7 @@ class ExpenseDetailsViewController: UIViewController {
         }
     }
     
-    /// <#Description#>
+    /// This method is called when the user claimed the expense , this will take you to the reimbursement view controller
     func updateClaimed() {
         let typefetch = NSFetchRequest<NSFetchRequestResult>(entityName: "ExpenseContent")
         typefetch.predicate = NSPredicate(format: "id == %@", expenseDetailsViewModel.expenseListArray.id!)
@@ -405,7 +396,7 @@ class ExpenseDetailsViewController: UIViewController {
         }
     }
     
-    /// <#Description#>
+    /// This method is called when the email is not sent with error message
     func showSendMailErrorAlert() {
         let alert = UIAlertController(title: "Email Failed", message: "Your device could not send e-mail.  Please check e-mail configuration and try again.", preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))

@@ -9,25 +9,25 @@ final class ZoomGestureController {
     
     // MARK: - File Private
     
-    /// <#Description#>
+    /// image
     private let image: UIImage
     
-    /// <#Description#>
+    /// quadView is a simple UIView subclass that can draw a quadrilateral, and optionally edit it.
     private let quadView: QuadrilateralView
     
-    /// <#Description#>
+    ///previousPanPosition contains a point in a two-dimensional coordinate system.
     private var previousPanPosition: CGPoint?
     
-    /// <#Description#>
+    /// closestCorner keep track of the position of the corners of a quadrilateral.
     private var closestCorner: CornerPosition?
     
     // MARK:- Initialization
     
-    /// <#Description#>
+    /// Initializing `ZoomGestureController`
     ///
     /// - Parameters:
-    ///   - image: <#image description#>
-    ///   - quadView: <#quadView description#>
+    ///   - image: image zoomable
+    ///   - quadView: It is a simple UIView subclass that can draw a quadrilateral, and optionally edit it.
     init(image: UIImage, quadView: QuadrilateralView) {
         self.image = image
         self.quadView = quadView
@@ -36,9 +36,9 @@ final class ZoomGestureController {
     
     // MARK: - UIGestureRecognizer Delegate
     
-    /// <#Description#>
+    /// Handle pan gesture to move the position of quad corners
     ///
-    /// - Parameter pan: <#pan description#>
+    /// - Parameter pan: pan gesture
     @objc func handle(pan: UIGestureRecognizer) {
         guard let drawnQuad = quadView.quad else {
             return

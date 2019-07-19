@@ -11,47 +11,47 @@ import UIKit
 /// Data structure for the Loading Activity indicator
 public struct EZLoadingActivity {
     
-    /// <#Description#>
+    /// data structure for the loading activity datasource elements
     public struct Settings {
         
-        /// <#Description#>
+        /// backgroundColor EZLoadingActivity
         public static var BackgroundColor = UIColor(red: 227/255, green: 232/255, blue: 235/255, alpha: 1.0)
         
-        /// <#Description#>
+        /// activityindicatorColor EZLoadingActivity
         public static var ActivityColor = UIColor(red: 0/255, green: 0/255, blue: 0/255, alpha: 1.0)
         
-        /// <#Description#>
+        /// textColor EZLoadingActivity
         public static var TextColor = UIColor(red: 80/255, green: 80/255, blue: 80/255, alpha: 1.0)
         
-        /// <#Description#>
+        /// font family for the text inside the EZLoadingActivity
         public static var FontName = "HelveticaNeue-Light"
         // Other possible stuff: ✓ ✓ ✔︎ ✕ ✖︎ ✘
         
-        /// <#Description#>
+        /// success icon after the success callback
         public static var SuccessIcon = "✔︎"
         
-        /// <#Description#>
+        /// fail icon after the failure callback
         public static var FailIcon = "✘"
         
-        /// <#Description#>
+        /// Success text after the success callback
         public static var SuccessText = "Success"
         
-        /// <#Description#>
+        /// fail text after the failure callback
         public static var FailText = "Failure"
         
-        /// <#Description#>
+        /// Success text color after the success callback
         public static var SuccessColor = UIColor(red: 68/255, green: 118/255, blue: 4/255, alpha: 1.0)
         
-        /// <#Description#>
+        ///  fail text color after the failure callback
         public static var FailColor = UIColor(red: 255/255, green: 75/255, blue: 56/255, alpha: 1.0)
         
-        /// <#Description#>
+        /// Activity indicator width
         public static var ActivityWidth = UIScreen.ScreenWidth / Settings.WidthDivision
         
-        /// <#Description#>
+        /// Activity indicator height
         public static var ActivityHeight = ActivityWidth / 3
         
-        /// <#Description#>
+        /// enable the shadow of the view
         public static var ShadowEnabled = true
         
         /// <#Description#>
@@ -72,23 +72,22 @@ public struct EZLoadingActivity {
         public static var DarkensBackground = false
     }
     
-    /// <#Description#>
+    /// instance of a custom view that manages the content for a rectangular area on the screen.
     fileprivate static var instance: LoadingActivity?
     
-    /// <#Description#>
+    /// hidingInProgress bool value to hide the hiding in progress view
     fileprivate static var hidingInProgress = false
     
-    /// <#Description#>
+    /// overlay that manages the content for a rectangular area on the screen.
     fileprivate static var overlay: UIView!
     
-    /// Disable UI stops users touch actions until EZLoadingActivity is hidden. Return success status
     
-    /// <#Description#>
+    /// Disable UI stops users touch actions until EZLoadingActivity is hidden. Return success status
     ///
     /// - Parameters:
-    ///   - text: <#text description#>
-    ///   - disableUI: <#disableUI description#>
-    /// - Returns: <#return value description#>
+    ///   - text: text to be displayed while loading in the loadingView
+    ///   - disableUI: disableUI true so that no userinteraction happens in the background
+    /// - Returns: return value true
     @discardableResult
     public static func show(_ text: String, disableUI: Bool) -> Bool {
         guard instance == nil else {
@@ -116,50 +115,18 @@ public struct EZLoadingActivity {
         return true
     }
     
-    /// <#Description#>
-    ///
-    /// - Parameters:
-    ///   - text: <#text description#>
-    ///   - disableUI: <#disableUI description#>
-    ///   - seconds: <#seconds description#>
-    /// - Returns: <#return value description#>
-    @discardableResult
-    public static func showWithDelay(_ text: String, disableUI: Bool, seconds: Double) -> Bool {
-        let showValue = show(text, disableUI: disableUI)
-        delay(seconds) { () -> () in
-            _ = hide(true, animated: false)
-        }
-        return showValue
-    }
+
     
-    /// <#Description#>
-    ///
-    /// - Parameters:
-    ///   - text: <#text description#>
-    ///   - disableUI: <#disableUI description#>
-    ///   - controller: <#controller description#>
-    /// - Returns: <#return value description#>
-    public static func showOnController(_ text: String, disableUI: Bool, controller:UIViewController) -> Bool{
-        guard instance == nil else {
-            print("EZLoadingActivity: You still have an active activity, please stop that before creating a new one")
-            return false
-        }
-        instance = LoadingActivity(text: text, disableUI: disableUI)
-        DispatchQueue.main.async {
-            instance?.showLoadingWithController(controller)
-        }
-        
-        return true
-    }
+
     
     /// Returns success status
     
-    /// <#Description#>
+    /// This method is used to hide the laoding view when the completion handler is called or after the callback success
     ///
     /// - Parameters:
-    ///   - success: <#success description#>
-    ///   - animated: <#animated description#>
-    /// - Returns: <#return value description#>
+    ///   - success: callback success
+    ///   - animated: animated false
+    /// - Returns: return true
     @discardableResult
     public static func hide(_ success: Bool? = nil, animated: Bool = false) -> Bool {
         guard instance != nil else {
@@ -191,18 +158,9 @@ public struct EZLoadingActivity {
         return true
     }
     
-    /// <#Description#>
-    ///
-    /// - Parameters:
-    ///   - seconds: <#seconds description#>
-    ///   - after: <#after description#>
-    fileprivate static func delay(_ seconds: Double, after: @escaping ()->()) {
-        let queue = DispatchQueue.main
-        let time = DispatchTime.now() + Double(Int64(seconds * Double(NSEC_PER_SEC))) / Double(NSEC_PER_SEC)
-        queue.asyncAfter(deadline: time, execute: after)
-    }
+
     
-    /// <#Description#>
+    /// custom view that manages the content for a rectangular area on the screen.
     fileprivate class LoadingActivity: UIView {
         var textLabel: UILabel!
         var activityView: UIActivityIndicatorView!
@@ -360,8 +318,8 @@ private extension NSObject {
     /// This method has the loop with timer added
     ///
     /// - Parameters:
-    ///   - selector: <#selector description#>
-    ///   - delay: <#delay description#>
+    ///   - selector: selector description
+    ///   - delay: delay for the specified time interval
     func callSelectorAsync(_ selector: Selector, delay: TimeInterval) {
         let timer = Timer.scheduledTimer(timeInterval: delay, target: self, selector: selector, userInfo: nil, repeats: false)
         RunLoop.main.add(timer, forMode: RunLoop.Mode.common)

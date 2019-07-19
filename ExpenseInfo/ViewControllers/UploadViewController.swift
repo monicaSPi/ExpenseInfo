@@ -9,22 +9,22 @@ import CoreTelephony
 import MobileCoreServices
 
 
-/// <#Description#>
+/// This View Controller is used to open the gallery and pick the image from the device
 class UploadViewController: UIViewController {
     
-    /// <#Description#>
+    /// imageView that displays a single image or a sequence of animated images in your interface.
     @IBOutlet var imageView: UIImageView!
     
-    /// <#Description#>
+    /// imagePicker that manages the system interfaces for taking pictures, recording movies, and choosing items from the user's media library.
     var imagePicker = UIImagePickerController()
     
-    /// <#Description#>
+    /// viewController that manages a view hierarchy for your UIKit app.
     var viewController: UIViewController?
     
-    /// <#Description#>
+    /// This is called after the image is plicked from the gallary
     var pickImageCallback : ((UIImage) -> ())?;
     
-    /// <#Description#>
+    /// Data Structure for RectangleDetector Result
     private var displayedRectangleResult: RectangleDetectorResult?
 
     /// uploadBtn that executes your custom code in response to user interactions.
@@ -39,40 +39,22 @@ class UploadViewController: UIViewController {
         }
     }
     
-    /// <#Description#>
+    /// alert that displays an alert message to the user.
     var alert = UIAlertController(title: "Choose Image", message: nil, preferredStyle: .actionSheet)
     
-    /// <#Description#>
+    /// This method dismiss the view controller from the navigation stack
     ///
-    /// - Parameter sender: <#sender description#>
+    /// - Parameter sender: sender id
     @IBAction func cloaseAction(_ sender: UIButton) {
         self.dismiss(animated: true, completion: nil)
         
     }
     
-    /// <#Description#>
-    ///
-    /// - Parameter rectangleResult: <#rectangleResult description#>
-    /// - Returns: <#return value description#>
-    @discardableResult private  func displayRectangleResult(rectangleResult: RectangleDetectorResult) -> Quadrilateral {
-        displayedRectangleResult = rectangleResult
-        
-        let quad = rectangleResult.rectangle.toCartesian(withHeight: rectangleResult.imageSize.height)
-        
-        DispatchQueue.main.async { [weak self] in
-            guard self != nil else {
-                return
-            }
-            
-        }
-        
-        return quad
-    }
+       
     
-    
-    /// <#Description#>
+    /// This method is used to open the ImagePickerController
     ///
-    /// - Parameter sender: <#sender description#>
+    /// - Parameter sender: sender id
     @IBAction func uploadAction(_ sender: UIButton) {
         UserDefaults.standard.set("Upload", forKey: AppConstants.Defaults.Key.AddExpenseType)
         
@@ -99,25 +81,6 @@ class UploadViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
-    /// <#Description#>
-    ///
-    /// - Parameter imageData: <#imageData description#>
-    /// - Returns: <#return value description#>
-    func metadata(fromImageData imageData: Data?) -> [AnyHashable: Any]? {
-        if let imageSource = CGImageSourceCreateWithData((imageData)! as CFData, nil) {
-            let options = [kCGImageSourceShouldCache as String: (0)]
-            if let imageProperties = CGImageSourceCopyPropertiesAtIndex(imageSource, 0, (options as CFDictionary?)!) {
-            let metadata = imageProperties as? [AnyHashable: Any]
-            if let aMetadata = metadata {
-                print("Metadata of selected image\(aMetadata)")
-            }
-            return metadata
-        }
-        
-        }
-        print("Can't read metadata")
-        return nil
-    }
     
     
 }
@@ -163,13 +126,13 @@ extension UploadViewController: UIImagePickerControllerDelegate {
 extension UploadViewController: UINavigationControllerDelegate {
     
 }
-/// <#Description#>
+/// Data Structure for RectangleDetector Result
 private struct RectangleDetectorResult {
     
-    /// <#Description#>
+    /// rectangle is Instance of Quadrilateral
     let rectangle: Quadrilateral
     
-    /// <#Description#>
+    /// size of the image
     let imageSize: CGSize
     
 }

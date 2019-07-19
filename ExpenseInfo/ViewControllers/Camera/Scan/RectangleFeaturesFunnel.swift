@@ -25,9 +25,9 @@ final class RectangleFeaturesFunnel {
         /// A higher score indicates that many recently added rectangles are very close to the rectangle of this instance.
         var matchingScore = 0
         
-        /// <#Description#>
+        /// Initializing rectangle Feature of a Quadrilateral
         ///
-        /// - Parameter rectangleFeature: <#rectangleFeature description#>
+        /// - Parameter rectangleFeature: rectangleFeature instance
         init(rectangleFeature: Quadrilateral) {
             self.rectangleFeature = rectangleFeature
         }

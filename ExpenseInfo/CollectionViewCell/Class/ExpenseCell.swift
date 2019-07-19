@@ -16,7 +16,7 @@ class ExpenseCell: UICollectionViewCell {
     /// Helps to add n number of Tags for the expense
     @IBOutlet weak var tagsView: UIView?
     
-    /// Initializing Custom TagsField
+    /// This is a scrollView to append tags in it
     fileprivate let tagsField = WSTagsField()
     
     

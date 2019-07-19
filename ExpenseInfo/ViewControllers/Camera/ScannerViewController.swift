@@ -3,36 +3,36 @@
 import UIKit
 import AVFoundation
 
-/// FlashResult enumeration
-///
-/// - successful: <#successful description#>
-/// - notSuccessful: <#notSuccessful description#>
-enum FlashResult {
-    case successful
-    case notSuccessful
-}
+///// FlashResult enumeration
+/////
+///// - successful: <#successful description#>
+///// - notSuccessful: <#notSuccessful description#>
+//enum FlashResult {
+//    case successful
+//    case notSuccessful
+//}
 
-/// <#Description#>
+/// This viewcontroller helps the user to capture a photo
 final class ScannerViewController: UIViewController {
     
-    /// <#Description#>
+    /// The CaptureSessionManager is responsible for setting up and managing the AVCaptureSession and the functions related to capturing.
     private var captureSessionManager: CaptureSessionManager?
     
-    /// <#Description#>
+    /// videoPreviewlayer  that can display video as it is being captured.
     private let videoPreviewlayer = AVCaptureVideoPreviewLayer()
     
-    /// <#Description#>
+    ///quadView  that can draw a quadrilateral, and optionally edit it.
     private let quadView = QuadrilateralView()
     
-    /// <#Description#>
+    /// The flash is not enabled
     private var flashEnabled = false
     
-    /// <#Description#>
+    /// Status bar is hidden
     override var prefersStatusBarHidden: Bool {
         return true
     }
     
-    /// <#Description#>
+    /// A simple button used for the shutter.
     lazy private var shutterButton: ShutterButton = {
         let button = ShutterButton()
         button.translatesAutoresizingMaskIntoConstraints = false
@@ -40,7 +40,7 @@ final class ScannerViewController: UIViewController {
         return button
     }()
     
-    /// <#Description#>
+    ///cancelButton that executes your custom code in response to user interactions.
     lazy private var cancelButton: UIButton = {
         let button = UIButton()
         button.setImage(UIImage(named: "closeButton"), for: .normal)
@@ -51,7 +51,7 @@ final class ScannerViewController: UIViewController {
     
     
     
-    /// <#Description#>
+    /// activityIndicator that shows that a task is in progress.
     lazy private var activityIndicator: UIActivityIndicatorView = {
         let activityIndicator = UIActivityIndicatorView(style: .gray)
         activityIndicator.hidesWhenStopped = true
@@ -104,7 +104,7 @@ final class ScannerViewController: UIViewController {
     }
     
   
-    /// <#Description#>
+    /// Camera User Privacy Settings
     private func presentCameraSettings() {
         DispatchQueue.main.async {
             let changePrivacySetting = "Expense doesn't have permission to use the camera, please change privacy settings"
@@ -127,9 +127,9 @@ final class ScannerViewController: UIViewController {
         }
     }
     
-    /// <#Description#>
+    /// Check for the camera access
     ///
-    /// - Parameter isAllowed: <#isAllowed description#>
+    /// - Parameter isAllowed: isAllowed is checked before camera launches
     func checkCameraAccess(isAllowed: @escaping (Bool) -> Void) {
         switch AVCaptureDevice.authorizationStatus(for: .video) {
         case .denied:
@@ -162,7 +162,7 @@ final class ScannerViewController: UIViewController {
     }
     
     
-    /// <#Description#>
+    /// setup subViews to the parent view
     private func setupViews() {
         view.layer.addSublayer(videoPreviewlayer)
         quadView.translatesAutoresizingMaskIntoConstraints = false
@@ -174,12 +174,12 @@ final class ScannerViewController: UIViewController {
         view.addSubview(activityIndicator)
     }
     
-    /// <#Description#>
+    /// This method dismiss the viewcontroller from the navigation stack
     @objc func closeAction() {
         self.dismiss(animated: true, completion: nil)
     }
     
-    /// <#Description#>
+    /// This sets up constraints for all the UI elements present
     private func setupConstraints() {
         var quadViewConstraints = [NSLayoutConstraint]()
         var cancelButtonConstraints = [NSLayoutConstraint]()
@@ -231,24 +231,22 @@ final class ScannerViewController: UIViewController {
     
     // MARK: - Actions
     
-    /// <#Description#>
+    /// This method is used to capture the image by capturesessionmanager
     ///
-    /// - Parameter sender: <#sender description#>
+    /// - Parameter sender: sender id
     @objc private func captureImage(_ sender: UIButton) {
         shutterButton.isUserInteractionEnabled = false
         captureSessionManager?.capturePhoto()
     }
     
-    /// <#Description#>
-    @objc private func toggleAutoScan() {
-    }
+  
     
-    /// <#Description#>
-    @objc private func toggleFlash() {
-        self.dismiss(animated: true, completion: nil)
-    }
+//    /// <#Description#>
+//    @objc private func toggleFlash() {
+//        self.dismiss(animated: true, completion: nil)
+//    }
     
-    /// <#Description#>
+    /// closeBtn that executes your custom code in response to user interactions.
     @IBOutlet weak var closeBtn: UIButton!
     
 }
@@ -264,11 +262,11 @@ extension ScannerViewController: UIImagePickerControllerDelegate {
 // MARK: - RectangleDetectionDelegateProtocol
 extension ScannerViewController: RectangleDetectionDelegateProtocol {
     
-    /// <#Description#>
+    /// When the camera failed to capture an picture this method is called
     ///
     /// - Parameters:
-    ///   - captureSessionManager: <#captureSessionManager description#>
-    ///   - error: <#error description#>
+    ///   - captureSessionManager: The `CaptureSessionManager` instance that started capturing a picture.
+    ///   - error: When the capturesession failed
     func captureSessionManager(_ captureSessionManager: CaptureSessionManager, didFailWithError error: Error) {
         
         activityIndicator.stopAnimating()
@@ -278,20 +276,20 @@ extension ScannerViewController: RectangleDetectionDelegateProtocol {
         imageScannerController.imageScannerDelegate?.imageScannerController(imageScannerController, didFailWithError: error)
     }
     
-    /// <#Description#>
+    /// This method is called when the camera start capturing a picture
     ///
-    /// - Parameter captureSessionManager: <#captureSessionManager description#>
+    /// - Parameter captureSessionManager: The `CaptureSessionManager` instance that started capturing a picture.
     func didStartCapturingPicture(for captureSessionManager: CaptureSessionManager) {
         activityIndicator.startAnimating()
         shutterButton.isUserInteractionEnabled = false
     }
     
-    /// <#Description#>
+    /// This method handles the capture session manager based on quad and picture that has been captured
     ///
     /// - Parameters:
-    ///   - captureSessionManager: <#captureSessionManager description#>
-    ///   - picture: <#picture description#>
-    ///   - quad: <#quad description#>
+    ///   - captureSessionManager: The `CaptureSessionManager` instance that started capturing a picture.
+    ///   - picture: The picture that has been captured.
+    ///   - quad: The quadrilateral to draw on the view. It should be in the coordinates of the current `QuadrilateralView` instance.
     func captureSessionManager(_ captureSessionManager: CaptureSessionManager, didCapturePicture picture: UIImage, withQuad quad: Quadrilateral?) {
         activityIndicator.stopAnimating()
         
@@ -304,12 +302,12 @@ extension ScannerViewController: RectangleDetectionDelegateProtocol {
         shutterButton.isUserInteractionEnabled = true
     }
     
-    /// <#Description#>
+    /// This method handles the capture session manager based on quad and image size
     ///
     /// - Parameters:
-    ///   - captureSessionManager: <#captureSessionManager description#>
-    ///   - quad: <#quad description#>
-    ///   - imageSize: <#imageSize description#>
+    ///   - captureSessionManager: The `CaptureSessionManager` instance that started capturing a picture.
+    ///   - quad: The quadrilateral to draw on the view. It should be in the coordinates of the current `QuadrilateralView` instance.
+    ///   - imageSize: The size of the image the quadrilateral has been detected on.
     func captureSessionManager(_ captureSessionManager: CaptureSessionManager, didDetectQuad quad: Quadrilateral?, _ imageSize: CGSize) {
         guard let quad = quad else {
             quadView.removeQuadrilateral()

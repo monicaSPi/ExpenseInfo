@@ -19,40 +19,39 @@ import CoreData
 /// ViewModel class of `AddNewExpenseViewController`
 class NewExpenseViewModel {
     
-    /// <#Description#>
+    /// fromCategory whose instances are either true or false.
     var fromCategory : Bool = false
     
-    /// <#Description#>
+    /// default Currency Symbol
     var currencySymbol : String = "$"
 
-    /// <#Description#>
+    /// default currency code
     var currencyCode : String = "USD"
     
-    /// <#Description#>
+    /// tagsString is the array of strings
     var tagsString : [String] = []
     
-    /// <#Description#>
+    /// indicates which textField is active
     var activeField: UITextField?
     
-    /// <#Description#>
+    /// Ocr result based on blocks is stored in this array
     var blockArray:NSMutableArray = []
     
-    /// <#Description#>
+    /// isKeyboardUp whose instances are either true or false.
     var isKeyboardUp: Bool = false
     
-    /// <#Description#>
+    ///  reimburseSwitch whose instances are either true or false.
     var reimburseSwitch : Bool = false
     
-    /// <#Description#>
+    ///  gotTotal of the expense whose instances are either true or false.
     var gotTotal: Bool = false
     
-    /// <#Description#>
-    var textImages = [UIImage]()
+   
     
-    /// <#Description#>
+    /// Gets an instance of Firebase Vision service for the default Firebase app. The default Firebase app instance must be configured before calling this method; otherwise, raises FIRAppNotConfigured exception.
     lazy var vision = Vision.vision()
     
-    /// <#Description#>
+    ///  Ocr result based on each line is stored in this array
     var lineArray : NSMutableArray = []
     
     /// <#Description#>
@@ -61,7 +60,7 @@ class NewExpenseViewModel {
     /// <#Description#>
     var amountArrayValue : NSMutableArray = []
     
-    /// <#Description#>
+    /// Gets an on-device text recognizer from Firebase Vision
     lazy var textRecognizer = vision.onDeviceTextRecognizer()
     
     /// <#Description#>
@@ -69,10 +68,10 @@ class NewExpenseViewModel {
 
     
    
-    /// <#Description#>
+    /// This method is used to scan the image and perform openGLES2 operation and return the image
     ///
-    /// - Parameter inputImage: <#inputImage description#>
-    /// - Returns: <#return value description#>
+    /// - Parameter inputImage: inputImage to be scanned
+    /// - Returns: return scanned image
     func getScannedImage(inputImage: UIImage) -> UIImage? {
         
         let openGLContext = EAGLContext(api: .openGLES2)

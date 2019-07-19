@@ -615,7 +615,6 @@
 			isa = PBXGroup;
 			children = (
 				8E8B6DCD21E46A16007F8AB9 /* Edit */,
-				8E8B6DC921E469F0007F8AB9 /* EditScanViewController.swift */,
 			);
 			path = Crop;
 			sourceTree = "<group>";
@@ -642,6 +641,7 @@
 			isa = PBXGroup;
 			children = (
 				8E8B6DCA21E469F1007F8AB9 /* ZoomGestureController.swift */,
+				8E8B6DC921E469F0007F8AB9 /* EditScanViewController.swift */,
 			);
 			path = Edit;
 			sourceTree = "<group>";

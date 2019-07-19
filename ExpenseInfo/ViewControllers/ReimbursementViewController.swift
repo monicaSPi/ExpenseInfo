@@ -473,7 +473,7 @@ class ReimbursementViewController: UIViewController {
     }
     
 
-    /// <#Description#>
+    /// This method configure the collectionView Layout
     private func configureCollectionViewLayout() {
         let lineSpacing: CGFloat = reimbursemntViewModel.lineSpacingValue()
 
@@ -483,10 +483,10 @@ class ReimbursementViewController: UIViewController {
         let itemWidth = UIScreen.main.bounds.width - 2 * reimbursemntViewModel.xInset
         layout.itemSize = CGSize(width: itemWidth, height: reimbursemntViewModel.itemHeight)
         collectionView.collectionViewLayout.invalidateLayout()
-        unClaimedCollectionView.collectionViewLayout.invalidateLayout()
+        collectionView.collectionViewLayout.invalidateLayout()
     }
     
-    /// <#Description#>
+    /// This method configure the unClaimedCollectionView Layout
     private func configureCollectionViewLayout1() {
         let lineSpacing: CGFloat = reimbursemntViewModel.lineSpacingValue()
 
@@ -498,7 +498,7 @@ class ReimbursementViewController: UIViewController {
         unClaimedCollectionView.collectionViewLayout.invalidateLayout()
     }
     
-    /// <#Description#>
+    /// This method configure the submittedCollectionView Layout
     private func configureCollectionViewLayout2() {
         let lineSpacing: CGFloat = reimbursemntViewModel.lineSpacingValue()
 

@@ -197,20 +197,6 @@
       "warning": "undocumented"
     },
     {
-      "file": "/Users/lw-dlf/Desktop/2019 Git/ExpenseInfo/ExpenseInfo/ViewControllers/Camera/ScannerViewController.swift",
-      "line": 11,
-      "symbol": "FlashResult.successful",
-      "symbol_kind": "source.lang.swift.decl.enumelement",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/lw-dlf/Desktop/2019 Git/ExpenseInfo/ExpenseInfo/ViewControllers/Camera/ScannerViewController.swift",
-      "line": 12,
-      "symbol": "FlashResult.notSuccessful",
-      "symbol_kind": "source.lang.swift.decl.enumelement",
-      "warning": "undocumented"
-    },
-    {
       "file": "/Users/lw-dlf/Desktop/2019 Git/ExpenseInfo/ExpenseInfo/ViewControllers/Camera/Session/CaptureSessionManager.swift",
       "line": 314,
       "symbol": "CaptureSessionManager.photoOutput(_:didFinishProcessingPhoto:error:)",

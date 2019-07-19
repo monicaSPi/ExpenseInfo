@@ -19,6 +19,6 @@ class ExpenseDetailsViewModel {
     
     // MARK: - File private
     
-     /// <#Description#>
+     /// This is a scrollView to append tags in it
      let tagsField = WSTagsField()
 }

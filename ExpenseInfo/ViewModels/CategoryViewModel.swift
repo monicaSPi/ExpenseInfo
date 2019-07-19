@@ -16,7 +16,7 @@ class CategoryViewModel {
     /// <#Description#>
     var cate = ExpenseCategory()
     
-    /// <#Description#>
+    /// 
     weak var delegate: CategoryInfoDelegate? = nil
     
     /// <#Description#>
@@ -25,7 +25,7 @@ class CategoryViewModel {
     /// <#Description#>
     var expenseCategory = [ExpenseCategory]()
     
-    /// <#Description#>
+    /// A view controller that manages the display of search results based on interactions with a search bar.
     var resultSearchController = UISearchController()
     
      /// <#Description#>

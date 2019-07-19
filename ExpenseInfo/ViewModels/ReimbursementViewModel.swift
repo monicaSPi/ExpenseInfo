@@ -13,13 +13,13 @@ import CoreGraphics
 /// ViewModel class of `ReimbursementViewController`
 class ReimbursementViewModel {
     
-     /// <#Description#>
+     /// collectionView contentInset itemHeight
      let itemHeight: CGFloat = 90
     //    private let lineSpacing: CGFloat = 8
     
-    /// <#Description#>
+    /// This method is called while setting the collectionView Layout
     ///
-    /// - Returns: <#return value description#>
+    /// - Returns: returns the custom size based on the device model
     func lineSpacingValue() -> CGFloat {
         switch UIDevice.current.model {
         case "iPhone 4":

@@ -199,11 +199,11 @@ final class CaptureSessionManager: NSObject, AVCaptureVideoDataOutputSampleBuffe
         }
     }
     
-    /// <#Description#>
+    /// This method is used to process the rectangle in the image
     ///
     /// - Parameters:
-    ///   - rectangle: <#rectangle description#>
-    ///   - imageSize: <#imageSize description#>
+    ///   - rectangle: `CGRect` points for the view
+    ///   - imageSize: The size of the image the quadrilateral has been detected on.
     private func processRectangle(rectangle: Quadrilateral?, imageSize: CGSize) {
         if let rectangle = rectangle {
             
@@ -243,10 +243,10 @@ final class CaptureSessionManager: NSObject, AVCaptureVideoDataOutputSampleBuffe
         }
     }
     
-    /// <#Description#>
+    /// This method displays the rectangle result after performing the Converts of current to the cartesian coordinate system (where 0 on the y axis is at the bottom).
     ///
-    /// - Parameter rectangleResult: <#rectangleResult description#>
-    /// - Returns: <#return value description#>
+    /// - Parameter rectangleResult: Data structure representing the result of the detection of a quadrilateral.
+    /// - Returns: A data structure representing a quadrilateral and its position. This class exists to bypass the fact that CIRectangleFeature is read-only.
     @discardableResult private func displayRectangleResult(rectangleResult: RectangleDetectorResult) -> Quadrilateral {
         displayedRectangleResult = rectangleResult
         

@@ -88,12 +88,12 @@ class SearchAndFindMerchantPicker : UIViewController {
     
     // MARK: - Picker Action
     
-    /// <#Description#>
+    /// Creates a custom picker with its data array and type string
     ///
     /// - Parameters:
-    ///   - dataArray: <#dataArray description#>
-    ///   - typeStr: <#typeStr description#>
-    /// - Returns: <#return value description#>
+    ///   - dataArray: dataArray to be loaded in the picker
+    ///   - typeStr: typeStr as "Data"
+    /// - Returns: return SearchAndFindMerchantPicker ViewController
     static func createPicker(dataArray: [[String:AnyObject]], typeStr : String) -> SearchAndFindMerchantPicker {
         let newViewController = UIStoryboard(name: AppConstants.XIB.Names.SearchStoryBoard, bundle: nil).instantiateViewController(withIdentifier: AppConstants.Segue.Identifier.SearchAndFindMerchantPicker) as! SearchAndFindMerchantPicker
         newViewController.merchantPickerViewModel.dataArray = dataArray
@@ -101,9 +101,9 @@ class SearchAndFindMerchantPicker : UIViewController {
         return newViewController
     }
     
-    /// <#Description#>
+    /// This method is called when the background is tapped and it will dismiss the picker and view is end editing
     ///
-    /// - Parameter tapGestureRecognizer: <#tapGestureRecognizer description#>
+    /// - Parameter tapGestureRecognizer: tapGestureRecognizer for the view
     @objc func backgroundTapped(tapGestureRecognizer: UITapGestureRecognizer) {
         self.view.endEditing(true)
     }
@@ -111,9 +111,9 @@ class SearchAndFindMerchantPicker : UIViewController {
     
     //MARK: - Button Actions
     
-    /// <#Description#>
+    /// After the selection is made in the picker , this bottom is pressed this conforms the selection and will set the delegate values
     ///
-    /// - Parameter sender: <#sender description#>
+    /// - Parameter sender: sender id
     @IBAction func doneButtonPressed(_ sender: UIButton) {
         
         guard (merchantPickerViewModel.selectedData) != nil else {
@@ -124,9 +124,9 @@ class SearchAndFindMerchantPicker : UIViewController {
         self.close()
     }
     
-    /// <#Description#>
+    /// This is the action to dismiss the picker without any selection
     ///
-    /// - Parameter sender: <#sender description#>
+    /// - Parameter sender: sender id
     @IBAction func cancelButtonPressed(_ sender: UIButton) {
         self.close()
     }
@@ -134,15 +134,15 @@ class SearchAndFindMerchantPicker : UIViewController {
     
     // MARK: Custom Methods
     
-    /// <#Description#>
+    /// Show the Picker method
     ///
-    /// - Parameter vc: <#vc description#>
+    /// - Parameter vc: viewController in which the picker should be injected
     func show(vc:UIViewController) {
         vc.addChild(self)
         vc.view.addSubview(self.view)
     }
     
-    /// <#Description#>
+    /// Picker Close or dismiss action
     func close() {
         centerView.transform = .identity
         UIView.animate(withDuration: 0.2, delay: 0, options: .curveEaseOut, animations: {() -> Void in

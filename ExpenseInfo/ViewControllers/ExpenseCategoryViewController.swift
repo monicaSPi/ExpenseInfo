@@ -7,17 +7,17 @@ import CoreData
 class ExpenseCategoryViewController: UIViewController {
     // MARK: - ViewModel Variables
     
-    /// <#Description#>
+    /// Instance of CategoryViewModel
     let categoryViewModel = CategoryViewModel()
     // MARK: IBOutlet Properties
     
-    /// <#Description#>
+    /// bottomView manages the content for a rectangular area on the screen.
     @IBOutlet weak var bottomView: UIView!
     
     /// topBar that manages the content for a top rectangular area on the screen.
     @IBOutlet weak var topBar: UIView!
     
-    /// <#Description#>
+    /// categoryCollection manages an ordered collection of data items and presents them using customizable layouts.
     @IBOutlet weak var categoryCollection: UICollectionView! {
         didSet {
             let layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
@@ -30,10 +30,10 @@ class ExpenseCategoryViewController: UIViewController {
         }
     }
     
-    /// <#Description#>
+    /// A specialized view for receiving search-related information from the user.
     @IBOutlet weak var searchBar: UISearchBar!
     
-    /// <#Description#>
+    ///categoryTableView presents category data using rows arranged in a single column.
     @IBOutlet weak var categoryTableView: UITableView!
     
 
@@ -181,9 +181,9 @@ class ExpenseCategoryViewController: UIViewController {
     }
     // MARK: IBAction Methods
     
-    /// <#Description#>
+    /// This method is used to dismiss this viewcontroller from the stact of viewcontrollers
     ///
-    /// - Parameter sender: <#sender description#>
+    /// - Parameter sender: sender id
     @IBAction func closeAction(_ sender: UIButton) {
         dismiss(animated: true, completion: nil)
     }

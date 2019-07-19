@@ -17,7 +17,7 @@ final class ShutterButton: UIControl {
     /// innerRing ratio instance of the shutter button in `CGFloat`
     private let innerRingRatio: CGFloat = 0.75
     
-    /// <#Description#>
+    /// A concrete UIFeedbackGenerator subclass that creates haptics to simulate physical impacts.
     private let impactFeedbackGenerator = UIImpactFeedbackGenerator(style: .light)
     
     /// A Boolean value indicating whether the control draws a highlight.
@@ -90,10 +90,10 @@ final class ShutterButton: UIControl {
     
     // MARK: - Paths
     
-    /// <#Description#>
+    /// This method is used to find the path of the outer ring in shutter button
     ///
-    /// - Parameter rect: <#rect description#>
-    /// - Returns: <#return value description#>
+    /// - Parameter rect: A structure that contains the location and dimensions of a rectangle.
+    /// - Returns: Outer ring line bezier path
     private func pathForOutterRing(inRect rect: CGRect) -> UIBezierPath {
         let path = UIBezierPath(ovalIn: rect)
         
@@ -105,10 +105,10 @@ final class ShutterButton: UIControl {
         return path
     }
     
-    /// <#Description#>
+    /// This method is used to find the path of the inner circle in shutter button
     ///
-    /// - Parameter rect: <#rect description#>
-    /// - Returns: <#return value description#>
+    /// - Parameter rect: A structure that contains the location and dimensions of a rectangle.
+    /// - Returns: inner circle  bezier path
     private func pathForInnerCircle(inRect rect: CGRect) -> UIBezierPath {
         let rect = rect.scaleAndCenter(withRatio: innerRingRatio)
         let path = UIBezierPath(ovalIn: rect)

@@ -5,13 +5,11 @@ import CoreData
 
 /// Displays List of Expenses made with the details
 class ExpenseViewController: UIViewController  {
-    //    func igcMenuSelected(_ selectedMenuName: String!, at index: Int) {
-    //
-    //    }
+
     
     // MARK: - ViewMode Variable
     
-    /// <#Description#>
+    /// Instance of ExpenseViewModel
     let expenseViewModel = ExpenseViewModel()
     
     
@@ -172,9 +170,9 @@ class ExpenseViewController: UIViewController  {
         
     }
     
-    /// <#Description#>
+    /// This method is to show the actionsheet to display the filter options
     ///
-    /// - Parameter sender: <#sender description#>
+    /// - Parameter sender: sender id
     @IBAction func showActionSheet(_ sender: UIButton) {
         
         let customActionSheet = UIAlertController(title: nil, message: nil, preferredStyle: AppConstants.alertActionStyle)
@@ -245,9 +243,9 @@ class ExpenseViewController: UIViewController  {
         self.present(firstVC!, animated: true, completion: nil)
     }
     
-    /// <#Description#>
+    /// This method is used to dismiss this viewcontroller from the stack of viewcontrollers
     ///
-    /// - Parameter sender: <#sender description#>
+    /// - Parameter sender: sender id
     @IBAction func goBack(_ sender: UIButton) {
         self.dismiss(animated: true, completion: nil)
     }
@@ -283,10 +281,7 @@ class ExpenseViewController: UIViewController  {
     }
     
     
-    
-  
-    
-    /// <#Description#>
+    /// This method configure the collectionView Layout
     private func configureCollectionViewLayout() {
         let lineSpacing: CGFloat = expenseViewModel.lineSpacingValue()
         
@@ -520,9 +515,9 @@ extension ExpenseViewController: UICollectionViewDataSource {
 extension UICollectionView {
     
     
-    /// <#Description#>
+    /// This method is called when there is nothing to show on the screen an empty message is set on the view
     ///
-    /// - Parameter message: <#message description#>
+    /// - Parameter message: message to be displayed
     func setEmptyMessage(_ message: String) {
         let messageLabel = UILabel(frame: CGRect(x: 0, y: 0, width: self.bounds.size.width, height: self.bounds.size.height))
         messageLabel.text = message
@@ -536,7 +531,7 @@ extension UICollectionView {
     }
     
     
-    /// <#Description#>
+    /// Restore method to set the backgroundView as nil
     func restore() {
         self.backgroundView = nil
     }

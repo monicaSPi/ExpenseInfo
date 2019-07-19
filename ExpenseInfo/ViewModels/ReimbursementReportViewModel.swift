@@ -10,16 +10,16 @@ import UIKit
 /// ViewModel class of `ReimburseReportViewController`
 struct ReportItemViewModel {
     
-    /// <#Description#>
+    /// color of the chart
     var color: UIColor
     
-    /// <#Description#>
+    /// reimbursement type
     var type: String
     
-    /// <#Description#>
+    /// percentage from the overall amount to be reimbursed with the reimbursed amount in a double-precision, floating-point value type.
     var percentage: Double?
     
-    /// <#Description#>
+    /// reimbursement amount in a double-precision, floating-point value type.
     var amount: Double?
 }
 

@@ -258,7 +258,7 @@ class AddNewExpenseViewController: UIViewController {
     
     
     
-    /// <#Description#>
+    /// Add annotation overlay view
     private lazy var annotationOverlayView: UIView = {
         precondition(isViewLoaded)
         let annotationOverlayView = UIView(frame: .zero)
@@ -266,7 +266,7 @@ class AddNewExpenseViewController: UIViewController {
         return annotationOverlayView
     }()
     
-    /// <#Description#>
+    /// remove detected annotation view
     private func removeDetectionAnnotations() {
   
         annotationOverlayView.subviews.forEach { (annotationView) in
@@ -274,12 +274,12 @@ class AddNewExpenseViewController: UIViewController {
         }
     }
     
-    /// <#Description#>
+    /// This method is used to draw rectangle in the detected text
     ///
     /// - Parameters:
-    ///   - frame: <#frame description#>
-    ///   - color: <#color description#>
-    ///   - transform: <#transform description#>
+    ///   - frame: rectangle text frame
+    ///   - color: color of the rectangle drawn
+    ///   - transform: An affine transformation matrix for use in drawing 2D graphics.
     private func drawFrame(_ frame: CGRect, in color: UIColor, transform: CGAffineTransform) {
         let transformedRect = frame.applying(transform)
         UIUtilities.addRectangle(
@@ -290,7 +290,7 @@ class AddNewExpenseViewController: UIViewController {
     }
     
     
-    /// <#Description#>
+    /// This is a scrollView to append tags in it
     fileprivate let tagsField = WSTagsField()
     
     /// Delegate for the Tag View when it is added , removed, changed, adjust height, select tag, unselect tag
@@ -648,34 +648,7 @@ class AddNewExpenseViewController: UIViewController {
     }
     
    
-//    func textDetect(dectect_image:UIImage, display_image_view:UIImageView)->UIImage{
-//        let handler:VNImageRequestHandler = VNImageRequestHandler.init(cgImage: (dectect_image.cgImage)!)
-//        let result_img:UIImage = UIImage.init();
-//        let request:VNDetectTextRectanglesRequest = VNDetectTextRectanglesRequest.init(completionHandler: { (request, error) in
-//            if( (error) != nil){
-//                print("Got Error In Run Text Dectect Request");
-//            }else{
-//            }
-//        })
-//
-//        request.reportCharacterBoxes = true
-//        do {
-//            try handler.perform([request])
-//            return result_img;
-//            //            print("Successful Run Text Dectect Request");
-//        } catch {
-//            return result_img;
-//        }
-//    }
-//    func addScreenShotToTextImages(sourceImage image: UIImage, boundingBox: CGRect) {
-//        let pct = 0.1 as CGFloat
-//        let newRect = boundingBox.insetBy(dx: -boundingBox.width*pct/2, dy: -boundingBox.height*pct/2)
-//
-//        if let imageRef = image.cgImage!.cropping(to: newRect) {
-//            let croppedImage = UIImage(cgImage: imageRef, scale: image.scale, orientation: image.imageOrientation)
-//            newExpenseViewModel.textImages.append(croppedImage)
-//        }
-//    }
+
    
     
     /// runTextRecognition method helps in process the given bill image to recognize the text using Vision Framework

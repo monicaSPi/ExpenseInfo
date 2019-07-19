@@ -105,13 +105,13 @@ class MainViewController: UIViewController {
         }
     }
     
-    /// <#Description#>
+    /// bottomView manages the content for a rectangular area on the screen.
     @IBOutlet weak var bottomView: UIView!
     
-    /// <#Description#>
+    /// blackView manages the content for a rectangular area on the screen.
     @IBOutlet weak var blackView: UIView!
     
-    /// <#Description#>
+   /// scrollView that allows the scrolling and zooming of its contained views.
     @IBOutlet weak var scrollView: UIScrollView!
     
    /// stack1 an interface for laying out a collection of views in either a column or a row.
@@ -122,7 +122,7 @@ class MainViewController: UIViewController {
     
     // MARK: - Local variables
     
-   /// <#Description#>
+   /// Instance of MainViewModel
    let mainViewModel = MainViewModel()
     
     
@@ -206,16 +206,16 @@ class MainViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
     }
     
-    /// <#Description#>
+    /// This method dismiss the current viewcontroller from the stack
     ///
-    /// - Parameter sender: <#sender description#>
+    /// - Parameter sender: sender id
     @IBAction func cancelPressed(_ sender: UIButton) {
         dismiss(animated: true, completion: nil)
     }
     
-    /// <#Description#>
+    /// This method is used to save the all entered details of the new expense manually
     ///
-    /// - Parameter sender: <#sender description#>
+    /// - Parameter sender: sender id
     @IBAction func saveBtnPressed(_ sender: UIButton) {
         
         let imageVC : AddNewExpenseViewController = self.children[0] as! AddNewExpenseViewController
@@ -263,7 +263,7 @@ class MainViewController: UIViewController {
     
  
     
-    /// <#Description#>
+    /// This method is used to fetch the Merchant list from the Retail.plist and update the MerchantPicker with the respective delegates
     @objc func someActionToBePerformed () {
         // this will be called when hashTag is changed
         // do something when hashTag is changed

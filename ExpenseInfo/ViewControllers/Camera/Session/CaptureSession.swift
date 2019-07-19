@@ -17,11 +17,11 @@ final class CaptureSession {
     /// The orientation of the captured image
     var editImageOrientation: CGImagePropertyOrientation
     
-    /// <#Description#>
+    /// Initializing the capture session
     ///
     /// - Parameters:
-    ///   - autoScanEnabled: <#autoScanEnabled description#>
-    ///   - editImageOrientation: <#editImageOrientation description#>
+    ///   - autoScanEnabled: autoScanEnabled true
+    ///   - editImageOrientation: editImageOrientation up
     private init(autoScanEnabled: Bool = true, editImageOrientation: CGImagePropertyOrientation = .up) {
         self.isEditing = false
         self.autoScanEnabled = autoScanEnabled
