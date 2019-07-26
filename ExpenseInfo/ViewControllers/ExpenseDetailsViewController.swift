@@ -57,11 +57,11 @@ class ExpenseDetailsViewController: UIViewController {
     }
     
     /// This displays the amount of the expense with the currency symbol
-//    @IBOutlet weak var mAmount: UILabel! {
-//        didSet {
-//              mAmount.text = "\(expenseDetailsViewModel.expenseListArray.currencySymbol!)\(expenseDetailsViewModel.expenseListArray.amount!)"
-//        }
-//    }
+    @IBOutlet weak var mAmount: UILabel! {
+        didSet {
+            mAmount.text = "\(expenseDetailsViewModel.expenseListArray.currencySymbol!)\(expenseDetailsViewModel.expenseListArray.amount!)"
+        }
+    }
     
     /// shortView that manages the content for a rectangular area on the screen.
     @IBOutlet weak var shortView: UIView!
@@ -70,17 +70,17 @@ class ExpenseDetailsViewController: UIViewController {
     @IBOutlet weak var mmerchantName: UILabel! {
         didSet {
             mmerchantName.text = expenseDetailsViewModel.expenseListArray.merchantName
-
+            
         }
     }
     
     /// This displays under which category the expense is made
-//    @IBOutlet weak var mCategory: UILabel! {
-//        didSet {
-//            mCategory.text = expenseDetailsViewModel.expenseListArray.category
-//
-//        }
-//    }
+    @IBOutlet weak var mCategory: UILabel! {
+        didSet {
+            mCategory.text = expenseDetailsViewModel.expenseListArray.category
+            
+        }
+    }
     
     /// A scrollable, multiline text region. contains notes of the expense made
     @IBOutlet weak var mDescription: UITextView! {
@@ -94,12 +94,12 @@ class ExpenseDetailsViewController: UIViewController {
     }
     
     /// This shows the category image
-//    @IBOutlet weak var mCategoryImg: UIImageView! {
-//        didSet {
-//            mCategoryImg.image = UIImage(data: expenseDetailsViewModel.expenseListArray.categoryImg!)
-//
-//        }
-//    }
+    @IBOutlet weak var mCategoryImg: UIImageView! {
+        didSet {
+            mCategoryImg.image = UIImage(data: expenseDetailsViewModel.expenseListArray.categoryImg!)
+            
+        }
+    }
     
     /// This custom button is to perform claim operation
     @IBOutlet weak var claimBtn: UIButton! {
@@ -119,17 +119,16 @@ class ExpenseDetailsViewController: UIViewController {
     @IBOutlet weak var claimedBttn: UIButton!
     
     /// This displays the date and time of the expense made
-//    @IBOutlet weak var mdate: UILabel! {
-//        didSet {
-//            mdate.text = "\(String(describing: expenseDetailsViewModel.expenseListArray.date!)) - \(String(describing: expenseDetailsViewModel.expenseListArray.time!))"
-//
-//        }
-//    }
+    @IBOutlet weak var mdate: UILabel! {
+        didSet {
+            mdate.text = "\(String(describing: expenseDetailsViewModel.expenseListArray.date!)) - \(String(describing: expenseDetailsViewModel.expenseListArray.time!))"
+        }
+    }
     
     /// This displayes the merchant name for which the expense is made
     @IBOutlet weak var MerchantName: UILabel! {
         didSet {
-                 MerchantName.text = expenseDetailsViewModel.expenseListArray.merchantName
+            MerchantName.text = expenseDetailsViewModel.expenseListArray.merchantName
         }
     }
     
@@ -137,7 +136,7 @@ class ExpenseDetailsViewController: UIViewController {
     @IBOutlet weak var amount: UILabel! {
         didSet {
             amount.text = "\(expenseDetailsViewModel.expenseListArray.currencySymbol!)\(expenseDetailsViewModel.expenseListArray.amount!)"
-
+            
         }
     }
     
@@ -145,7 +144,7 @@ class ExpenseDetailsViewController: UIViewController {
     @IBOutlet weak var category: UILabel! {
         didSet {
             category.text = expenseDetailsViewModel.expenseListArray.category
-
+            
         }
     }
     
@@ -153,14 +152,14 @@ class ExpenseDetailsViewController: UIViewController {
     @IBOutlet weak var dateandTime: UILabel! {
         didSet {
             dateandTime.text = "\(String(describing: expenseDetailsViewModel.expenseListArray.date!)) - \(String(describing: expenseDetailsViewModel.expenseListArray.time!))"
-
+            
         }
     }
     
     /// This shows the category image
     @IBOutlet weak var catImage: UIImageView! {
         didSet {
-              catImage.image = UIImage(data: expenseDetailsViewModel.expenseListArray.categoryImg!)
+            catImage.image = UIImage(data: expenseDetailsViewModel.expenseListArray.categoryImg!)
         }
     }
     
@@ -185,15 +184,15 @@ class ExpenseDetailsViewController: UIViewController {
     @IBOutlet weak var mTagsView: UIView!
     
     
-  /// Instance of ExpenseDetailsViewModel
-  let expenseDetailsViewModel = ExpenseDetailsViewModel()
+    /// Instance of ExpenseDetailsViewModel
+    let expenseDetailsViewModel = ExpenseDetailsViewModel()
     
     // MARK: Default View Controller Methods
     /// Called after the controller's view is loaded into memory.
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-       
+        
         
         expenseDetailsViewModel.tagsField.readOnly = true
         
@@ -226,11 +225,11 @@ class ExpenseDetailsViewController: UIViewController {
         if expenseDetailsViewModel.expenseListArray.tags?.count > 0 {
             let valueString = expenseDetailsViewModel.expenseListArray.tags
             let tagString : NSMutableString = ""
-//
+            //
             
             valueString?.forEach({ (val) in
                 tagString.append("#\(val) ")
-
+                
             })
             emptyTag.text = tagString as String
             mEmptyTag.text = tagString as String
@@ -328,7 +327,7 @@ class ExpenseDetailsViewController: UIViewController {
                 do {
                     let test = try AppConstants.managedObjectContext.fetch(fetchRequest)
                     let objectToDelete = test[0] as! NSManagedObject
-                  AppConstants.managedObjectContext.delete(objectToDelete)
+                    AppConstants.managedObjectContext.delete(objectToDelete)
                     do {
                         try AppConstants.managedObjectContext.save()
                         self.dismiss(animated: true, completion: nil)
@@ -346,12 +345,12 @@ class ExpenseDetailsViewController: UIViewController {
             case .destructive:
                 print("destructive")
             @unknown default:
-               break
+                break
             }}))
         self.present(alert, animated: true, completion: nil)
     }
     
-
+    
     
     /// This method is called when the user Submitted the expense , this will take you to the reimbursement view controller
     func updateSubmitted() {
@@ -389,7 +388,7 @@ class ExpenseDetailsViewController: UIViewController {
                     saveItems()
                     let imageVC = self.storyboard?.instantiateViewController(withIdentifier: AppConstants.Segue.Identifier.ReimbursementViewController) as! ReimbursementViewController
                     self.present(imageVC, animated: true, completion: nil)
-
+                    
                 }
             }
         } catch {
@@ -403,7 +402,7 @@ class ExpenseDetailsViewController: UIViewController {
         self.present(alert, animated: true)
     }
     
-  
+    
     
     
     

@@ -26,7 +26,7 @@ class UploadViewController: UIViewController {
     
     /// Data Structure for RectangleDetector Result
     private var displayedRectangleResult: RectangleDetectorResult?
-
+    
     /// uploadBtn that executes your custom code in response to user interactions.
     @IBOutlet weak var uploadBtn: UIButton! {
         didSet {
@@ -35,7 +35,7 @@ class UploadViewController: UIViewController {
             uploadBtn.layer.shadowOpacity = 1.0
             uploadBtn.layer.shadowRadius = 10.0
             uploadBtn.layer.masksToBounds = false
-
+            
         }
     }
     
@@ -50,7 +50,7 @@ class UploadViewController: UIViewController {
         
     }
     
-       
+    
     
     /// This method is used to open the ImagePickerController
     ///
@@ -70,12 +70,12 @@ class UploadViewController: UIViewController {
     /// Notifies the view controller that its view is about to be added to a view hierarchy.
     ///
     /// - Parameter animated: If true, the view is being added to the window using an animation.
-
+    
     override func viewWillAppear(_ animated: Bool) {
         imagePicker.delegate = self
     }
     /// Called after the controller's view is loaded into memory.
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -116,7 +116,7 @@ extension UploadViewController: UIImagePickerControllerDelegate {
     /// Tells the delegate that the user cancelled the pick operation.
     ///
     /// - Parameter picker: The controller object managing the image picker interface.
-
+    
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
         imagePicker.dismiss(animated: true, completion: nil)
     }

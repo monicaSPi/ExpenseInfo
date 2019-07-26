@@ -13,6 +13,6 @@ import Foundation
 class MainViewModel {
     
     /// Check for the option menus is active
-
-      var isMenuActive = false
+    
+    var isMenuActive = false
 }

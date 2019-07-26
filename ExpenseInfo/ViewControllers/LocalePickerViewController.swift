@@ -20,7 +20,7 @@ final class LocalePickerViewController: UIViewController {
     }
     
     /// type Kind of Picker
-     fileprivate var type: Kind
+    fileprivate var type: Kind
     
     /// selection
     fileprivate var selection: Selection?
@@ -89,7 +89,7 @@ final class LocalePickerViewController: UIViewController {
     /// Returns an object initialized from data in a given unarchiver.
     ///
     /// - Parameter aDecoder: An unarchiver object.
-
+    
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
@@ -105,7 +105,7 @@ final class LocalePickerViewController: UIViewController {
         view = tableView
     }
     /// Called after the controller's view is loaded into memory.
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -140,7 +140,7 @@ final class LocalePickerViewController: UIViewController {
         searchController.searchBar.frame.size.height = searchView.frame.size.height
     }
     /// Called to notify the view controller that its view has just laid out its subviews.
-
+    
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         indicatorView.center = view.center
@@ -242,7 +242,7 @@ extension LocalePickerViewController: UISearchResultsUpdating {
     /// Called when the search bar becomes the first responder or when the user makes changes inside the search bar.
     ///
     /// - Parameter searchController: The `UISearchController` object used as the search bar.
-
+    
     func updateSearchResults(for searchController: UISearchController) {
         if let searchText = searchController.searchBar.text, searchController.isActive {
             filteredInfo = []
@@ -270,7 +270,7 @@ extension LocalePickerViewController: UISearchBarDelegate {
     /// ells the delegate that the cancel button was tapped.
     ///
     /// - Parameter searchBar: The search bar that was tapped.
-
+    
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
         
     }
@@ -311,7 +311,7 @@ extension LocalePickerViewController: UITableViewDataSource {
     ///   - tableView: The table-view object requesting this information.
     ///   - section: An index number identifying a section in tableView.
     /// - Returns: The number of rows in section.
-
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if searchController.isActive { return filteredInfo.count }
         if let infoForSection = orderedInfo[sortedInfoKeys[section]] {
@@ -336,7 +336,7 @@ extension LocalePickerViewController: UITableViewDataSource {
     /// Asks the data source to return the titles for the sections of a table view.
     ///
     /// - Parameter tableView: The table-view object requesting this information.
-
+    
     /// - Returns: An array of strings that serve as the title of sections in the table view and appear in the index list on the right side of the table view. The table view must be in the plain style (UITableViewStylePlain). For example, for an alphabetized list, you could return an array containing strings “A” through “Z”.
     func sectionIndexTitles(for tableView: UITableView) -> [String]? {
         if searchController.isActive { return nil }
@@ -360,7 +360,7 @@ extension LocalePickerViewController: UITableViewDataSource {
     ///   - tableView: A table-view object requesting the cell.
     ///   - indexPath: An index path locating a row in tableView.
     /// - Returns: An object inheriting from UITableViewCell that the table view can use for the specified row. UIKit raises an assertion if you return nil.
-
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         guard let info = info(at: indexPath) else { return UITableViewCell() }

@@ -93,14 +93,14 @@ class SettingsViewController: UIViewController {
             reimbursementBtn.layer.masksToBounds = false
         }
     }
-
+    
     /// Perform set Currency trigger
     ///
     /// - Parameter sender: sender UIButton
     @IBAction func setCurrencyAction(_ sender: UIButton) {
         setCurrency()
     }
-
+    
     /// Hide Options Menu
     func hideMenu() {
         self.shadowView.isHidden = true
@@ -132,7 +132,7 @@ class SettingsViewController: UIViewController {
     
     /// Check for the option menus is active
     var isMenuActive = false
-
+    
     /// optionsView that manages the content for a rectangular area on the screen.
     @IBOutlet weak var optionsView: UIView!
     
@@ -141,7 +141,7 @@ class SettingsViewController: UIViewController {
     /// Notifies the view controller that its view is about to be removed from a view hierarchy.
     ///
     /// - Parameter animated: If true, the disappearance of the view is being animated.
-
+    
     override func viewWillDisappear(_ animated: Bool) {
         self.stack1.isHidden = false
         self.stack2.isHidden = false
@@ -157,27 +157,27 @@ class SettingsViewController: UIViewController {
     @IBAction func menuButtonAction(_ sender: UIButton) {
         
         if isMenuActive {
-//            self.stack1.isHidden = false
-//            self.stack2.isHidden = false
+            //            self.stack1.isHidden = false
+            //            self.stack2.isHidden = false
             menuButton.setImage(UIImage(named: "add-bill-b"), for: .normal)
             hideMenu()
             
-//            isMenuActive = false
+            //            isMenuActive = false
         } else {
-//            self.stack1.isHidden = true
-//            self.stack2.isHidden = true
+            //            self.stack1.isHidden = true
+            //            self.stack2.isHidden = true
             menuButton.setImage(UIImage(named: "retakeButton"), for: .normal)
             
             self.showMenu()
-//            isMenuActive = true
+            //            isMenuActive = true
         }
         self.stack1.isHidden = isMenuActive ? false : true
         self.stack2.isHidden = isMenuActive ? false : true
         isMenuActive = isMenuActive ? false : true
-
+        
     }
     
-
+    
     @IBOutlet weak var passwordLbl: UILabel!
     
     /// When this manual Entry is pressed , it updates the AddExpenseType Defaults and navigate to MainViewController
@@ -237,12 +237,12 @@ class SettingsViewController: UIViewController {
         
     }
     /// Called after the controller's view is loaded into memory.
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         
-      
+        
         if let currencyCode = UserDefaults.standard.value(forKey: AppConstants.Defaults.Key.CurrencyCode) {
             if let currencySymbol = UserDefaults.standard.value(forKey: AppConstants.Defaults.Key.CurrencySymbol) {
                 self.currency.text = "\(currencySymbol) \(currencyCode)"

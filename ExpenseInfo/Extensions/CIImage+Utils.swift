@@ -6,7 +6,7 @@ import UIKit
 
 // MARK: - CIImage Extension
 extension CIImage {
-
+    
     
     ///  Applies an AdaptiveThresholding filter to the image, which enhances the image and makes it completely gray scale
     ///
@@ -27,9 +27,9 @@ extension CIImage {
         let secondInputEdge = 0.75
         
         let arguments: [Any] = [self, firstInputEdge, secondInputEdge]
-
+        
         guard let enhancedCIImage = colorKernel.apply(extent: self.extent, arguments: arguments) else { return nil }
-
+        
         if let cgImage = CIContext(options: nil).createCGImage(enhancedCIImage, from: enhancedCIImage.extent) {
             return UIImage(cgImage: cgImage)
         } else {

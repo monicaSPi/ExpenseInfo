@@ -16,7 +16,7 @@ class SearchViewController: UIViewController {
     /// A specialized view for receiving search-related information from the user.
     @IBOutlet weak var searchBar: UISearchBar! {
         didSet {
-             searchBar.delegate = self
+            searchBar.delegate = self
         }
     }
     
@@ -26,15 +26,15 @@ class SearchViewController: UIViewController {
     let searchViewModel = SearchViewModel()
     // MARK: - View Initializatioln
     /// Called after the controller's view is loaded into memory.
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-       
+        
     }
     /// Notifies the view controller that its view is about to be added to a view hierarchy.
     ///
     /// - Parameter animated: If true, the view is being added to the window using an animation.
-
+    
     override func viewWillAppear(_ animated: Bool) {
         let nib = UINib(nibName: searchViewModel.cellId, bundle: nil)
         collectionView.register( nib, forCellWithReuseIdentifier: searchViewModel.cellId)
@@ -139,9 +139,9 @@ class SearchViewController: UIViewController {
     }
     
     
-
     
-
+    
+    
     
 }
 
@@ -153,7 +153,7 @@ extension SearchViewController: UISearchBarDelegate {
     /// - Parameters:
     ///   - searchBar: The search bar that is being edited.
     ///   - searchText: The current text in the search text field.
-
+    
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         print("didchange")
         
@@ -173,7 +173,7 @@ extension SearchViewController: UISearchBarDelegate {
     /// Tells the delegate when the user begins editing the search text.
     ///
     /// - Parameter searchBar: The search bar that is being edited.
-
+    
     func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
         searchViewModel.searchActive = true
         collectionView.reloadData()
@@ -182,7 +182,7 @@ extension SearchViewController: UISearchBarDelegate {
     /// Tells the delegate that the user finished editing the search text.
     ///
     /// - Parameter searchBar: The search bar that is being edited.
-
+    
     func searchBarTextDidEndEditing(_ searchBar: UISearchBar) {
         searchViewModel.searchActive = false
         searchBar.resignFirstResponder()
@@ -192,7 +192,7 @@ extension SearchViewController: UISearchBarDelegate {
     /// Tells the delegate that the cancel button was tapped.
     ///
     /// - Parameter searchBar: The search bar that was tapped.
-
+    
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
         searchViewModel.searchActive = false
         collectionView.reloadData()
@@ -201,7 +201,7 @@ extension SearchViewController: UISearchBarDelegate {
     /// Tells the delegate that the search button was tapped.
     ///
     /// - Parameter searchBar: The search bar that was tapped.
-
+    
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         searchViewModel.searchActive = false
         collectionView.reloadData()

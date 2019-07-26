@@ -13,21 +13,21 @@ import UIKit
 class CategoryViewModel {
     // MARK: - Local variable
     
-    /// <#Description#>
+    /// This is the instance of Expenses
     var cate = ExpenseCategory()
     
     /// 
     weak var delegate: CategoryInfoDelegate? = nil
     
-    /// <#Description#>
+    /// This callback method is called when the target is achieved
     var callback : ((String) -> Void)?
     
-    /// <#Description#>
+    /// This is the instance of ExpenseCategory model
     var expenseCategory = [ExpenseCategory]()
     
     /// A view controller that manages the display of search results based on interactions with a search bar.
     var resultSearchController = UISearchController()
     
-     /// <#Description#>
-     let cellId = "categoryCell"
+    /// This is the unique identifier of the category cell
+    let cellId = "categoryCell"
 }

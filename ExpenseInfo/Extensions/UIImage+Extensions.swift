@@ -100,11 +100,11 @@ extension UIImage {
         return UIImage(cgImage: croppedImage)
     }
     
-    /// Returns the same image with a portrait orientation.
     
-    /// <#Description#>
+    
+    /// This method returns  the same image with a portrait orientation.
     ///
-    /// - Returns: <#return value description#>
+    /// - Returns: returns  the same image with a portrait orientation
     func applyingPortraitOrientation() -> UIImage {
         switch imageOrientation {
         case .up:
@@ -120,9 +120,9 @@ extension UIImage {
         }
     }
     
-    /// Data structure to easily express rotation options.
     
-    /// <#Description#>
+    
+    /// Data structure to easily express rotation options.
     struct RotationOptions: OptionSet {
         let rawValue: Int
         
@@ -165,11 +165,10 @@ extension UIImage {
         return image
     }
     
-    /// Rotates the image based on the information collected by the accelerometer
     
-    /// <#Description#>
+    /// Rotates the image based on the information collected by the accelerometer
     ///
-    /// - Returns: <#return value description#>
+    /// - Returns: return image with the fixed orientation
     func withFixedOrientation() -> UIImage {
         var imageAngle: Double = 0.0
         

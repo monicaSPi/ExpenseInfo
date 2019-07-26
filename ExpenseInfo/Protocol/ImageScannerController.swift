@@ -92,7 +92,7 @@ public final class ImageScannerController: UINavigationController {
     override public var supportedInterfaceOrientations: UIInterfaceOrientationMask {
         return .portrait
     }
-
+    
     
 }
 

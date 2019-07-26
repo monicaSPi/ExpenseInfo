@@ -77,8 +77,8 @@ struct AppConstants {
     /// This Data structure is used to define the UserDefaults applied in the entire application
     struct Defaults {
         
-         /// UserDefaults Key Singleton
-         static let Key = Defaults()
+        /// UserDefaults Key Singleton
+        static let Key = Defaults()
         
         /// AddExpenseType UserDefaults Key
         let AddExpenseType = "AddExpenseType"

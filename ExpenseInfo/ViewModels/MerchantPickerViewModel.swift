@@ -40,7 +40,7 @@ class MerchantPickerViewModel {
             tempDataArray.append(data)
         }
         self.dataArray = tempDataArray
-      
+        
     }
     
     

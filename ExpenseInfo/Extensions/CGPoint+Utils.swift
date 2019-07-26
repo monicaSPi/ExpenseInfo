@@ -34,7 +34,7 @@ extension CGPoint {
         return CGPoint(x: x, y: height - y)
     }
     
-
+    
     
     /// This method is used to get the distance between two points
     ///
@@ -44,7 +44,7 @@ extension CGPoint {
         return hypot((self.x - point.x), (self.y - point.y))
     }
     
-
+    
     
     /// This method is used to get closest corner from the point
     ///

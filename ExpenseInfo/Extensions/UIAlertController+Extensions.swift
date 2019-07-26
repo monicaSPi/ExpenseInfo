@@ -139,7 +139,7 @@ extension UIAlertController {
             preferredContentSize.height = height
         }
     }
-
+    
     /// Create new alert view controller.
     ///
     /// - Parameters:

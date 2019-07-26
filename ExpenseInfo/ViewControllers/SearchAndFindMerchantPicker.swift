@@ -57,12 +57,12 @@ class SearchAndFindMerchantPicker : UIViewController {
     
     // MARK: Default View Controller Methods
     /// Called after the controller's view is loaded into memory.
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-      
+        
         merchantPickerViewModel.clearSelection()
-          tableView.reloadData()
+        tableView.reloadData()
     }
     /// Notifies the view controller that its view is about to be added to a view hierarchy.
     ///
@@ -78,7 +78,7 @@ class SearchAndFindMerchantPicker : UIViewController {
     /// Notifies the view controller that its view is about to be removed from a view hierarchy.
     ///
     /// - Parameter animated: If true, the disappearance of the view is being animated.
-
+    
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillShowNotification, object: nil)
@@ -155,7 +155,7 @@ class SearchAndFindMerchantPicker : UIViewController {
         self.removeFromParent()
     }
     
-
+    
     
 }
 
@@ -165,7 +165,7 @@ extension SearchAndFindMerchantPicker : UISearchBarDelegate {
     /// Tells the delegate when the user begins editing the search text.
     ///
     /// - Parameter searchBar: The search bar that is being edited.
-
+    
     func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
         merchantPickerViewModel.searchActive = true;
         searchBar.setShowsCancelButton(true, animated: true)
@@ -174,7 +174,7 @@ extension SearchAndFindMerchantPicker : UISearchBarDelegate {
     /// Tells the delegate that the user finished editing the search text.
     ///
     /// - Parameter searchBar: The search bar that is being edited.
-
+    
     func searchBarTextDidEndEditing(_ searchBar: UISearchBar) {
         merchantPickerViewModel.searchActive = false;
         searchBar.setShowsCancelButton(false, animated: true)
@@ -183,7 +183,7 @@ extension SearchAndFindMerchantPicker : UISearchBarDelegate {
     /// Tells the delegate that the cancel button was tapped.
     ///
     /// - Parameter searchBar: The search bar that was tapped.
-
+    
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
         merchantPickerViewModel.searchActive = false;
         self.view.endEditing(true)
@@ -193,7 +193,7 @@ extension SearchAndFindMerchantPicker : UISearchBarDelegate {
     /// Tells the delegate that the search button was tapped.
     ///
     /// - Parameter searchBar: The search bar that was tapped.
-
+    
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         merchantPickerViewModel.searchActive = false;
         searchBar.resignFirstResponder()
@@ -212,7 +212,7 @@ extension SearchAndFindMerchantPicker : UISearchBarDelegate {
             }
             return false
         })
-   
+        
         merchantPickerViewModel.searchActive = merchantPickerViewModel.filteredArray.count == 0 ? false : true
         self.tableView.reloadData()
     }
@@ -265,7 +265,7 @@ extension SearchAndFindMerchantPicker: UITableViewDataSource {
 // MARK: -  UITableViewDelegate
 extension SearchAndFindMerchantPicker :  UITableViewDelegate {
     
-   
+    
     
     /// Tells the delegate that the specified row is now selected.
     ///
@@ -274,7 +274,7 @@ extension SearchAndFindMerchantPicker :  UITableViewDelegate {
     ///   - indexPath: An index path locating the new selected row in tableView.
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         merchantPickerViewModel.clearSelection()
-          tableView.reloadData()
+        tableView.reloadData()
         if let cell = tableView.cellForRow(at: indexPath) as? SearchAndFindCell {
             cell.actionButton.isHidden = false
             merchantPickerViewModel.selectedData = (merchantPickerViewModel.searchActive && merchantPickerViewModel.filteredArray.count > 0) ? merchantPickerViewModel.filteredArray[indexPath.row] : merchantPickerViewModel.dataArray[indexPath.row]

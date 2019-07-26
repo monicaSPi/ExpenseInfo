@@ -28,7 +28,7 @@ extension UIView {
         }
         set {
             layer.cornerRadius = circleCorner ? min(bounds.size.height, bounds.size.width) / 2 : newValue
-                //abs(CGFloat(Int(newValue * 100)) / 100)
+            //abs(CGFloat(Int(newValue * 100)) / 100)
         }
     }
     
@@ -173,7 +173,7 @@ public extension UIView {
         return UIImage()
     }
     /// Extension: insert view.fadeTransition right before changing content
-
+    
     /// - Parameter duration: in specific time interval
     func fadeTransition(_ duration: CFTimeInterval) {
         let animation: CATransition = CATransition()
@@ -185,7 +185,7 @@ public extension UIView {
     
     
     /// This is a function to get subViews of a particular type from view recursively. It would look recursively in all subviews and return back the subviews of the type T
-
+    
     /// - Parameter type: type T of any kind
     /// - Returns: return array of type T of any Kind
     func allSubViewsOf<T : UIView>(type : T.Type) -> [T]{
@@ -200,7 +200,7 @@ public extension UIView {
         getSubview(view: self)
         return all
     }
-
+    
     typealias Configuration = (UIView) -> Swift.Void
     
     /// Set some or all corners radiuses of view.
@@ -236,7 +236,7 @@ public extension UIView {
     }
     
     /// Height of view.
-     var height: CGFloat {
+    var height: CGFloat {
         get {
             return self.frame.size.height
         }
@@ -245,7 +245,7 @@ public extension UIView {
         }
     }
     
-  
+    
     
 }
 

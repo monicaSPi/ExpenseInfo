@@ -11,7 +11,7 @@ extension ReimbursementViewController: UICollectionViewDataSource {
     /// - Parameters:
     ///   - collectionView: The collection view requesting this information.
     ///   - indexPath: The index path that specifies the location of the item.
-
+    
     /// - Returns: A configured cell object. You must not return nil from this method.
     func collectionView(_ collectionView: UICollectionView,
                         cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -39,7 +39,6 @@ extension ReimbursementViewController: UICollectionViewDataSource {
             cell.amount.text = "\(share.currencySymbol!)\(share.amount!)"
             
             cell.tagsView = nil
-            //            print("indexPath \(indexPath.row) value : \(share.tags)")
             if let sharetags = share.tags {
                 cell.configureTags(value: sharetags)
                 cell.tagsView?.isHidden = false
@@ -48,8 +47,7 @@ extension ReimbursementViewController: UICollectionViewDataSource {
             }
             
             
-            cell.date.text =
-            "\(share.date!) - \(share.time!)"
+            cell.date.text = "\(share.date!) - \(share.time!)"
             
             return cell
         } else if collectionView == self.unClaimedCollectionView   {
@@ -203,7 +201,7 @@ extension ReimbursementViewController: MFMailComposeViewControllerDelegate {
 }
 /// This ViewController is used to show the claimed expense, unclaimed expense, submitted expense in a single roof using segments
 class ReimbursementViewController: UIViewController {
-   
+    
     // MARK: - ViewModel Variable
     
     /// Instance of ReimbursementViewModel
@@ -225,9 +223,9 @@ class ReimbursementViewController: UIViewController {
     
     /// submittedCollectionView that manages an ordered collection of data items and presents them using customizable layouts.
     @IBOutlet weak var submittedCollectionView: UICollectionView!
-
+    
     /// unClaimedCollectionView that manages an ordered collection of data items and presents them using customizable layouts.
-
+    
     @IBOutlet weak var unClaimedCollectionView: UICollectionView!
     
     /// segmentControl is a horizontal control made of multiple segments, each segment functioning as a discrete button.
@@ -235,7 +233,7 @@ class ReimbursementViewController: UIViewController {
     
     /// collectionView that manages an ordered collection of data items and presents them using customizable layouts.
     @IBOutlet weak var collectionView: UICollectionView!
-
+    
     /// Designable menuButton that executes your custom code in response to user interactions.
     @IBOutlet weak var menuButton: RoundButton! {
         didSet {
@@ -247,7 +245,7 @@ class ReimbursementViewController: UIViewController {
         }
     }
     
-     /// expensBtn that executes your custom code in response to user interactions.
+    /// expensBtn that executes your custom code in response to user interactions.
     @IBOutlet weak var expensBtn: UIButton! {
         didSet {
             expensBtn.layer.shadowColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.25).cgColor
@@ -284,7 +282,7 @@ class ReimbursementViewController: UIViewController {
     }
     
     /// settingsBtn that executes your custom code in response to user interactions.
-
+    
     @IBOutlet weak var settingsBtn: UIButton! {
         didSet {
             settingsBtn.layer.shadowColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.25).cgColor
@@ -307,7 +305,7 @@ class ReimbursementViewController: UIViewController {
         }
     }
     
-     /// reportBtn that executes your custom code in response to user interactions.
+    /// reportBtn that executes your custom code in response to user interactions.
     @IBOutlet weak var reportBtn: UIButton! {
         didSet {
             reportBtn.layer.shadowColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.25).cgColor
@@ -318,7 +316,7 @@ class ReimbursementViewController: UIViewController {
         }
     }
     
-     /// reimbursementBtn that executes your custom code in response to user interactions.
+    /// reimbursementBtn that executes your custom code in response to user interactions.
     @IBOutlet weak var reimbursementBtn: UIButton! {
         didSet {
             reimbursementBtn.layer.shadowColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.25).cgColor
@@ -328,9 +326,9 @@ class ReimbursementViewController: UIViewController {
             reimbursementBtn.layer.masksToBounds = false
         }
     }
-
-
-        // MARK: IBAction Methodss
+    
+    
+    // MARK: IBAction Methodss
     
     /// When this snap bill is pressed , it updates the AddExpenseType Defaults and navigate to ScannerViewController
     ///
@@ -391,7 +389,7 @@ class ReimbursementViewController: UIViewController {
         self.present(firstVC!, animated: true, completion: nil)
         
     }
-
+    
     /// A horizontal control made of multiple segments, each segment functioning as a discrete button.
     ///
     /// - Parameter sender: UISegmentedControl id
@@ -416,9 +414,9 @@ class ReimbursementViewController: UIViewController {
         }
     }
     
-        // MARK: - Custom Calls
+    // MARK: - Custom Calls
     
-   /// Hide Options Menu
+    /// Hide Options Menu
     func hideMenu() {
         self.shadowView.isHidden = true
         self.optionsView.isHidden = true
@@ -433,12 +431,12 @@ class ReimbursementViewController: UIViewController {
         
     }
     
-        // MARK: - UICollectionView Delegate
+    // MARK: - UICollectionView Delegate
     
-
+    
     // MARK: Default View Controller Methods
     /// Called after the controller's view is loaded into memory.
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         let nib = UINib(nibName: reimbursemntViewModel.cellId1, bundle: nil)
@@ -462,7 +460,7 @@ class ReimbursementViewController: UIViewController {
     /// Notifies the view controller that its view is about to be removed from a view hierarchy.
     ///
     /// - Parameter animated: If true, the disappearance of the view is being animated.
-
+    
     override func viewWillDisappear(_ animated: Bool) {
         self.stack1.isHidden = false
         self.stack2.isHidden = false
@@ -472,11 +470,11 @@ class ReimbursementViewController: UIViewController {
         reimbursemntViewModel.isMenuActive = false
     }
     
-
+    
     /// This method configure the collectionView Layout
     private func configureCollectionViewLayout() {
         let lineSpacing: CGFloat = reimbursemntViewModel.lineSpacingValue()
-
+        
         guard let layout = collectionView.collectionViewLayout as? VegaScrollFlowLayout else { return }
         layout.minimumLineSpacing = lineSpacing
         layout.sectionInset = UIEdgeInsets(top: reimbursemntViewModel.topInset, left: 0, bottom: 0, right: 0)
@@ -489,7 +487,7 @@ class ReimbursementViewController: UIViewController {
     /// This method configure the unClaimedCollectionView Layout
     private func configureCollectionViewLayout1() {
         let lineSpacing: CGFloat = reimbursemntViewModel.lineSpacingValue()
-
+        
         guard let layout = unClaimedCollectionView.collectionViewLayout as? VegaScrollFlowLayout else { return }
         layout.minimumLineSpacing = lineSpacing
         layout.sectionInset = UIEdgeInsets(top: reimbursemntViewModel.topInset, left: 0, bottom: 0, right: 0)
@@ -501,7 +499,7 @@ class ReimbursementViewController: UIViewController {
     /// This method configure the submittedCollectionView Layout
     private func configureCollectionViewLayout2() {
         let lineSpacing: CGFloat = reimbursemntViewModel.lineSpacingValue()
-
+        
         guard let layout = submittedCollectionView.collectionViewLayout as? VegaScrollFlowLayout else { return }
         layout.minimumLineSpacing = lineSpacing
         layout.sectionInset = UIEdgeInsets(top: reimbursemntViewModel.topInset, left: 0, bottom: 0, right: 0)
@@ -512,7 +510,7 @@ class ReimbursementViewController: UIViewController {
     /// Notifies the view controller that its view is about to be added to a view hierarchy.
     ///
     /// - Parameter animated: If true, the view is being added to the window using an animation.
-
+    
     override func viewWillAppear(_ animated: Bool) {
         getReimbursementDetailsList()
         collectionView.reloadData()
@@ -530,7 +528,7 @@ class ReimbursementViewController: UIViewController {
         do {
             let fetchedtype = try AppConstants.managedObjectContext.fetch(typefetch) as! [ExpenseContent]
             if fetchedtype.count > 0 {
-
+                
                 
                 fetchedtype.forEach { (exp) in
                     var addAcc = ExpenseListInfo()
@@ -565,9 +563,9 @@ class ReimbursementViewController: UIViewController {
                     collectionView.reloadData()
                     unClaimedCollectionView.reloadData()
                     self.collectionView.setEmptyMessage("")
-                     self.emptyImageBox.isHidden = false
+                    self.emptyImageBox.isHidden = false
                 } else {
-                     self.emptyImageBox.isHidden = true
+                    self.emptyImageBox.isHidden = true
                     self.collectionView.restore()
                 }
             }
@@ -582,7 +580,7 @@ class ReimbursementViewController: UIViewController {
             let fetchedtype1 = try AppConstants.managedObjectContext.fetch(typefetch2) as! [ExpenseContent]
             
             if fetchedtype1.count > 0 {
-
+                
                 fetchedtype1.forEach { (exp) in
                     var addAcc = ExpenseListInfo()
                     addAcc.merchantName = exp.merchantName
@@ -618,9 +616,9 @@ class ReimbursementViewController: UIViewController {
                     unClaimedCollectionView.reloadData()
                     submittedCollectionView.reloadData()
                     self.submittedCollectionView.setEmptyMessage("")
-                     self.emptyImageBox.isHidden = false
+                    self.emptyImageBox.isHidden = false
                 } else {
-                     self.emptyImageBox.isHidden = true
+                    self.emptyImageBox.isHidden = true
                     self.submittedCollectionView.restore()
                 }
             }
@@ -638,7 +636,7 @@ class ReimbursementViewController: UIViewController {
             let fetchedtype1 = try AppConstants.managedObjectContext.fetch(typefetch1) as! [ExpenseContent]
             
             if fetchedtype1.count > 0 {
-
+                
                 
                 fetchedtype1.forEach { (exp) in
                     var addAcc = ExpenseListInfo()
@@ -668,7 +666,7 @@ class ReimbursementViewController: UIViewController {
                     reimbursemntViewModel.unclaimedListArray.append(addAcc)
                 }
                 
-//
+                //
                 collectionView.reloadData()
                 unClaimedCollectionView.reloadData()
             } else {
@@ -676,9 +674,9 @@ class ReimbursementViewController: UIViewController {
                     collectionView.reloadData()
                     unClaimedCollectionView.reloadData()
                     self.unClaimedCollectionView.setEmptyMessage("")
-                     self.emptyImageBox.isHidden = false
+                    self.emptyImageBox.isHidden = false
                 } else {
-                     self.emptyImageBox.isHidden = true
+                    self.emptyImageBox.isHidden = true
                     self.unClaimedCollectionView.restore()
                 }
             }
@@ -688,7 +686,7 @@ class ReimbursementViewController: UIViewController {
         }
         
     }
-
+    
     
     /// This method is used to navigate to HomeViewController
     ///
@@ -698,7 +696,7 @@ class ReimbursementViewController: UIViewController {
         self.present(firstVC!, animated: true, completion: nil)
     }
     
-
+    
     
     
     

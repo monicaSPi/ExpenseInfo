@@ -77,7 +77,7 @@ extension UISearchBar {
             
             let button = textField.value(forKey: AppConstants.Defaults.Key.clearButton) as! UIButton
             if (button.imageView?.image) != nil {
-//                button.setImage(image.transform(withNewColor: color), for: .normal)
+                //                button.setImage(image.transform(withNewColor: color), for: .normal)
             }
         }
     }

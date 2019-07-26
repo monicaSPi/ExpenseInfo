@@ -12,29 +12,29 @@ import UIKit
 
 /// ViewModel class of `ExpenseViewController`
 class ExpenseViewModel {
-
-     /// <#Description#>
-     let cellId = "ExpenseCell"
     
-     /// <#Description#>
-     let itemHeight: CGFloat = 90
+    /// This uinque identifier of the Expense Cell Collection view cell
+    let cellId = "ExpenseCell"
     
-     /// <#Description#>
-     let xInset: CGFloat = 10
+    /// This denotes the expense cell height
+    let itemHeight: CGFloat = 90
     
-     /// <#Description#>
-     let topInset: CGFloat = 10
+    /// This is the value of xInset of the expense cell
+    let xInset: CGFloat = 10
+    
+    /// This is the value of topInset of the expense cell
+    let topInset: CGFloat = 10
     
     /// globalExpense a double-precision, floating-point value type.
     var globalExpense : Double = 0.0
     
-    /// <#Description#>
+    /// This is used to check the sorting order of the expense list
     var currentCheckedIndex = 2;
     
     /// Check for the option menus is active
     var isMenuActive = false
     
-    /// <#Description#>
+    /// This is the instance of expense list array
     var expenseListArray = [ExpenseListInfo]()
     
     

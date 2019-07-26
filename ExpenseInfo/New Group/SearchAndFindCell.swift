@@ -4,7 +4,7 @@ import UIKit
 
 /// Search and Find is the custom uitableviewCell
 class SearchAndFindCell : UITableViewCell {
-
+    
     /// displays the name
     @IBOutlet weak var labelName: UILabel!
     

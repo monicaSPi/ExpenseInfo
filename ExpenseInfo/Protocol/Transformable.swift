@@ -11,7 +11,7 @@ protocol Transformable {
     ///   - t: The transform to apply
     /// - Returns: The same object transformed by the passed in `CGAffineTransform`.
     func applying(_ transform: CGAffineTransform) -> Self
-
+    
 }
 
 // MARK: - Objects that conform to the Transformable protocol are capable of being transformed with a `CGAffineTransform`.

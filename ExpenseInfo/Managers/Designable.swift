@@ -13,7 +13,7 @@ import UIKit
     /// Returns an object initialized from data in a given unarchiver.
     ///
     /// - Parameter aDecoder: An unarchiver object.
-
+    
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         sharedInit()
@@ -54,7 +54,7 @@ import UIKit
     override init(frame: CGRect) {
         super.init(frame: frame)
         updateLayerProperties()
-
+        
         sharedInit()
     }
     
@@ -69,18 +69,18 @@ import UIKit
     /// Returns an object initialized from data in a given unarchiver.
     ///
     /// - Parameter aDecoder: An unarchiver object.
-
+    
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         sharedInit()
     }
     
-   /// Called when a designable object is created in Interface Builder.
+    /// Called when a designable object is created in Interface Builder.
     override func prepareForInterfaceBuilder() {
         sharedInit()
     }
     
-     /// This method refreshCorners with value for the corner radius
+    /// This method refreshCorners with value for the corner radius
     func sharedInit() {
         refreshCorners(value: cornerRadiuss)
         
@@ -114,7 +114,7 @@ import UIKit
     /// Returns an object initialized from data in a given unarchiver.
     ///
     /// - Parameter aDecoder: An unarchiver object.
-
+    
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         sharedInit()
@@ -125,7 +125,7 @@ import UIKit
         sharedInit()
     }
     
-     /// This method refreshCorners with value for the corner radius
+    /// This method refreshCorners with value for the corner radius
     func sharedInit() {
         refreshCorners(value: cornerRadiuss)
         

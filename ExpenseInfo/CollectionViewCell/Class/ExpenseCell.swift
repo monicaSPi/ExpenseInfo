@@ -6,7 +6,7 @@ import WSTagsField
 /// This custom uicollectionviewcell is used to display the expense made in a list
 class ExpenseCell: UICollectionViewCell {
     
-   
+    
     /// This has merchant name and merchant details
     @IBOutlet weak var merchantDetails: UILabel!
     
@@ -43,11 +43,11 @@ class ExpenseCell: UICollectionViewCell {
         layer.masksToBounds = false
         layer.shadowRadius = 2
         tagsField.readOnly = true
-
-        tagsField.layoutMargins = UIEdgeInsets(top: 5, left: 2, bottom: 5, right: 2)
- tagsField.contentInset = UIEdgeInsets(top: 10, left: 5, bottom: 0, right: 5)
         
-
+        tagsField.layoutMargins = UIEdgeInsets(top: 5, left: 2, bottom: 5, right: 2)
+        tagsField.contentInset = UIEdgeInsets(top: 10, left: 5, bottom: 0, right: 5)
+        
+        
         tagsField.spaceBetweenTags = 10
         tagsField.backgroundColor = .clear
         tagsField.font = UIFont(name: "MyriadPro-Regular", size: 14.0)
@@ -69,14 +69,14 @@ class ExpenseCell: UICollectionViewCell {
     ///
     /// - Parameter value: tags of type string array
     func configureTags(value : [String])  {
-//        for val in value {
-//            self.tagsField.addTag(val)
-//        }
+        //        for val in value {
+        //            self.tagsField.addTag(val)
+        //        }
         value.forEach { (val) in
-             self.tagsField.addTag(val)
+            self.tagsField.addTag(val)
         }
     }
-
+    
     
     /// This method is used to format the double value with 2 disgits after decimal point and return as a string
     ///

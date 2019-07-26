@@ -76,7 +76,7 @@ class ReimburseReportViewController: UIViewController{
             let fetchedtype = try AppConstants.managedObjectContext.fetch(typefetch) as! [ExpenseContent]
             
             if fetchedtype.count > 0 {
-     
+                
                 fetchedtype.forEach { (exp) in
                     let myString = exp.amount
                     let myFloat = (myString! as NSString).doubleValue
@@ -198,7 +198,7 @@ class ReimburseReportViewController: UIViewController{
     /// Default global currency symbol
     var globalCurrencySymbol : String = "$"
     /// Called after the controller's view is loaded into memory.
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -226,7 +226,7 @@ extension ReimburseReportViewController: UITableViewDataSource {
     ///   - tableView: The table-view object requesting this information.
     ///   - section: An index number identifying a section in tableView.
     /// - Returns: The number of rows in section.
-
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return reportItemsArray.count
     }
@@ -235,7 +235,7 @@ extension ReimburseReportViewController: UITableViewDataSource {
     ///
     /// - Parameter tableView: An object representing the table view requesting this information.
     /// - Returns: The number of sections in tableView.
-
+    
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }

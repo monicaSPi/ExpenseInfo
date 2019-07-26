@@ -27,5 +27,5 @@ extension CGAffineTransform {
         let translate = CGPoint(x: toRect.midX - fromRect.midX, y: toRect.midY - fromRect.midY)
         return CGAffineTransform(translationX: translate.x, y: translate.y)
     }
-        
+    
 }

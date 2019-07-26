@@ -36,7 +36,7 @@ extension ExpenseReportViewController: UITableViewDataSource {
     ///   - tableView: The table-view object requesting this information.
     ///   - section: An index number identifying a section in tableView.
     /// - Returns: The number of rows in section.
-
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return reportItemsArray.count
     }
@@ -45,7 +45,7 @@ extension ExpenseReportViewController: UITableViewDataSource {
     ///
     /// - Parameter tableView: An object representing the table view requesting this information.
     /// - Returns: The number of sections in tableView.
-
+    
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
@@ -73,11 +73,11 @@ class ExpenseReportViewController: UIViewController {
     
     /// Default global currency symbol
     var globalCurrencySymbol : String = "$"
-
+    
     /// array of ReportItemViewModel
     var reportItemsArray = [ReportItemViewModel]()
     /// Called after the controller's view is loaded into memory.
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         if UserDefaults.standard.value(forKey: AppConstants.Defaults.Key.CurrencyCode) != nil {
@@ -91,12 +91,12 @@ class ExpenseReportViewController: UIViewController {
         
     }
     
-
+    
     
     /// Indicates the Empty text in the Label
     @IBOutlet weak var emptyLbl: UILabel!
     
-
+    
     
     /// This method Updates the PieChart for the Expense by fetching the data from the core data model
     func updateExpenseBlocks() {
@@ -110,7 +110,7 @@ class ExpenseReportViewController: UIViewController {
                     let myString = exp.amount
                     let myFloat = (myString! as NSString).doubleValue
                     expenseValueBlock += myFloat
-
+                    
                 }
             }
         } catch {
@@ -133,7 +133,7 @@ class ExpenseReportViewController: UIViewController {
                 if fetchedtype.count > 0 {
                     var expenseAmount : Double = 0.0
                     var categoryName : String = ""
-
+                    
                     fetchedtype.forEach({ (exp) in
                         expenseAmount += Double(exp.amount!)!
                         categorycolor = exp.categoryColor!
@@ -161,8 +161,8 @@ class ExpenseReportViewController: UIViewController {
         let value = String(format:"%.2f", expenseValueBlock)
         let title = "\(globalCurrencySymbol)\(value)"
         let chartView = RKPieChartView(items: itemsArray, centerTitle: title)
-
-
+        
+        
         chartView.circleColor = itemsArray.count == 1 ? UIColor(hexString: categorycolor) : .clear
         
         emptyImageBox.isHidden = itemsArray.count == 0 ? false : true

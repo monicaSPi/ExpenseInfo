@@ -6,7 +6,7 @@ import Foundation
 // MARK: - Array Extension
 extension Array where Element == Quadrilateral {
     
-
+    
     
     /// Finds the biggest rectangle within an array of `Quadrilateral` objects.
     ///

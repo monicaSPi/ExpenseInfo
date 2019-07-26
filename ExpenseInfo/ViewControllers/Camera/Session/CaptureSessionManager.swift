@@ -117,7 +117,7 @@ final class CaptureSessionManager: NSObject, AVCaptureVideoDataOutputSampleBuffe
     
     /// Starts the camera and detecting quadrilaterals.
     internal func start() {
-
+        
         let authorizationStatus = AVCaptureDevice.authorizationStatus(for: AVMediaType.video)
         
         switch authorizationStatus {
@@ -288,10 +288,10 @@ extension CaptureSessionManager: AVCapturePhotoCaptureDelegate {
         isDetecting = false
         rectangleFunnel.currentAutoScanPassCount = 0
         delegate?.didStartCapturingPicture(for: self)
-//        @available(iOS 11.0, *)
-//        func photoOutput(_ output: AVCapturePhotoOutput, didFinishProcessingPhoto photo: AVCapturePhoto, error: Error?) {
-//            let imageData = photo.fileDataRepresentation()
-//        }
+        //        @available(iOS 11.0, *)
+        //        func photoOutput(_ output: AVCapturePhotoOutput, didFinishProcessingPhoto photo: AVCapturePhoto, error: Error?) {
+        //            let imageData = photo.fileDataRepresentation()
+        //        }
         if let sampleBuffer = photoSampleBuffer,
             let imageData = AVCapturePhotoOutput.jpegPhotoDataRepresentation(forJPEGSampleBuffer: sampleBuffer, previewPhotoSampleBuffer: nil) {
             completeImageCapture(with: imageData)

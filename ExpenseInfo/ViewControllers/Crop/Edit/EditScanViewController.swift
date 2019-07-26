@@ -105,7 +105,7 @@ final class EditScanViewController: UIViewController {
     
     // MARK: Default View Controller Methods
     /// Called after the controller's view is loaded into memory.
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.image = image?.applyingPortraitOrientation()
@@ -123,7 +123,7 @@ final class EditScanViewController: UIViewController {
         centerView.addGestureRecognizer(touchDown)
     }
     /// Called to notify the view controller that its view has just laid out its subviews.
-
+    
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         adjustQuadViewConstraints()
@@ -132,7 +132,7 @@ final class EditScanViewController: UIViewController {
     /// Notifies the view controller that its view is about to be added to a view hierarchy.
     ///
     /// - Parameter animated: If true, the view is being added to the window using an animation.
-
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         navigationController?.setNavigationBarHidden(false, animated: false)
@@ -141,7 +141,7 @@ final class EditScanViewController: UIViewController {
     /// Notifies the view controller that its view is about to be removed from a view hierarchy.
     ///
     /// - Parameter animated: If true, the disappearance of the view is being animated.
-
+    
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         

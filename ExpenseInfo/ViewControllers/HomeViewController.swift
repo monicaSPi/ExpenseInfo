@@ -6,7 +6,7 @@ import Photos
 import CoreTelephony
 import CoreData
 import MobileCoreServices
-import WeScan
+//import WeScan
 
 /// This ViewController is like a dashboard for the current application
 class HomeViewController: UIViewController {
@@ -24,7 +24,7 @@ class HomeViewController: UIViewController {
         }
     }
     
-     /// If this button is pressed will take us to the ExpenseList view controller to view the Expense list
+    /// If this button is pressed will take us to the ExpenseList view controller to view the Expense list
     @IBOutlet weak var expenseBtn: RoundButton! {
         didSet {
             expenseBtn.layer.shadowColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.25).cgColor
@@ -35,7 +35,7 @@ class HomeViewController: UIViewController {
         }
     }
     
-     /// If this button is pressed will take us to the Report view controller to view the report details
+    /// If this button is pressed will take us to the Report view controller to view the report details
     @IBOutlet weak var reportBtn: RoundButton! {
         didSet {
             reportBtn.layer.shadowColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.25).cgColor
@@ -46,7 +46,7 @@ class HomeViewController: UIViewController {
         }
     }
     
-     /// If this button is pressed will take us to the camera  to capture an image
+    /// If this button is pressed will take us to the camera  to capture an image
     @IBOutlet weak var snapBillBtn: RoundButton! {
         didSet {
             snapBillBtn.layer.shadowColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.25).cgColor
@@ -57,7 +57,7 @@ class HomeViewController: UIViewController {
         }
     }
     
-     /// If this button is pressed will take us to the upload view controller to open the gallery and select an image
+    /// If this button is pressed will take us to the upload view controller to open the gallery and select an image
     @IBOutlet weak var uploadBillBtn: RoundButton! {
         didSet {
             uploadBillBtn.layer.shadowColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.25).cgColor
@@ -135,7 +135,7 @@ class HomeViewController: UIViewController {
     /// Notifies the view controller that its view is about to be added to a view hierarchy.
     ///
     /// - Parameter animated: If true, the view is being added to the window using an animation.
-
+    
     override func viewWillAppear(_ animated: Bool) {
         self.navigationController?.setNavigationBarHidden(true, animated: true)
     }

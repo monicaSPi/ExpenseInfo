@@ -90,8 +90,8 @@ public extension UIColor {
         let b = Int(arc4random_uniform(255))
         return UIColor(red: r, green: g, blue: b)
     }
-
-
+    
+    
     
     /**
      Creates an UIColor from HEX String in "#363636" format
@@ -128,7 +128,7 @@ public extension UIColor {
     ///   - green: green component.
     ///   - blue: blue component.
     ///   - transparency: optional transparency value (default is 1)
-     convenience init(red: Int, green: Int, blue: Int, transparency: CGFloat = 1) {
+    convenience init(red: Int, green: Int, blue: Int, transparency: CGFloat = 1) {
         assert(red >= 0 && red <= 255, "Invalid red component")
         assert(green >= 0 && green <= 255, "Invalid green component")
         assert(blue >= 0 && blue <= 255, "Invalid blue component")

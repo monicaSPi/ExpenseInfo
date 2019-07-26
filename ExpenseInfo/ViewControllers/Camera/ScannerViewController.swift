@@ -60,7 +60,7 @@ final class ScannerViewController: UIViewController {
     }()
     
     /// Called after the controller's view is loaded into memory.
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         CaptureSession.current.autoScanEnabled = false
@@ -75,7 +75,7 @@ final class ScannerViewController: UIViewController {
     /// Notifies the view controller that its view is about to be added to a view hierarchy.
     ///
     /// - Parameter animated: If true, the view is being added to the window using an animation.
-
+    
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -86,7 +86,7 @@ final class ScannerViewController: UIViewController {
             checkCameraAccess(isAllowed: {
                 if $0 {
                     DispatchQueue.main.async {
-                       // self.presentCamera()
+                        // self.presentCamera()
                     }
                 } else {
                     DispatchQueue.main.async {
@@ -103,7 +103,7 @@ final class ScannerViewController: UIViewController {
         navigationController?.setNavigationBarHidden(true, animated: false)
     }
     
-  
+    
     /// Camera User Privacy Settings
     private func presentCameraSettings() {
         DispatchQueue.main.async {
@@ -145,7 +145,7 @@ final class ScannerViewController: UIViewController {
         }
     }
     /// Called to notify the view controller that its view has just laid out its subviews.
-
+    
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         
@@ -154,7 +154,7 @@ final class ScannerViewController: UIViewController {
     /// Notifies the view controller that its view is about to be removed from a view hierarchy.
     ///
     /// - Parameter animated: If true, the disappearance of the view is being animated.
-
+    
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         UIApplication.shared.isIdleTimerDisabled = false
@@ -205,7 +205,7 @@ final class ScannerViewController: UIViewController {
         ]
         
         if #available(iOS 11.0, *) {
-//            let window = UIApplication.shared.keyWindow
+            //            let window = UIApplication.shared.keyWindow
             
             
             cancelButtonConstraints = [
@@ -239,12 +239,8 @@ final class ScannerViewController: UIViewController {
         captureSessionManager?.capturePhoto()
     }
     
-  
     
-//    /// <#Description#>
-//    @objc private func toggleFlash() {
-//        self.dismiss(animated: true, completion: nil)
-//    }
+    
     
     /// closeBtn that executes your custom code in response to user interactions.
     @IBOutlet weak var closeBtn: UIButton!

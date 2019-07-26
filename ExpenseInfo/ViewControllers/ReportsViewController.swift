@@ -22,7 +22,7 @@ class ReportsViewController: UIViewController {
         }
     }
     
-     /// expensBtn that executes your custom code in response to user interactions.
+    /// expensBtn that executes your custom code in response to user interactions.
     @IBOutlet weak var expensBtn: UIButton! {
         didSet {
             expensBtn.layer.shadowColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.25).cgColor
@@ -56,7 +56,7 @@ class ReportsViewController: UIViewController {
     }
     
     /// settingsBtn that executes your custom code in response to user interactions.
-
+    
     @IBOutlet weak var settingsBtn: UIButton! {
         didSet {
             settingsBtn.layer.shadowColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.25).cgColor
@@ -67,7 +67,7 @@ class ReportsViewController: UIViewController {
         }
     }
     
-   /// uploadBtn that executes your custom code in response to user interactions.
+    /// uploadBtn that executes your custom code in response to user interactions.
     @IBOutlet weak var uploadBtn: UIButton! {
         didSet {
             uploadBtn.layer.shadowColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.25).cgColor
@@ -86,7 +86,7 @@ class ReportsViewController: UIViewController {
         generateReportforExpense()
     }
     
-     /// reportBtn that executes your custom code in response to user interactions.
+    /// reportBtn that executes your custom code in response to user interactions.
     @IBOutlet weak var reportBtn: UIButton! {
         didSet {
             reportBtn.layer.shadowColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.25).cgColor
@@ -98,14 +98,14 @@ class ReportsViewController: UIViewController {
     }
     
     ///  generatereportBtn that executes your custom code in response to user interactions.
-   
+    
     @IBOutlet weak var generatereportBtn: UIButton! {
         didSet {
             generatereportBtn.isHidden = false
         }
     }
     
-     /// reimbursementBtn that executes your custom code in response to user interactions.
+    /// reimbursementBtn that executes your custom code in response to user interactions.
     @IBOutlet weak var reimbursementBtn: UIButton! {
         didSet {
             reimbursementBtn.layer.shadowColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.25).cgColor
@@ -131,7 +131,7 @@ class ReportsViewController: UIViewController {
         }
     }
     
-   /// stack1 an interface for laying out a collection of views in either a column or a row.
+    /// stack1 an interface for laying out a collection of views in either a column or a row.
     @IBOutlet weak var stack1: UIStackView!
     
     /// stack2 an interface for laying out a collection of views in either a column or a row.
@@ -140,7 +140,7 @@ class ReportsViewController: UIViewController {
     /// Check for the option menus is active
     var isMenuActive = false
     
-   /// Hide Options Menu
+    /// Hide Options Menu
     func hideMenu() {
         self.shadowView.isHidden = true
         self.optionsView.isHidden = true
@@ -186,7 +186,7 @@ class ReportsViewController: UIViewController {
     /// scrollView allows the scrolling and zooming of its contained views.
     @IBOutlet weak var scrollView: UIScrollView!
     /// Called after the controller's view is loaded into memory.
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -195,7 +195,7 @@ class ReportsViewController: UIViewController {
     /// Notifies the view controller that its view is about to be removed from a view hierarchy.
     ///
     /// - Parameter animated: If true, the disappearance of the view is being animated.
-
+    
     override func viewWillDisappear(_ animated: Bool) {
         self.stack1.isHidden = false
         self.stack2.isHidden = false
@@ -240,7 +240,7 @@ class ReportsViewController: UIViewController {
         
     }
     
-   /// Instance for a Data structure containing information about Expense List
+    /// Instance for a Data structure containing information about Expense List
     var expenseListArray = [ExpenseListInfo]()
     
     /// When this upload bill is pressed , it updates the AddExpenseType Defaults and navigate to UploadViewController
@@ -276,7 +276,7 @@ class ReportsViewController: UIViewController {
             let fetchedtype = try AppConstants.managedObjectContext.fetch(typefetch) as! [ExpenseContent]
             
             if fetchedtype.count > 0 {
-            
+                
                 
                 fetchedtype.forEach { (exp) in
                     var addAcc = ExpenseListInfo()

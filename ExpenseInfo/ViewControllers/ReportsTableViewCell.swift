@@ -16,12 +16,12 @@ class ReportsTableViewCell: UITableViewCell {
     
     /// Shows the amount value in the chart
     @IBOutlet weak var amount: UILabel!
-
+    
     /// Prepares the receiver for service after it has been loaded from an Interface Builder archive, or nib file.
     override func awakeFromNib() {
         super.awakeFromNib()
     }
-
+    
     /// Sets the selected state of the cell, optionally animating the transition between states.
     ///
     /// - Parameters:
@@ -29,7 +29,7 @@ class ReportsTableViewCell: UITableViewCell {
     ///   - animated: true to animate the transition between selected states, false to make the transition immediate.
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
+        
     }
-
+    
 }

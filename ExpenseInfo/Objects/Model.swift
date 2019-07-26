@@ -113,7 +113,7 @@ struct CIRectangleDetector {
         let biggestRectangle = rectangle(forImage: image)
         completion(biggestRectangle)
     }
-  
+    
     /// Detects rectangles from the given image on iOS 10.
     ///
     /// - Parameters:

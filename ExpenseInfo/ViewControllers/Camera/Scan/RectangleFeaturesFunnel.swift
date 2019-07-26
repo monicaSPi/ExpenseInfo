@@ -32,7 +32,7 @@ final class RectangleFeaturesFunnel {
             self.rectangleFeature = rectangleFeature
         }
         
-               
+        
         /// Whether the rectangle of this instance is within the distance of the given rectangle.
         ///
         /// - Parameters:
@@ -179,11 +179,11 @@ final class RectangleFeaturesFunnel {
     /// Resets the matching score of all of the rectangles in the queue to 0
     private func resetMatchingScores() {
         guard !rectangles.isEmpty else { return }
-
+        
         
         rectangles.forEach { (rectangle) in
             rectangle.matchingScore = 1
-
+            
         }
     }
     

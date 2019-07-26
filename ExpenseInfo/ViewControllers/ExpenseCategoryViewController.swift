@@ -36,13 +36,13 @@ class ExpenseCategoryViewController: UIViewController {
     ///categoryTableView presents category data using rows arranged in a single column.
     @IBOutlet weak var categoryTableView: UITableView!
     
-
-  
-   
+    
+    
+    
     
     // MARK: - View Initializatioln
     /// Called after the controller's view is loaded into memory.
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -114,7 +114,7 @@ class ExpenseCategoryViewController: UIViewController {
         categoryViewModel.cate.categoryImg = "gift"
         categoryViewModel.cate.categoryColor = "ffd180"
         
-       categoryViewModel.expenseCategory.append(categoryViewModel.cate)
+        categoryViewModel.expenseCategory.append(categoryViewModel.cate)
         
         categoryViewModel.cate.categoryId = "11"
         categoryViewModel.cate.categoryName = "Labour"
@@ -165,10 +165,6 @@ class ExpenseCategoryViewController: UIViewController {
         
         categoryViewModel.expenseCategory.append(categoryViewModel.cate)
         
-        
-        
-        
-  
         let imageSize = CGSize(width: 50 , height: 30)
         let headertitle = UILabel(frame: CGRect(x: 0, y: 0, width: imageSize.width, height: imageSize.height))
         
@@ -218,7 +214,7 @@ extension ExpenseCategoryViewController: UICollectionViewDataSource {
     /// - Parameters:
     ///   - collectionView: The collection view requesting this information.
     ///   - section: An index number identifying a section in collectionView. This index value is 0-based.
-
+    
     /// - Returns: The number of rows in section.
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         
@@ -230,7 +226,7 @@ extension ExpenseCategoryViewController: UICollectionViewDataSource {
     /// - Parameters:
     ///   - collectionView: The collection view requesting this information.
     ///   - indexPath: The index path that specifies the location of the item.
-
+    
     /// - Returns: A configured cell object. You must not return nil from this method.
     func collectionView(_ collectionView: UICollectionView,
                         cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {

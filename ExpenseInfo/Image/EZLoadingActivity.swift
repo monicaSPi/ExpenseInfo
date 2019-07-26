@@ -54,7 +54,7 @@ public struct EZLoadingActivity {
         /// enable the shadow of the view
         public static var ShadowEnabled = true
         
-        /// <#Description#>
+        /// This gives the width of the device
         public static var WidthDivision: CGFloat {
             get {
                 if UIDevice.current.userInterfaceIdiom == UIUserInterfaceIdiom.pad {
@@ -65,10 +65,10 @@ public struct EZLoadingActivity {
             }
         }
         
-        /// <#Description#>
+        /// Loads over the application window to add as a subview
         public static var LoadOverApplicationWindow = false
         
-        /// <#Description#>
+        /// This darkens the background boolean to true or false . By default it is false
         public static var DarkensBackground = false
     }
     
@@ -115,9 +115,9 @@ public struct EZLoadingActivity {
         return true
     }
     
-
     
-
+    
+    
     
     /// Returns success status
     
@@ -150,15 +150,15 @@ public struct EZLoadingActivity {
         if overlay != nil {
             UIView.animate(withDuration: 0.2, animations: {
                 overlay.backgroundColor = overlay.backgroundColor?.withAlphaComponent(0)
-                }, completion: { _ in
-                    overlay.removeFromSuperview()
+            }, completion: { _ in
+                overlay.removeFromSuperview()
             })
         }
         
         return true
     }
     
-
+    
     
     /// custom view that manages the content for a rectangular area on the screen.
     fileprivate class LoadingActivity: UIView {
@@ -291,14 +291,14 @@ public struct EZLoadingActivity {
                 activityView.stopAnimating()
                 UIView.animate(withDuration: animationDuration, animations: {
                     self.icon.alpha = 1
-                    }, completion: { (value: Bool) in
-                        UIView.animate(withDuration: 0.2, animations: {
-                            self.alpha = 0
-                            }, completion: { (success) in
-                                self.callSelectorAsync(#selector(UIView.removeFromSuperview), delay: animationDuration)
-                        })
-                        instance = nil
-                        hidingInProgress = false
+                }, completion: { (value: Bool) in
+                    UIView.animate(withDuration: 0.2, animations: {
+                        self.alpha = 0
+                    }, completion: { (success) in
+                        self.callSelectorAsync(#selector(UIView.removeFromSuperview), delay: animationDuration)
+                    })
+                    instance = nil
+                    hidingInProgress = false
                 })
             } else {
                 activityView.stopAnimating()
@@ -347,7 +347,7 @@ private extension UIScreen {
         }
     }
     
-  }
+}
 
 /// This method return the current uiviewcontroller
 private var topMostController: UIViewController? {

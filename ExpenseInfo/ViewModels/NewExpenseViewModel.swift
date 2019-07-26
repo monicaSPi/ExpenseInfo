@@ -24,7 +24,7 @@ class NewExpenseViewModel {
     
     /// default Currency Symbol
     var currencySymbol : String = "$"
-
+    
     /// default currency code
     var currencyCode : String = "USD"
     
@@ -46,7 +46,7 @@ class NewExpenseViewModel {
     ///  gotTotal of the expense whose instances are either true or false.
     var gotTotal: Bool = false
     
-   
+    
     
     /// Gets an instance of Firebase Vision service for the default Firebase app. The default Firebase app instance must be configured before calling this method; otherwise, raises FIRAppNotConfigured exception.
     lazy var vision = Vision.vision()
@@ -54,20 +54,20 @@ class NewExpenseViewModel {
     ///  Ocr result based on each line is stored in this array
     var lineArray : NSMutableArray = []
     
-    /// <#Description#>
+    /// This array represents amount Array
     var amountArray : NSMutableArray = []
     
-    /// <#Description#>
+    /// This array represents amount Value array
     var amountArrayValue : NSMutableArray = []
     
     /// Gets an on-device text recognizer from Firebase Vision
     lazy var textRecognizer = vision.onDeviceTextRecognizer()
     
-    /// <#Description#>
+    /// This array is used to represent the global values required for the application
     var globalArray :NSMutableArray = []
-
     
-   
+    
+    
     /// This method is used to scan the image and perform openGLES2 operation and return the image
     ///
     /// - Parameter inputImage: inputImage to be scanned
@@ -93,7 +93,7 @@ class NewExpenseViewModel {
     }
     
     
-        
+    
     /// Set Orientation for `UIImage` given
     ///
     /// - Parameter image: image for the orientation process

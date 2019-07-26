@@ -2,25 +2,25 @@
 
 import UIKit
 
-/// <#Description#>
+/// The standard transform matrix used throughout Core Animation.
 private let transformIdentity = CATransform3D(m11: 1, m12: 0, m13: 0, m14: 0,
-                                                  m21: 0, m22: 1, m23: 0, m24: 0,
-                                                  m31: 0, m32: 0, m33: 1, m34: 0,
-                                                  m41: 0, m42: 0, m43: 0, m44: 1)
+                                              m21: 0, m22: 1, m23: 0, m24: 0,
+                                              m31: 0, m32: 0, m33: 1, m34: 0,
+                                              m41: 0, m42: 0, m43: 0, m44: 1)
 
-/// <#Description#>
+/// A concrete layout object that organizes items into a grid with optional header and footer views for each section.
 open class VegaScrollFlowLayout: UICollectionViewFlowLayout {
     
     /// <#Description#>
     open var springHardness: CGFloat = 15
     
-    /// <#Description#>
+    /// paging enable boolean value true or false
     open var isPagingEnabled: Bool = true
     
-    /// <#Description#>
+    /// An object that provides physics-related capabilities and animations for its dynamic items, and provides the context for those animations.
     private var dynamicAnimator: UIDynamicAnimator!
     
-    /// <#Description#>
+    /// An unordered collection of unique elements.
     private var visibleIndexPaths = Set<IndexPath>()
     
     /// <#Description#>
@@ -36,7 +36,7 @@ open class VegaScrollFlowLayout: UICollectionViewFlowLayout {
     /// Returns an object initialized from data in a given unarchiver.
     ///
     /// - Parameter aDecoder: An unarchiver object.
-
+    
     required public init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         initialize()
@@ -61,9 +61,9 @@ open class VegaScrollFlowLayout: UICollectionViewFlowLayout {
     override open func prepare() {
         super.prepare()
         guard let collectionView = collectionView else { return }
-		
-		// expand the visible rect slightly to avoid flickering when scrolling quickly
-		let expandBy: CGFloat = -100
+        
+        // expand the visible rect slightly to avoid flickering when scrolling quickly
+        let expandBy: CGFloat = -100
         let visibleRect = CGRect(origin: collectionView.bounds.origin,
                                  size: collectionView.frame.size).insetBy(dx: 0, dy: expandBy)
         
@@ -91,7 +91,7 @@ open class VegaScrollFlowLayout: UICollectionViewFlowLayout {
         guard isPagingEnabled else {
             return latestOffset
         }
-		
+        
         let row = ((proposedContentOffset.y) / (itemSize.height + minimumLineSpacing)).rounded()
         
         let calculatedOffset = row * itemSize.height + row * minimumLineSpacing
@@ -107,33 +107,33 @@ open class VegaScrollFlowLayout: UICollectionViewFlowLayout {
         guard let collectionView = collectionView else { return nil }
         let dynamicItems = dynamicAnimator.items(in: rect) as? [UICollectionViewLayoutAttributes]
         dynamicItems?.forEach { item in
-			let convertedY = item.center.y - collectionView.contentOffset.y	- sectionInset.top
-			item.zIndex = item.indexPath.row
-			transformItemIfNeeded(y: convertedY, item: item)
+            let convertedY = item.center.y - collectionView.contentOffset.y	- sectionInset.top
+            item.zIndex = item.indexPath.row
+            transformItemIfNeeded(y: convertedY, item: item)
         }
         return dynamicItems
     }
-	
+    
     /// <#Description#>
     ///
     /// - Parameters:
     ///   - y: <#y description#>
     ///   - item: <#item description#>
-	private func transformItemIfNeeded(y: CGFloat, item: UICollectionViewLayoutAttributes) {
-		guard itemSize.height > 0, y < itemSize.height * 0.5 else {
-			return
-		}
-		
-		let scaleFactor: CGFloat = scaleDistributor(x: y)
-		
-		let yDelta = getYDelta(y: y)
-		
-		item.transform3D = CATransform3DTranslate(transformIdentity, 0, yDelta, 0)
-		item.transform3D = CATransform3DScale(item.transform3D, scaleFactor, scaleFactor, scaleFactor)
-		item.alpha = alphaDistributor(x: y)
-	
-	}
-	
+    private func transformItemIfNeeded(y: CGFloat, item: UICollectionViewLayoutAttributes) {
+        guard itemSize.height > 0, y < itemSize.height * 0.5 else {
+            return
+        }
+        
+        let scaleFactor: CGFloat = scaleDistributor(x: y)
+        
+        let yDelta = getYDelta(y: y)
+        
+        item.transform3D = CATransform3DTranslate(transformIdentity, 0, yDelta, 0)
+        item.transform3D = CATransform3DScale(item.transform3D, scaleFactor, scaleFactor, scaleFactor)
+        item.alpha = alphaDistributor(x: y)
+        
+    }
+    
     /// Returns the layout attributes for the item at the specified index path.
     ///
     /// - Parameter indexPath: The index path of the item.
@@ -146,7 +146,7 @@ open class VegaScrollFlowLayout: UICollectionViewFlowLayout {
     ///
     /// - Parameter newBounds: The new bounds of the collection view.
     /// - Returns: true if the collection view requires a layout update or false if the layout does not need to change.
-
+    
     override open func shouldInvalidateLayout(forBoundsChange newBounds: CGRect) -> Bool {
         let scrollView = self.collectionView!
         let delta = newBounds.origin.y - scrollView.bounds.origin.y
@@ -164,9 +164,9 @@ open class VegaScrollFlowLayout: UICollectionViewFlowLayout {
     
     // MARK: - Utils
     
-    /// <#Description#>
+    /// This method removes no longer visible behaviors
     ///
-    /// - Parameter indexPaths: <#indexPaths description#>
+    /// - Parameter indexPaths: An unordered collection of unique elements.
     private func removeNoLongerVisibleBehaviors(indexPathsInVisibleRect indexPaths: Set<IndexPath>) {
         //get no longer visible behaviors
         let noLongerVisibleBehaviours = dynamicAnimator.behaviors.filter { behavior in
@@ -184,9 +184,9 @@ open class VegaScrollFlowLayout: UICollectionViewFlowLayout {
         }
     }
     
-    /// <#Description#>
+    /// Adding the custom behavior to the collectionView
     ///
-    /// - Parameter items: <#items description#>
+    /// - Parameter items: A layout object that manages the layout-related attributes for a given item in a collection view.
     private func addBehaviors(for items: [UICollectionViewLayoutAttributes]) {
         guard let collectionView = collectionView else { return }
         let touchLocation = collectionView.panGestureRecognizer.location(in: collectionView)
@@ -239,21 +239,21 @@ open class VegaScrollFlowLayout: UICollectionViewFlowLayout {
      */
     
     private func distributor(x: CGFloat, threshold: CGFloat, xOrigin: CGFloat) -> CGFloat {
-		guard threshold > xOrigin else {
-			return 1
-		}
+        guard threshold > xOrigin else {
+            return 1
+        }
         var arg = (x - xOrigin)/(threshold - xOrigin)
         arg = arg <= 0 ? 0 : arg
         let y = sqrt(arg)
         return y > 1 ? 1 : y
     }
-	
+    
     /// <#Description#>
     ///
     /// - Parameter x: <#x description#>
     /// - Returns: <#return value description#>
-	private func scaleDistributor(x: CGFloat) -> CGFloat {
-		return distributor(x: x, threshold: itemSize.height * 0.5, xOrigin: -itemSize.height * 5)
+    private func scaleDistributor(x: CGFloat) -> CGFloat {
+        return distributor(x: x, threshold: itemSize.height * 0.5, xOrigin: -itemSize.height * 5)
     }
     
     /// <#Description#>
@@ -261,14 +261,14 @@ open class VegaScrollFlowLayout: UICollectionViewFlowLayout {
     /// - Parameter x: <#x description#>
     /// - Returns: <#return value description#>
     private func alphaDistributor(x: CGFloat) -> CGFloat {
-		return distributor(x: x, threshold: itemSize.height * 0.5, xOrigin: -itemSize.height)
+        return distributor(x: x, threshold: itemSize.height * 0.5, xOrigin: -itemSize.height)
     }
-	
+    
     /// <#Description#>
     ///
     /// - Parameter y: <#y description#>
     /// - Returns: <#return value description#>
-	private func getYDelta(y: CGFloat) -> CGFloat {
-		return itemSize.height * 0.5 - y
-	}
+    private func getYDelta(y: CGFloat) -> CGFloat {
+        return itemSize.height * 0.5 - y
+    }
 }

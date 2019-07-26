@@ -5,7 +5,7 @@ import CoreData
 
 /// Displays List of Expenses made with the details
 class ExpenseViewController: UIViewController  {
-
+    
     
     // MARK: - ViewMode Variable
     
@@ -27,7 +27,7 @@ class ExpenseViewController: UIViewController  {
             let nib = UINib(nibName: expenseViewModel.cellId, bundle: nil)
             collectionView.register( nib, forCellWithReuseIdentifier: expenseViewModel.cellId)
             collectionView.contentInset.bottom = expenseViewModel.itemHeight
-
+            
         }
     }
     
@@ -66,7 +66,7 @@ class ExpenseViewController: UIViewController  {
     }
     
     /// settingsBtn that executes your custom code in response to user interactions.
-
+    
     @IBOutlet weak var settingsBtn: UIButton! {
         didSet {
             settingsBtn.layer.shadowColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.25).cgColor
@@ -77,7 +77,7 @@ class ExpenseViewController: UIViewController  {
         }
     }
     
-   /// uploadBtn that executes your custom code in response to user interactions.
+    /// uploadBtn that executes your custom code in response to user interactions.
     @IBOutlet weak var uploadBtn: UIButton! {
         didSet {
             uploadBtn.layer.shadowColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.25).cgColor
@@ -88,7 +88,7 @@ class ExpenseViewController: UIViewController  {
         }
     }
     
-     /// reportBtn that executes your custom code in response to user interactions.
+    /// reportBtn that executes your custom code in response to user interactions.
     @IBOutlet weak var reportBtn: UIButton! {
         didSet {
             reportBtn.layer.shadowColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.25).cgColor
@@ -99,7 +99,7 @@ class ExpenseViewController: UIViewController  {
         }
     }
     
-     /// reimbursementBtn that executes your custom code in response to user interactions.
+    /// reimbursementBtn that executes your custom code in response to user interactions.
     @IBOutlet weak var reimbursementBtn: UIButton! {
         didSet {
             reimbursementBtn.layer.shadowColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.25).cgColor
@@ -124,15 +124,15 @@ class ExpenseViewController: UIViewController  {
     /// emptyImageBox that displays a single image or a sequence of animated images in your interface. when there is nothing to show
     @IBOutlet weak var emptyImageBox: UIImageView!
     
-   /// stack1 an interface for laying out a collection of views in either a column or a row.
+    /// stack1 an interface for laying out a collection of views in either a column or a row.
     @IBOutlet weak var stack1: UIStackView!
     
     /// stack2 an interface for laying out a collection of views in either a column or a row.
     @IBOutlet weak var stack2: UIStackView!
     
     
-   
-
+    
+    
     
     // MARK: IBAction Methods
     
@@ -178,7 +178,7 @@ class ExpenseViewController: UIViewController  {
         let customActionSheet = UIAlertController(title: nil, message: nil, preferredStyle: AppConstants.alertActionStyle)
         
         let firstButton = UIAlertAction(title: "Low - High", style: .default, handler: { action in
-
+            
             self.expenseViewModel.currentCheckedIndex = 0;
             self.expenseViewModel.expenseListArray = self.expenseViewModel.currentCheckedIndex == 0 ? self.expenseViewModel.expenseListArray.sorted(by: { $1.totalAmount > $0.totalAmount}) : self.expenseViewModel.expenseListArray.sorted(by: { $0.totalAmount > $1.totalAmount})
             self.collectionView.reloadData()
@@ -187,7 +187,7 @@ class ExpenseViewController: UIViewController  {
         
         firstButton.setValue(UIColor.black, forKey: AppConstants.Defaults.Key.titleTextColor)
         firstButton.setValue(UIColor.black, forKey: AppConstants.Defaults.Key.imageTintColor)
-       
+        
         let secondButton = UIAlertAction(title: "High - Low", style: .default, handler: { action in
             //click action
             self.expenseViewModel.currentCheckedIndex = 1;
@@ -204,19 +204,19 @@ class ExpenseViewController: UIViewController  {
         if expenseViewModel.currentCheckedIndex == 0 {
             firstButton.setValue(NSNumber(value: true), forKey: AppConstants.Defaults.Key.checked)
             secondButton.setValue(NSNumber(value: false), forKey: AppConstants.Defaults.Key.checked)
-
+            
         } else if expenseViewModel.currentCheckedIndex == 1 {
             secondButton.setValue(NSNumber(value: true), forKey: AppConstants.Defaults.Key.checked)
             firstButton.setValue(NSNumber(value: false), forKey: AppConstants.Defaults.Key.checked)
-
+            
         }
-      
+        
         customActionSheet.addAction(firstButton)
         customActionSheet.addAction(secondButton)
         customActionSheet.addAction(cancelButton)
         
         present(customActionSheet, animated: true)
-
+        
     }
     
     /// When this upload bill is pressed , it updates the AddExpenseType Defaults and navigate to UploadViewController
@@ -260,7 +260,7 @@ class ExpenseViewController: UIViewController  {
     
     // MARK: - Custom Action
     
-   /// Hide Options Menu
+    /// Hide Options Menu
     func hideMenu() {
         self.stack1.isHidden = false
         self.stack2.isHidden = false
@@ -293,7 +293,7 @@ class ExpenseViewController: UIViewController  {
         collectionView.collectionViewLayout.invalidateLayout()
     }
     
-     /// This method is used to get the expense list from the core data and append the result in expenseListArray and the reaload the collectionView to populate the data
+    /// This method is used to get the expense list from the core data and append the result in expenseListArray and the reaload the collectionView to populate the data
     func getExpenseList() {
         expenseViewModel.expenseListArray = [ExpenseListInfo]()
         
@@ -358,18 +358,18 @@ class ExpenseViewController: UIViewController  {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-       
+        
+        
         
         //    collectionView.setup()
         
     }
     
-   
+    
     /// Notifies the view controller that its view is about to be added to a view hierarchy.
     ///
     /// - Parameter animated: If true, the view is being added to the window using an animation.
-
+    
     override func viewWillAppear(_ animated: Bool) {
         hideMenu()
         getExpenseList()
@@ -380,7 +380,7 @@ class ExpenseViewController: UIViewController  {
     }
     
     
-
+    
     
     
     /// Notifies the view controller that its view is about to be removed from a view hierarchy.
@@ -410,7 +410,7 @@ class ExpenseViewController: UIViewController  {
     }
     
     // MARK: - ActionSheet Delegate
-
+    
     
     
 }
@@ -471,7 +471,7 @@ extension ExpenseViewController: UICollectionViewDataSource {
         
         cell.categoryIcon.image = UIImage(data:share.categoryImg!)
         cell.amount.text = "\(share.currencySymbol!)\(share.amount!)"
-    
+        
         cell.claimedLbl.isHidden =  share.claimed! == "CL" ? false : true
         cell.tagsView = nil
         print("indexPath \(indexPath.row) value : \(String(describing: share.tags))")

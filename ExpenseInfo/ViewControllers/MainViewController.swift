@@ -38,7 +38,7 @@ class MainViewController: UIViewController {
         }
     }
     
-     /// enterBillBtn that executes your custom code in response to user interactions.
+    /// enterBillBtn that executes your custom code in response to user interactions.
     @IBOutlet weak var enterBillBtn: UIButton! {
         didSet {
             enterBillBtn.layer.shadowColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.25).cgColor
@@ -60,7 +60,7 @@ class MainViewController: UIViewController {
         }
     }
     
-   /// uploadBtn that executes your custom code in response to user interactions.
+    /// uploadBtn that executes your custom code in response to user interactions.
     @IBOutlet weak var uploadBtn: UIButton! {
         didSet {
             uploadBtn.layer.shadowColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.25).cgColor
@@ -71,7 +71,7 @@ class MainViewController: UIViewController {
         }
     }
     
-     /// reportBtn that executes your custom code in response to user interactions.
+    /// reportBtn that executes your custom code in response to user interactions.
     @IBOutlet weak var reportBtn: UIButton! {
         didSet {
             
@@ -83,7 +83,7 @@ class MainViewController: UIViewController {
         }
     }
     
-     /// reimbursementBtn that executes your custom code in response to user interactions.
+    /// reimbursementBtn that executes your custom code in response to user interactions.
     @IBOutlet weak var reimbursementBtn: UIButton! {
         didSet {
             reimbursementBtn.layer.shadowColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.25).cgColor
@@ -111,10 +111,10 @@ class MainViewController: UIViewController {
     /// blackView manages the content for a rectangular area on the screen.
     @IBOutlet weak var blackView: UIView!
     
-   /// scrollView that allows the scrolling and zooming of its contained views.
+    /// scrollView that allows the scrolling and zooming of its contained views.
     @IBOutlet weak var scrollView: UIScrollView!
     
-   /// stack1 an interface for laying out a collection of views in either a column or a row.
+    /// stack1 an interface for laying out a collection of views in either a column or a row.
     @IBOutlet weak var stack1: UIStackView!
     
     /// stack2 an interface for laying out a collection of views in either a column or a row.
@@ -122,13 +122,13 @@ class MainViewController: UIViewController {
     
     // MARK: - Local variables
     
-   /// Instance of MainViewModel
-   let mainViewModel = MainViewModel()
+    /// Instance of MainViewModel
+    let mainViewModel = MainViewModel()
     
     
     // MARK: Default View Controller Methods
     /// Called after the controller's view is loaded into memory.
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         mainViewModel.isMenuActive = false
@@ -146,7 +146,7 @@ class MainViewController: UIViewController {
     /// Notifies the view controller that its view is about to be removed from a view hierarchy.
     ///
     /// - Parameter animated: If true, the disappearance of the view is being animated.
-
+    
     override func viewWillDisappear(_ animated: Bool) {
         self.stack1.isHidden = false
         self.stack2.isHidden = false
@@ -159,7 +159,7 @@ class MainViewController: UIViewController {
     /// Notifies the view controller that its view was added to a view hierarchy.
     ///
     /// - Parameter animated: If true, the view was added to the window using an animation.
-
+    
     override func viewDidAppear(_ animated: Bool) {
         self.navigationController?.setNavigationBarHidden(true, animated: false)
     }
@@ -202,7 +202,7 @@ class MainViewController: UIViewController {
     /// Notifies the view controller that its view is about to be added to a view hierarchy.
     ///
     /// - Parameter animated: If true, the view is being added to the window using an animation.
-
+    
     override func viewWillAppear(_ animated: Bool) {
     }
     
@@ -261,7 +261,7 @@ class MainViewController: UIViewController {
     }
     
     
- 
+    
     
     /// This method is used to fetch the Merchant list from the Retail.plist and update the MerchantPicker with the respective delegates
     @objc func someActionToBePerformed () {
@@ -277,10 +277,10 @@ class MainViewController: UIViewController {
         
         var dataList = [[String:AnyObject]]()
         
-
+        
         
         myEnglishArray.forEach { (i) in
-             dataList.append(["id":NSNumber(integerLiteral: 1+1), "name":"\(i)" as AnyObject])
+            dataList.append(["id":NSNumber(integerLiteral: 1+1), "name":"\(i)" as AnyObject])
         }
         let searchPicker = SearchAndFindMerchantPicker.createPicker(dataArray: dataList , typeStr: "Data")
         addChild(searchPicker)
@@ -298,7 +298,7 @@ class MainViewController: UIViewController {
         }
     }
     
-  
+    
     
     
     

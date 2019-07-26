@@ -27,7 +27,7 @@ class HomeViewModel {
     /// unclaimedValueBlock a double-precision, floating-point value type.
     var unclaimedValueBlock : Double = 0.0
     
-
+    
     
     // MARK: - Get List
     
@@ -96,7 +96,7 @@ class HomeViewModel {
      /// This function is used to update the Expense block
      - get expense list from the coredata entity 
      - sum up the amount from the fetchResult and assign the value to claimedValueBlock variable
-
+     
      */
     func updateExpenseBlocks() {
         

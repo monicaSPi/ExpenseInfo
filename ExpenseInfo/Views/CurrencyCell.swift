@@ -20,7 +20,7 @@ final class CurrencyTableViewCell: UITableViewCell {
     /// Returns an object initialized from data in a given unarchiver.
     ///
     /// - Parameter aDecoder: An unarchiver object.
-
+    
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
@@ -62,7 +62,7 @@ final class StoreTableViewCell: UITableViewCell {
     /// Returns an object initialized from data in a given unarchiver.
     ///
     /// - Parameter aDecoder: An unarchiver object.
-
+    
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }

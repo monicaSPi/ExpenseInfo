@@ -15,27 +15,27 @@ class SearchViewModel {
     // MARK: - Local variable
     
     /// Instance for a Data structure containing information about Expense List
-
+    
     var expenseListArray = [ExpenseListInfo]()
     
     /// Instance for a Data structure containing information about Expense List after filter
-
+    
     var filtered = [ExpenseListInfo]()
     
-    /// <#Description#>
+    /// searchActive sets bool value
     var searchActive : Bool = false
     
     // MARK: - File Private
     
-     /// <#Description#>
-     let cellId = "ExpenseCell"
+    /// This uinque identifier of the Expense Cell Collection view cell
+    let cellId = "ExpenseCell"
     
-     /// <#Description#>
-     let itemHeight: CGFloat = 90
+    /// collectionView contentInset itemHeight
+    let itemHeight: CGFloat = 90
     
-     /// <#Description#>
-     let xInset: CGFloat = 10
+    /// This is the value of xInset of the expense cell
+    let xInset: CGFloat = 10
     
-     /// <#Description#>
-     let topInset: CGFloat = 10
+    /// This is the value of topInset of the expense cell
+    let topInset: CGFloat = 10
 }

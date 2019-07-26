@@ -11,7 +11,7 @@ import CoreData
 
 // MARK: - LLSwitchDelegate
 extension AddNewExpenseViewController : LLSwitchDelegate {
-
+    
     
     /// This method is called when a toggle switch changes its value
     ///
@@ -25,9 +25,9 @@ extension AddNewExpenseViewController : LLSwitchDelegate {
 
 // MARK: - CategoryInfoDelegate
 extension AddNewExpenseViewController: CategoryInfoDelegate {
-  
     
-   
+    
+    
     /// This method is used to get imformation from the `ExpenseCategoryViewController`
     ///
     /// - Parameters:
@@ -105,7 +105,7 @@ extension AddNewExpenseViewController: UITextFieldDelegate {
     }
     
     
-
+    
     /// Asks the delegate if the specified text should be changed.
     ///
     /// - Parameters:
@@ -182,7 +182,7 @@ extension AddNewExpenseViewController : UITextViewDelegate {
     ///   - text: The text to insert.
     /// - Returns: true if the old text should be replaced by the new text; false if the replacement operation should be aborted.
     
-
+    
     func textView(textView: UITextView, shouldChangeTextInRange range: NSRange, replacementText text: String) -> Bool {
         if(text == "\n") {
             textView.resignFirstResponder()
@@ -268,7 +268,7 @@ class AddNewExpenseViewController: UIViewController {
     
     /// remove detected annotation view
     private func removeDetectionAnnotations() {
-  
+        
         annotationOverlayView.subviews.forEach { (annotationView) in
             annotationView.removeFromSuperview()
         }
@@ -465,7 +465,7 @@ class AddNewExpenseViewController: UIViewController {
         deregisterFromKeyboardNotifications()
     }
     
-   
+    
     // MARK: - Image Transform
     
     /// This method helps an affine transformation matrix is used to rotate, scale, translate, or skew the objects you draw in a graphics context
@@ -494,7 +494,7 @@ class AddNewExpenseViewController: UIViewController {
     }
     
     
- 
+    
     
     
     // MARK: - OCR Update
@@ -614,7 +614,7 @@ class AddNewExpenseViewController: UIViewController {
     }
     
     
-   
+    
     /// This method is used to send the image for text recognition
     ///
     /// - Parameter completion: returns true after completion of text Recognition
@@ -647,9 +647,9 @@ class AddNewExpenseViewController: UIViewController {
         completion(true)
     }
     
-   
-
-   
+    
+    
+    
     
     /// runTextRecognition method helps in process the given bill image to recognize the text using Vision Framework
     ///
@@ -864,7 +864,7 @@ class AddNewExpenseViewController: UIViewController {
     
     /// This method is used to save the populated data of the expense to core data stack . By validating all the fields and check the mode of saving either as a new expense or edited expense
     func addnewExpenseNow() {
-            
+        
         let type = UserDefaults.standard.value(forKey: AppConstants.Defaults.Key.AddExpenseType) as! String
         
         
@@ -1035,7 +1035,7 @@ class AddNewExpenseViewController: UIViewController {
         
     }
     
-   
+    
     /// This delegate used to hide the keyboard from the view when the NSNotification is posted
     ///
     /// - Parameter notification: notification is triggered
@@ -1094,7 +1094,7 @@ class AddNewExpenseViewController: UIViewController {
         
     }
     /// Create the timepicker view, and animate opening the view
-
+    
     func timePickerTapped() {
         
         let datePicker = DatePickerDialog(textColor: .black,
@@ -1117,10 +1117,10 @@ class AddNewExpenseViewController: UIViewController {
         }
         
     }
-
-
- 
- 
+    
+    
+    
+    
     
 }
 
